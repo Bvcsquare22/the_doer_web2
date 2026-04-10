@@ -218,13 +218,8 @@
     }
 
     @keyframes slowZoom {
-      from {
-        transform: scale(1.05);
-      }
-
-      to {
-        transform: scale(1.13);
-      }
+      from { transform: scale(1.05); }
+      to { transform: scale(1.13); }
     }
 
     .hero-gradient {
@@ -330,27 +325,11 @@
       animation: wordUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    .hero-headline .word:nth-child(1) {
-      animation-delay: 0.6s;
-    }
-
-    .hero-headline .word:nth-child(2) {
-      animation-delay: 0.75s;
-      color: var(--gold);
-    }
-
-    .hero-headline .word:nth-child(3) {
-      animation-delay: 0.9s;
-    }
-
-    .hero-headline .word:nth-child(4) {
-      animation-delay: 1.05s;
-      color: var(--gold);
-    }
-
-    .hero-headline .word:nth-child(5) {
-      animation-delay: 1.2s;
-    }
+    .hero-headline .word:nth-child(1) { animation-delay: 0.6s; }
+    .hero-headline .word:nth-child(2) { animation-delay: 0.75s; color: var(--gold); }
+    .hero-headline .word:nth-child(3) { animation-delay: 0.9s; }
+    .hero-headline .word:nth-child(4) { animation-delay: 1.05s; color: var(--gold); }
+    .hero-headline .word:nth-child(5) { animation-delay: 1.2s; }
 
     .hero-sub {
       font-size: 19px;
@@ -387,15 +366,8 @@
     }
 
     @keyframes goldPulse {
-
-      0%,
-      100% {
-        box-shadow: 0 0 0 0 rgba(212, 168, 67, 0.4);
-      }
-
-      50% {
-        box-shadow: 0 0 0 14px rgba(212, 168, 67, 0);
-      }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212, 168, 67, 0.4); }
+      50% { box-shadow: 0 0 0 14px rgba(212, 168, 67, 0); }
     }
 
     .btn-primary:hover {
@@ -415,17 +387,9 @@
       transition: color 0.3s;
     }
 
-    .btn-secondary:hover {
-      color: var(--white);
-    }
-
-    .btn-secondary .arrow {
-      transition: transform 0.3s;
-    }
-
-    .btn-secondary:hover .arrow {
-      transform: translateX(4px);
-    }
+    .btn-secondary:hover { color: var(--white); }
+    .btn-secondary .arrow { transition: transform 0.3s; }
+    .btn-secondary:hover .arrow { transform: translateX(4px); }
 
     .hero-scroll-indicator {
       position: absolute;
@@ -448,15 +412,8 @@
     }
 
     @keyframes scrollPulse {
-
-      0%,
-      100% {
-        opacity: 0.3;
-      }
-
-      50% {
-        opacity: 1;
-      }
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
     }
 
     .scroll-text {
@@ -469,41 +426,18 @@
     }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes wordUp {
-      from {
-        opacity: 0;
-        transform: translateY(60px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes livePulse {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.4;
-        transform: scale(0.8);
-      }
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
     }
 
     /* SECTIONS */
@@ -554,9 +488,7 @@
       margin: 0 auto;
     }
 
-    .how-header {
-      margin-bottom: 80px;
-    }
+    .how-header { margin-bottom: 80px; }
 
     .how-title {
       font-family: 'Bebas Neue', sans-serif;
@@ -592,9 +524,7 @@
       transition: color 0.4s;
     }
 
-    .how-step:hover .step-num {
-      color: rgba(212, 168, 67, 0.7);
-    }
+    .how-step:hover .step-num { color: rgba(212, 168, 67, 0.7); }
 
     .step-icon {
       width: 44px;
@@ -685,13 +615,8 @@
       transform-origin: left;
     }
 
-    .feature-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .feature-card:hover {
-      background: rgba(212, 168, 67, 0.03);
-    }
+    .feature-card:hover::before { transform: scaleX(1); }
+    .feature-card:hover { background: rgba(212, 168, 67, 0.03); }
 
     .feature-icon {
       font-size: 30px;
@@ -736,9 +661,7 @@
       margin: 0 auto;
     }
 
-    .challenges-header {
-      margin-bottom: 80px;
-    }
+    .challenges-header { margin-bottom: 80px; }
 
     .challenges-title {
       font-family: 'Bebas Neue', sans-serif;
@@ -793,23 +716,9 @@
       gap: 6px;
     }
 
-    .notch-dot {
-      width: 7px;
-      height: 7px;
-      background: #1c1c1c;
-      border-radius: 50%;
-    }
-
-    .notch-bar {
-      width: 38px;
-      height: 4px;
-      background: #1c1c1c;
-      border-radius: 2px;
-    }
-
-    .phone-screen {
-      background: #111;
-    }
+    .notch-dot { width: 7px; height: 7px; background: #1c1c1c; border-radius: 50%; }
+    .notch-bar { width: 38px; height: 4px; background: #1c1c1c; border-radius: 2px; }
+    .phone-screen { background: #111; }
 
     .phone-home-bar {
       height: 32px;
@@ -833,15 +742,8 @@
       justify-content: space-between;
     }
 
-    .ccard-back {
-      font-size: 18px;
-      color: var(--white-dim);
-    }
-
-    .ccard-menu {
-      font-size: 18px;
-      color: var(--white-dim);
-    }
+    .ccard-back { font-size: 18px; color: var(--white-dim); }
+    .ccard-menu { font-size: 18px; color: var(--white-dim); }
 
     .ccard-brand-banner {
       padding: 18px;
@@ -862,17 +764,9 @@
       flex-shrink: 0;
     }
 
-    .cr-logo {
-      background: linear-gradient(135deg, #8B0000, #CC0000);
-    }
-
-    .ab-logo {
-      background: linear-gradient(135deg, #001a5e, #003087);
-    }
-
-    .fw-logo {
-      background: linear-gradient(135deg, #0b2c6b, #00b9f1);
-    }
+    .cr-logo { background: linear-gradient(135deg, #8B0000, #CC0000); }
+    .ab-logo { background: linear-gradient(135deg, #001a5e, #003087); }
+    .fw-logo { background: linear-gradient(135deg, #0b2c6b, #00b9f1); }
 
     .brand-sponsored-tag {
       font-size: 10px;
@@ -890,9 +784,7 @@
       color: var(--white);
     }
 
-    .ccard-body {
-      padding: 18px;
-    }
+    .ccard-body { padding: 18px; }
 
     .ccard-title {
       font-family: 'Syne', sans-serif;
@@ -939,15 +831,9 @@
       line-height: 1;
     }
 
-    .step-target-unit {
-      font-size: 11px;
-      color: var(--white-dimmer);
-      font-weight: 500;
-    }
+    .step-target-unit { font-size: 11px; color: var(--white-dimmer); font-weight: 500; }
 
-    .ccard-progress-wrap {
-      margin-bottom: 16px;
-    }
+    .ccard-progress-wrap { margin-bottom: 16px; }
 
     .ccard-progress-header {
       display: flex;
@@ -955,17 +841,8 @@
       margin-bottom: 8px;
     }
 
-    .ccard-progress-header span {
-      font-size: 12px;
-      color: var(--white-dimmer);
-      font-weight: 500;
-    }
-
-    .ccard-progress-header strong {
-      font-size: 12px;
-      color: var(--gold);
-      font-weight: 700;
-    }
+    .ccard-progress-header span { font-size: 12px; color: var(--white-dimmer); font-weight: 500; }
+    .ccard-progress-header strong { font-size: 12px; color: var(--gold); font-weight: 700; }
 
     .progress-bar {
       height: 5px;
@@ -990,28 +867,9 @@
       margin-bottom: 16px;
     }
 
-    .ccard-stat {
-      background: rgba(255, 255, 255, 0.02);
-      padding: 12px 8px;
-      text-align: center;
-    }
-
-    .cstat-val {
-      font-family: 'Syne', sans-serif;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--white);
-      display: block;
-      margin-bottom: 3px;
-    }
-
-    .cstat-label {
-      font-size: 9px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--white-dimmer);
-      font-weight: 600;
-    }
+    .ccard-stat { background: rgba(255, 255, 255, 0.02); padding: 12px 8px; text-align: center; }
+    .cstat-val { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--white); display: block; margin-bottom: 3px; }
+    .cstat-label { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--white-dimmer); font-weight: 600; }
 
     .ccard-reward {
       background: rgba(212, 168, 67, 0.08);
@@ -1024,38 +882,12 @@
       margin-bottom: 16px;
     }
 
-    .reward-icon {
-      font-size: 20px;
-    }
+    .reward-icon { font-size: 20px; }
+    .reward-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; font-weight: 700; }
+    .reward-val { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); }
 
-    .reward-label {
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 3px;
-      font-weight: 700;
-    }
-
-    .reward-val {
-      font-family: 'Syne', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--white);
-    }
-
-    .ccard-leaderboard {
-      margin-bottom: 16px;
-    }
-
-    .leaderboard-title {
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--white-dimmer);
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
+    .ccard-leaderboard { margin-bottom: 16px; }
+    .leaderboard-title { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--white-dimmer); margin-bottom: 10px; font-weight: 700; }
 
     .leaderboard-row {
       display: flex;
@@ -1065,50 +897,13 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     }
 
-    .leaderboard-row:last-child {
-      border-bottom: none;
-    }
-
-    .lb-rank {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 15px;
-      color: var(--gold);
-      width: 20px;
-    }
-
-    .lb-rank.you {
-      color: #4CAF50;
-    }
-
-    .lb-avatar {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.07);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-    }
-
-    .lb-name {
-      flex: 1;
-      font-size: 13px;
-      color: var(--white-dim);
-      font-weight: 500;
-    }
-
-    .lb-name.you {
-      color: #4CAF50;
-      font-weight: 700;
-    }
-
-    .lb-steps {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--white);
-      font-family: 'Syne', sans-serif;
-    }
+    .leaderboard-row:last-child { border-bottom: none; }
+    .lb-rank { font-family: 'Bebas Neue', sans-serif; font-size: 15px; color: var(--gold); width: 20px; }
+    .lb-rank.you { color: #4CAF50; }
+    .lb-avatar { width: 26px; height: 26px; border-radius: 50%; background: rgba(255, 255, 255, 0.07); display: flex; align-items: center; justify-content: center; font-size: 11px; }
+    .lb-name { flex: 1; font-size: 13px; color: var(--white-dim); font-weight: 500; }
+    .lb-name.you { color: #4CAF50; font-weight: 700; }
+    .lb-steps { font-size: 13px; font-weight: 700; color: var(--white); font-family: 'Syne', sans-serif; }
 
     .ccard-join-btn {
       width: 100%;
@@ -1145,13 +940,7 @@
       font-weight: 700;
     }
 
-    .group-battle-label::before {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 1px;
-      background: var(--gold);
-    }
+    .group-battle-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
 
     .group-battle-title {
       font-family: 'Bebas Neue', sans-serif;
@@ -1180,9 +969,7 @@
       box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 60px rgba(212, 168, 67, 0.05);
     }
 
-    .battle-screen {
-      background: #111;
-    }
+    .battle-screen { background: #111; }
 
     .battle-top-bar {
       background: linear-gradient(135deg, #1a1a2e, #16213e);
@@ -1193,12 +980,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .battle-top-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--white);
-    }
+    .battle-top-title { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; color: var(--white); }
 
     .battle-live-badge {
       display: flex;
@@ -1215,32 +997,11 @@
       font-weight: 700;
     }
 
-    .live-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      animation: livePulse 1.5s ease-in-out infinite;
-    }
+    .live-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: livePulse 1.5s ease-in-out infinite; }
 
-    .battle-body {
-      padding: 16px;
-    }
-
-    .battle-sponsor-tag {
-      text-align: center;
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--white-dimmer);
-      margin-bottom: 14px;
-      font-weight: 600;
-    }
-
-    .battle-sponsor-name {
-      color: var(--gold);
-      font-weight: 700;
-    }
+    .battle-body { padding: 16px; }
+    .battle-sponsor-tag { text-align: center; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--white-dimmer); margin-bottom: 14px; font-weight: 600; }
+    .battle-sponsor-name { color: var(--gold); font-weight: 700; }
 
     .battle-vs-row {
       display: grid;
@@ -1250,9 +1011,7 @@
       margin-bottom: 18px;
     }
 
-    .b-team {
-      text-align: center;
-    }
+    .b-team { text-align: center; }
 
     .b-team-icon {
       width: 46px;
@@ -1266,26 +1025,10 @@
       border: 2px solid rgba(255, 255, 255, 0.07);
     }
 
-    .b-team-icon-1 {
-      background: linear-gradient(135deg, #1a3a1a, #2d6a2d);
-    }
-
-    .b-team-icon-2 {
-      background: linear-gradient(135deg, #3a1a1a, #6a2d2d);
-    }
-
-    .b-team-name {
-      font-family: 'Syne', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 2px;
-    }
-
-    .b-team-loc {
-      font-size: 10px;
-      color: var(--white-dimmer);
-    }
+    .b-team-icon-1 { background: linear-gradient(135deg, #1a3a1a, #2d6a2d); }
+    .b-team-icon-2 { background: linear-gradient(135deg, #3a1a1a, #6a2d2d); }
+    .b-team-name { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+    .b-team-loc { font-size: 10px; color: var(--white-dimmer); }
 
     .vs-text {
       font-family: 'Bebas Neue', sans-serif;
@@ -1296,15 +1039,8 @@
     }
 
     @keyframes vsPulse {
-
-      0%,
-      100% {
-        text-shadow: 0 0 10px rgba(212, 168, 67, 0.3);
-      }
-
-      50% {
-        text-shadow: 0 0 25px rgba(212, 168, 67, 0.9);
-      }
+      0%, 100% { text-shadow: 0 0 10px rgba(212, 168, 67, 0.3); }
+      50% { text-shadow: 0 0 25px rgba(212, 168, 67, 0.9); }
     }
 
     .battle-scores-box {
@@ -1315,67 +1051,16 @@
       margin-bottom: 14px;
     }
 
-    .scores-label {
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--white-dimmer);
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
+    .scores-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--white-dimmer); margin-bottom: 12px; font-weight: 700; }
 
-    .score-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .score-row:last-child {
-      margin-bottom: 0;
-    }
-
-    .score-team {
-      font-size: 11px;
-      color: var(--white-dim);
-      width: 85px;
-      flex-shrink: 0;
-      font-weight: 500;
-    }
-
-    .score-bar-wrap {
-      flex: 1;
-    }
-
-    .score-bar {
-      height: 5px;
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 3px;
-      overflow: hidden;
-      margin-bottom: 3px;
-    }
-
-    .score-fill-1 {
-      height: 100%;
-      width: 68%;
-      background: linear-gradient(90deg, #2d6a2d, #4CAF50);
-      border-radius: 3px;
-    }
-
-    .score-fill-2 {
-      height: 100%;
-      width: 52%;
-      background: linear-gradient(90deg, #6a2d2d, #e53935);
-      border-radius: 3px;
-    }
-
-    .score-val {
-      font-family: 'Syne', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--white);
-      white-space: nowrap;
-    }
+    .score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .score-row:last-child { margin-bottom: 0; }
+    .score-team { font-size: 11px; color: var(--white-dim); width: 85px; flex-shrink: 0; font-weight: 500; }
+    .score-bar-wrap { flex: 1; }
+    .score-bar { height: 5px; background: rgba(255, 255, 255, 0.06); border-radius: 3px; overflow: hidden; margin-bottom: 3px; }
+    .score-fill-1 { height: 100%; width: 68%; background: linear-gradient(90deg, #2d6a2d, #4CAF50); border-radius: 3px; }
+    .score-fill-2 { height: 100%; width: 52%; background: linear-gradient(90deg, #6a2d2d, #e53935); border-radius: 3px; }
+    .score-val { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; color: var(--white); white-space: nowrap; }
 
     .battle-reward-box {
       background: rgba(212, 168, 67, 0.08);
@@ -1388,18 +1073,8 @@
       margin-bottom: 12px;
     }
 
-    .battle-timer {
-      text-align: center;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--white-dimmer);
-      font-weight: 600;
-    }
-
-    .battle-timer strong {
-      color: var(--gold);
-    }
+    .battle-timer { text-align: center; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--white-dimmer); font-weight: 600; }
+    .battle-timer strong { color: var(--gold); }
 
     .battle-join-btn {
       width: 100%;
@@ -1460,9 +1135,7 @@
       margin-bottom: 24px;
     }
 
-    .waitlist-title span {
-      color: var(--gold);
-    }
+    .waitlist-title span { color: var(--gold); }
 
     .waitlist-sub {
       font-size: 18px;
@@ -1491,13 +1164,8 @@
       transition: border-color 0.3s;
     }
 
-    .waitlist-input::placeholder {
-      color: var(--white-dimmer);
-    }
-
-    .waitlist-input:focus {
-      border-color: rgba(212, 168, 67, 0.5);
-    }
+    .waitlist-input::placeholder { color: var(--white-dimmer); }
+    .waitlist-input:focus { border-color: rgba(212, 168, 67, 0.5); }
 
     .waitlist-submit {
       background: var(--gold);
@@ -1515,14 +1183,28 @@
       animation: goldPulse 3s ease-in-out infinite;
     }
 
-    .waitlist-submit:hover {
-      background: #e8be5a;
-    }
+    .waitlist-submit:hover { background: #e8be5a; }
 
     .waitlist-note {
       font-size: 13px;
       color: var(--white-dimmer);
       font-weight: 400;
+    }
+
+    .waitlist-success-msg {
+      margin-top: 16px;
+      font-size: 15px;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .waitlist-success-msg.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* FOOTER */
@@ -1532,10 +1214,7 @@
       padding: 60px 48px 40px;
     }
 
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
 
     .footer-top {
       display: flex;
@@ -1546,236 +1225,69 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      text-decoration: none;
-    }
-
-    .footer-logo-img {
-      width: 30px;
-      height: 30px;
-      border-radius: 7px;
-    }
-
-    .footer-logo-text {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 24px;
-      letter-spacing: 3px;
-      color: var(--white);
-    }
-
-    .footer-logo-text span {
-      color: var(--gold);
-    }
-
-    .footer-tagline {
-      font-size: 14px;
-      color: var(--white-dimmer);
-      font-weight: 400;
-      max-width: 240px;
-      line-height: 1.6;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 80px;
-    }
-
-    .footer-col h4 {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 12px;
-    }
-
-    .footer-col ul li a {
-      color: var(--white-dimmer);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 400;
-      transition: color 0.3s;
-    }
-
-    .footer-col ul li a:hover {
-      color: var(--white);
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-copy {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.25);
-    }
-
-    .footer-gold-line {
-      width: 60px;
-      height: 1px;
-      background: var(--gold);
-      opacity: 0.3;
-    }
+    .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; text-decoration: none; }
+    .footer-logo-img { width: 30px; height: 30px; border-radius: 7px; }
+    .footer-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 3px; color: var(--white); }
+    .footer-logo-text span { color: var(--gold); }
+    .footer-tagline { font-size: 14px; color: var(--white-dimmer); font-weight: 400; max-width: 240px; line-height: 1.6; }
+    .footer-links { display: flex; gap: 80px; }
+    .footer-col h4 { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 700; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 12px; }
+    .footer-col ul li a { color: var(--white-dimmer); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.3s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 13px; color: rgba(255, 255, 255, 0.25); }
+    .footer-gold-line { width: 60px; height: 1px; background: var(--gold); opacity: 0.3; }
 
     /* REVEAL */
-    .js-ready .reveal { opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      animation: revealFallback 0.8s ease 1.5s forwards;
-    }
+    .js-ready .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; animation: revealFallback 0.8s ease 1.5s forwards; }
+    .js-ready .reveal.visible { opacity: 1; transform: translateY(0); animation: none; }
+    .js-ready .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; animation: revealFallback 0.8s ease 1.5s forwards; }
+    .js-ready .reveal-left.visible { opacity: 1; transform: translateX(0); animation: none; }
+    .js-ready .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; animation: revealFallback 0.8s ease 1.5s forwards; }
+    .js-ready .reveal-right.visible { opacity: 1; transform: translateX(0); animation: none; }
 
-    .js-ready .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-      animation: none;
-    }
+    @keyframes revealFallback { to { opacity: 1; transform: none; } }
 
-    .js-ready .reveal-left { opacity: 0;
-      transform: translateX(-40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      animation: revealFallback 0.8s ease 1.5s forwards;
-    }
-
-    .js-ready .reveal-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-      animation: none;
-    }
-
-    .js-ready .reveal-right { opacity: 0;
-      transform: translateX(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      animation: revealFallback 0.8s ease 1.5s forwards;
-    }
-
-    .js-ready .reveal-right.visible {
-      opacity: 1;
-      transform: translateX(0);
-      animation: none;
-    }
-
-    @keyframes revealFallback {
-      to { opacity: 1; transform: none; }
-    }
-
-
-    .delay-1 {
-      transition-delay: 0.1s;
-    }
-
-    .delay-2 {
-      transition-delay: 0.2s;
-    }
-
-    .delay-3 {
-      transition-delay: 0.3s;
-    }
-
-    .delay-4 {
-      transition-delay: 0.4s;
-    }
-
-    .delay-5 {
-      transition-delay: 0.5s;
-    }
-
-    .delay-6 {
-      transition-delay: 0.6s;
-    }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+    .delay-5 { transition-delay: 0.5s; }
+    .delay-6 { transition-delay: 0.6s; }
 
     @media (max-width: 900px) {
-      nav {
-        padding: 16px 20px;
-      }
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 0 20px; margin-left: 0; }
+      .how, .features, .challenges, .waitlist { padding: 100px 20px; }
+      .how-steps, .features-grid, .challenge-cards { grid-template-columns: 1fr; }
+      .features-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .features-subtitle { text-align: left; }
+      .group-battle-layout { grid-template-columns: 1fr; gap: 48px; }
+      .footer-top { flex-direction: column; gap: 40px; }
+      .footer-links { gap: 40px; }
+      .footer-bottom { flex-direction: column; gap: 16px; }
+      footer { padding: 60px 20px 40px; }
 
-      .nav-links {
-        display: none;
-      }
-
-      .hero-content {
-        padding: 0 20px;
-        margin-left: 0;
-      }
-
-      .how,
-      .features,
-      .challenges,
-      .waitlist {
-        padding: 100px 20px;
-      }
-
-      .how-steps,
-      .features-grid,
-      .challenge-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .features-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
-      .features-subtitle {
-        text-align: left;
-      }
-
-      .group-battle-layout {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .footer-top {
-        flex-direction: column;
-        gap: 40px;
-      }
-
-      .footer-links {
-        gap: 40px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      footer {
-        padding: 60px 20px 40px;
-      }
       .waitlist-form {
-  flex-direction: column;
-  gap: 10px;
-}
+        flex-direction: column;
+        gap: 10px;
+      }
 
-.waitlist-input {
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
-  width: 100%;
-}
+      .waitlist-input {
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+        width: 100%;
+      }
 
-.waitlist-submit {
-  width: 100%;
-}
+      .waitlist-submit {
+        width: 100%;
+      }
     }
-  
+
     /* HOW-IT-WORKS GOLD CARD */
-    .how-step.gold-card {
-      background: var(--gold);
-      border-color: var(--gold);
-    }
+    .how-step.gold-card { background: var(--gold); border-color: var(--gold); }
     .how-step.gold-card .step-num { color: rgba(13,13,13,0.18); }
     .how-step.gold-card .step-icon { border-color: rgba(13,13,13,0.3); }
     .how-step.gold-card .step-title { color: var(--dark); }
@@ -1784,28 +1296,27 @@
 
     /* SOCIAL PROOF TOASTS */
     .toast-container {
-      position: fixed; bottom: 32px; left: 32px;
+      position: fixed;
+      inset: 0;
       z-index: 9000;
-      display: flex; flex-direction: column-reverse; gap: 12px;
-      pointer-events: none; max-width: 310px;
+      pointer-events: none;
     }
+
     .sp-toast {
-      display: flex; align-items: center; gap: 12px;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       background: rgba(13,13,13,0.93);
       border: 1px solid rgba(212,168,67,0.28);
       backdrop-filter: blur(20px);
-      padding: 12px 16px; border-radius: 12px;
+      padding: 12px 16px;
+      border-radius: 12px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.55);
-      opacity: 0;
-      transform: translateX(-20px) scale(0.96);
-      transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16,1,0.3,1);
-      pointer-events: none; min-width: 260px;
+      pointer-events: none;
+      width: 280px;
     }
-    .sp-toast.visible { opacity: 1; transform: translateX(0) scale(1); }
-    .sp-toast.hiding {
-      opacity: 0; transform: translateX(-12px) scale(0.97);
-      transition: opacity 0.35s ease, transform 0.35s ease;
-    }
+
     .sp-avatar {
       width: 36px; height: 36px; border-radius: 50%;
       background: var(--gold); color: var(--dark);
@@ -1813,16 +1324,17 @@
       font-size: 14px; font-weight: 800;
       font-family: 'Bebas Neue', sans-serif; flex-shrink: 0;
     }
+
     .sp-text { flex: 1; min-width: 0; }
     .sp-name { font-size: 13px; font-weight: 700; color: var(--white); font-family: 'Cabinet Grotesk', sans-serif; }
     .sp-action { font-size: 12px; color: rgba(245,240,232,0.58); font-family: 'Cabinet Grotesk', sans-serif; line-height: 1.4; margin-top: 1px; }
     .sp-icon { font-size: 18px; flex-shrink: 0; }
     .sp-live { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; animation: livePulse 1.5s ease-in-out infinite; }
+
     @media (max-width: 600px) {
-      .toast-container { bottom: 16px; left: 10px; right: 10px; max-width: none; }
-      .sp-toast { min-width: unset; width: 100%; }
+      .sp-toast { width: calc(100vw - 40px); }
     }
-</style>
+  </style>
 </head>
 
 <body>
@@ -1858,11 +1370,9 @@
       </a>
       <div class="hero-eyebrow">The Fitness Revolution</div>
       <h1 class="hero-headline">
-        <span class="word">Get&nbsp;</span><span class="word">Paid&nbsp;</span><span class="word">to&nbsp;</span><span
-          class="word">Get&nbsp;</span><span class="word">Fit.</span>
+        <span class="word">Get&nbsp;</span><span class="word">Paid&nbsp;</span><span class="word">to&nbsp;</span><span class="word">Get&nbsp;</span><span class="word">Fit.</span>
       </h1>
-      <p class="hero-sub">Doer is the app where top brands sponsor your fitness goals — and reward you for hitting them.
-      </p>
+      <p class="hero-sub">Doer is the app where top brands sponsor your fitness goals — and reward you for hitting them.</p>
       <div class="hero-cta">
         <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
         <a href="#how" class="btn-secondary">See how it works <span class="arrow">→</span></a>
@@ -1886,22 +1396,19 @@
           <div class="step-num">01</div>
           <div class="step-icon">🏆</div>
           <div class="step-title">Join a Challenge</div>
-          <p class="step-desc">Pick a brand-sponsored fitness challenge. Walk, run, hit your step goal. The challenge
-            starts the moment you do.</p>
+          <p class="step-desc">Pick a brand-sponsored fitness challenge. Walk, run, hit your step goal. The challenge starts the moment you do.</p>
         </div>
         <div class="how-step gold-card reveal delay-2">
           <div class="step-num">02</div>
           <div class="step-icon">🔥</div>
           <div class="step-title">Track Your Progress</div>
-          <p class="step-desc">Doer tracks every step. Your streak grows. Your rank climbs. Miss a day and it resets —
-            so don't.</p>
+          <p class="step-desc">Doer tracks every step. Your streak grows. Your rank climbs. Miss a day and it resets — so don't.</p>
         </div>
         <div class="how-step reveal delay-3">
           <div class="step-num">03</div>
           <div class="step-icon">🎁</div>
           <div class="step-title">Earn Real Rewards</div>
-          <p class="step-desc">Hit your goal, claim your reward. Not points. Not virtual coins. Actual rewards from
-            actual brands, redeemable in the real world.</p>
+          <p class="step-desc">Hit your goal, claim your reward. Not points. Not virtual coins. Actual rewards from actual brands, redeemable in the real world.</p>
         </div>
       </div>
     </div>
@@ -1911,8 +1418,7 @@
     <div class="features-inner">
       <div class="features-header reveal">
         <h2 class="features-title">Built to Keep You Moving.</h2>
-        <p class="features-subtitle">Every feature on Doer exists for one reason — to make sure you show up tomorrow.
-        </p>
+        <p class="features-subtitle">Every feature on Doer exists for one reason — to make sure you show up tomorrow.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card reveal delay-1"><span class="feature-icon">🏅</span>
@@ -1921,8 +1427,7 @@
         </div>
         <div class="feature-card reveal delay-2"><span class="feature-icon">👣</span>
           <div class="feature-title">Step & Streak Tracking</div>
-          <p class="feature-desc">Every step counts. Every day you show up builds your streak. Miss a day and it resets
-            — so don't.</p>
+          <p class="feature-desc">Every step counts. Every day you show up builds your streak. Miss a day and it resets — so don't.</p>
         </div>
         <div class="feature-card reveal delay-3"><span class="feature-icon">📊</span>
           <div class="feature-title">Leaderboards</div>
@@ -1930,13 +1435,11 @@
         </div>
         <div class="feature-card reveal delay-4"><span class="feature-icon">🎖️</span>
           <div class="feature-title">Badges & Milestones</div>
-          <p class="feature-desc">From your first 1,000 steps to 3 million — every milestone you hit is a badge you keep
-            forever.</p>
+          <p class="feature-desc">From your first 1,000 steps to 3 million — every milestone you hit is a badge you keep forever.</p>
         </div>
         <div class="feature-card reveal delay-5"><span class="feature-icon">💰</span>
           <div class="feature-title">Real Rewards</div>
-          <p class="feature-desc">Not points. Not virtual coins. Actual rewards from actual brands, redeemable in the
-            real world.</p>
+          <p class="feature-desc">Not points. Not virtual coins. Actual rewards from actual brands, redeemable in the real world.</p>
         </div>
         <div class="feature-card reveal delay-6"><span class="feature-icon">👥</span>
           <div class="feature-title">Community & Run Clubs</div>
@@ -1952,224 +1455,124 @@
       <div class="challenges-header reveal">
         <div class="section-label">Live Challenges</div>
         <h2 class="challenges-title">Pick Your Challenge.<br>Earn Your Reward.</h2>
-        <p class="challenges-sub">Every challenge on Doer is sponsored by a real brand with a real reward waiting at the
-          finish line.</p>
+        <p class="challenges-sub">Every challenge on Doer is sponsored by a real brand with a real reward waiting at the finish line.</p>
       </div>
       <div class="challenge-cards">
         <!-- Chicken Republic -->
         <div class="reveal delay-1">
           <div class="phone-frame">
-            <div class="phone-notch">
-              <div class="notch-dot"></div>
-              <div class="notch-bar"></div>
-              <div class="notch-dot"></div>
-            </div>
+            <div class="phone-notch"><div class="notch-dot"></div><div class="notch-bar"></div><div class="notch-dot"></div></div>
             <div class="phone-screen">
               <div class="ccard-header"><span class="ccard-back">←</span><span class="ccard-menu">⋮</span></div>
               <div class="ccard-brand-banner">
                 <div class="brand-logo-circle cr-logo">🍗</div>
-                <div>
-                  <div class="brand-sponsored-tag">Sponsored by</div>
-                  <div class="brand-name-large">Chicken Republic</div>
-                </div>
+                <div><div class="brand-sponsored-tag">Sponsored by</div><div class="brand-name-large">Chicken Republic</div></div>
               </div>
               <div class="ccard-body">
                 <div class="ccard-title">The 10K Daily Challenge</div>
                 <div class="ccard-duration">7 Day Challenge</div>
                 <div class="ccard-step-target">
-                  <div>
-                    <div class="step-target-label">Daily Target</div>
-                    <div class="step-target-val">10,000</div>
-                  </div>
-                  <div style="text-align:right">
-                    <div class="step-target-label">Steps Per Day</div>
-                    <div class="step-target-unit">👣 steps/day</div>
-                  </div>
+                  <div><div class="step-target-label">Daily Target</div><div class="step-target-val">10,000</div></div>
+                  <div style="text-align:right"><div class="step-target-label">Steps Per Day</div><div class="step-target-unit">👣 steps/day</div></div>
                 </div>
                 <div class="ccard-progress-wrap">
                   <div class="ccard-progress-header"><span>Day 4 of 7</span><strong>57%</strong></div>
-                  <div class="progress-bar">
-                    <div class="progress-fill" style="width:57%"></div>
-                  </div>
+                  <div class="progress-bar"><div class="progress-fill" style="width:57%"></div></div>
                 </div>
                 <div class="ccard-stats">
-                  <div class="ccard-stat"><span class="cstat-val">2,841</span><span class="cstat-label">Joined</span>
-                  </div>
-                  <div class="ccard-stat"><span class="cstat-val">#12</span><span class="cstat-label">Your Rank</span>
-                  </div>
+                  <div class="ccard-stat"><span class="cstat-val">2,841</span><span class="cstat-label">Joined</span></div>
+                  <div class="ccard-stat"><span class="cstat-val">#12</span><span class="cstat-label">Your Rank</span></div>
                   <div class="ccard-stat"><span class="cstat-val">3d</span><span class="cstat-label">Left</span></div>
                 </div>
-                <div class="ccard-reward"><span class="reward-icon">🎁</span>
-                  <div>
-                    <div class="reward-label">Reward</div>
-                    <div class="reward-val">Free Meal Voucher</div>
-                  </div>
-                </div>
+                <div class="ccard-reward"><span class="reward-icon">🎁</span><div><div class="reward-label">Reward</div><div class="reward-val">Free Meal Voucher</div></div></div>
                 <div class="ccard-leaderboard">
                   <div class="leaderboard-title">Leaderboard</div>
-                  <div class="leaderboard-row"><span class="lb-rank">1</span>
-                    <div class="lb-avatar">😤</div><span class="lb-name">Tunde A.</span><span
-                      class="lb-steps">42,100</span>
-                  </div>
-                  <div class="leaderboard-row"><span class="lb-rank you">You</span>
-                    <div class="lb-avatar">😊</div><span class="lb-name you">You</span><span
-                      class="lb-steps">31,420</span>
-                  </div>
-                  <div class="leaderboard-row"><span class="lb-rank">3</span>
-                    <div class="lb-avatar">💪</div><span class="lb-name">Adaeze K.</span><span
-                      class="lb-steps">28,900</span>
-                  </div>
+                  <div class="leaderboard-row"><span class="lb-rank">1</span><div class="lb-avatar">😤</div><span class="lb-name">Tunde A.</span><span class="lb-steps">42,100</span></div>
+                  <div class="leaderboard-row"><span class="lb-rank you">You</span><div class="lb-avatar">😊</div><span class="lb-name you">You</span><span class="lb-steps">31,420</span></div>
+                  <div class="leaderboard-row"><span class="lb-rank">3</span><div class="lb-avatar">💪</div><span class="lb-name">Adaeze K.</span><span class="lb-steps">28,900</span></div>
                 </div>
                 <button class="ccard-join-btn">Keep Walking →</button>
               </div>
             </div>
-            <div class="phone-home-bar">
-              <div class="home-bar-line"></div>
-            </div>
+            <div class="phone-home-bar"><div class="home-bar-line"></div></div>
           </div>
         </div>
         <!-- Access Bank -->
         <div class="reveal delay-2">
           <div class="phone-frame">
-            <div class="phone-notch">
-              <div class="notch-dot"></div>
-              <div class="notch-bar"></div>
-              <div class="notch-dot"></div>
-            </div>
+            <div class="phone-notch"><div class="notch-dot"></div><div class="notch-bar"></div><div class="notch-dot"></div></div>
             <div class="phone-screen">
               <div class="ccard-header"><span class="ccard-back">←</span><span class="ccard-menu">⋮</span></div>
               <div class="ccard-brand-banner">
                 <div class="brand-logo-circle ab-logo">🏦</div>
-                <div>
-                  <div class="brand-sponsored-tag">Sponsored by</div>
-                  <div class="brand-name-large">Access Bank</div>
-                </div>
+                <div><div class="brand-sponsored-tag">Sponsored by</div><div class="brand-name-large">Access Bank</div></div>
               </div>
               <div class="ccard-body">
                 <div class="ccard-title">The Fortnight Hustle</div>
                 <div class="ccard-duration">14 Day Challenge</div>
                 <div class="ccard-step-target">
-                  <div>
-                    <div class="step-target-label">Daily Target</div>
-                    <div class="step-target-val">8,000</div>
-                  </div>
-                  <div style="text-align:right">
-                    <div class="step-target-label">Steps Per Day</div>
-                    <div class="step-target-unit">👣 steps/day</div>
-                  </div>
+                  <div><div class="step-target-label">Daily Target</div><div class="step-target-val">8,000</div></div>
+                  <div style="text-align:right"><div class="step-target-label">Steps Per Day</div><div class="step-target-unit">👣 steps/day</div></div>
                 </div>
                 <div class="ccard-progress-wrap">
                   <div class="ccard-progress-header"><span>Day 9 of 14</span><strong>64%</strong></div>
-                  <div class="progress-bar">
-                    <div class="progress-fill" style="width:64%"></div>
-                  </div>
+                  <div class="progress-bar"><div class="progress-fill" style="width:64%"></div></div>
                 </div>
                 <div class="ccard-stats">
-                  <div class="ccard-stat"><span class="cstat-val">1,563</span><span class="cstat-label">Joined</span>
-                  </div>
-                  <div class="ccard-stat"><span class="cstat-val">#5</span><span class="cstat-label">Your Rank</span>
-                  </div>
+                  <div class="ccard-stat"><span class="cstat-val">1,563</span><span class="cstat-label">Joined</span></div>
+                  <div class="ccard-stat"><span class="cstat-val">#5</span><span class="cstat-label">Your Rank</span></div>
                   <div class="ccard-stat"><span class="cstat-val">5d</span><span class="cstat-label">Left</span></div>
                 </div>
-                <div class="ccard-reward"><span class="reward-icon">💳</span>
-                  <div>
-                    <div class="reward-label">Reward</div>
-                    <div class="reward-val">₦5,000 Cashback</div>
-                  </div>
-                </div>
+                <div class="ccard-reward"><span class="reward-icon">💳</span><div><div class="reward-label">Reward</div><div class="reward-val">₦5,000 Cashback</div></div></div>
                 <div class="ccard-leaderboard">
                   <div class="leaderboard-title">Leaderboard</div>
-                  <div class="leaderboard-row"><span class="lb-rank">1</span>
-                    <div class="lb-avatar">🔥</div><span class="lb-name">Emeka O.</span><span
-                      class="lb-steps">68,400</span>
-                  </div>
-                  <div class="leaderboard-row"><span class="lb-rank you">You</span>
-                    <div class="lb-avatar">😎</div><span class="lb-name you">You</span><span
-                      class="lb-steps">55,200</span>
-                  </div>
-                  <div class="leaderboard-row"><span class="lb-rank">3</span>
-                    <div class="lb-avatar">⚡</div><span class="lb-name">Ngozi F.</span><span
-                      class="lb-steps">51,700</span>
-                  </div>
+                  <div class="leaderboard-row"><span class="lb-rank">1</span><div class="lb-avatar">🔥</div><span class="lb-name">Emeka O.</span><span class="lb-steps">68,400</span></div>
+                  <div class="leaderboard-row"><span class="lb-rank you">You</span><div class="lb-avatar">😎</div><span class="lb-name you">You</span><span class="lb-steps">55,200</span></div>
+                  <div class="leaderboard-row"><span class="lb-rank">3</span><div class="lb-avatar">⚡</div><span class="lb-name">Ngozi F.</span><span class="lb-steps">51,700</span></div>
                 </div>
                 <button class="ccard-join-btn">Keep Walking →</button>
               </div>
             </div>
-            <div class="phone-home-bar">
-              <div class="home-bar-line"></div>
-            </div>
+            <div class="phone-home-bar"><div class="home-bar-line"></div></div>
           </div>
         </div>
         <!-- Flutterwave -->
         <div class="reveal delay-3">
           <div class="phone-frame">
-            <div class="phone-notch">
-              <div class="notch-dot"></div>
-              <div class="notch-bar"></div>
-              <div class="notch-dot"></div>
-            </div>
+            <div class="phone-notch"><div class="notch-dot"></div><div class="notch-bar"></div><div class="notch-dot"></div></div>
             <div class="phone-screen">
               <div class="ccard-header"><span class="ccard-back">←</span><span class="ccard-menu">⋮</span></div>
               <div class="ccard-brand-banner">
                 <div class="brand-logo-circle fw-logo">⚡</div>
-                <div>
-                  <div class="brand-sponsored-tag">Sponsored by</div>
-                  <div class="brand-name-large">Flutterwave</div>
-                </div>
+                <div><div class="brand-sponsored-tag">Sponsored by</div><div class="brand-name-large">Flutterwave</div></div>
               </div>
               <div class="ccard-body">
                 <div class="ccard-title">The Monthly Grind</div>
                 <div class="ccard-duration">30 Day Challenge</div>
                 <div class="ccard-step-target">
-                  <div>
-                    <div class="step-target-label">Total Target</div>
-                    <div class="step-target-val">100K</div>
-                  </div>
-                  <div style="text-align:right">
-                    <div class="step-target-label">Total Steps</div>
-                    <div class="step-target-unit">👣 in 30 days</div>
-                  </div>
+                  <div><div class="step-target-label">Total Target</div><div class="step-target-val">100K</div></div>
+                  <div style="text-align:right"><div class="step-target-label">Total Steps</div><div class="step-target-unit">👣 in 30 days</div></div>
                 </div>
                 <div class="ccard-progress-wrap">
                   <div class="ccard-progress-header"><span>Day 18 of 30</span><strong>60%</strong></div>
-                  <div class="progress-bar">
-                    <div class="progress-fill" style="width:60%"></div>
-                  </div>
+                  <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
                 </div>
                 <div class="ccard-stats">
-                  <div class="ccard-stat"><span class="cstat-val">984</span><span class="cstat-label">Joined</span>
-                  </div>
-                  <div class="ccard-stat"><span class="cstat-val">#3</span><span class="cstat-label">Your Rank</span>
-                  </div>
+                  <div class="ccard-stat"><span class="cstat-val">984</span><span class="cstat-label">Joined</span></div>
+                  <div class="ccard-stat"><span class="cstat-val">#3</span><span class="cstat-label">Your Rank</span></div>
                   <div class="ccard-stat"><span class="cstat-val">12d</span><span class="cstat-label">Left</span></div>
                 </div>
-                <div class="ccard-reward"><span class="reward-icon">🏆</span>
-                  <div>
-                    <div class="reward-label">Reward</div>
-                    <div class="reward-val">₦20,000 Transfer</div>
-                  </div>
-                </div>
+                <div class="ccard-reward"><span class="reward-icon">🏆</span><div><div class="reward-label">Reward</div><div class="reward-val">₦20,000 Transfer</div></div></div>
                 <div class="ccard-leaderboard">
                   <div class="leaderboard-title">Leaderboard</div>
-                  <div class="leaderboard-row"><span class="lb-rank">1</span>
-                    <div class="lb-avatar">🦅</div><span class="lb-name">Chidi M.</span><span
-                      class="lb-steps">74,200</span>
-                  </div>
-                  <div class="leaderboard-row"><span class="lb-rank">2</span>
-                    <div class="lb-avatar">💨</div><span class="lb-name">Fatima B.</span><span
-                      class="lb-steps">68,900</span>
-                  </div>
-                  <div class="leaderboard-row"><span class="lb-rank you">You</span>
-                    <div class="lb-avatar">😤</div><span class="lb-name you">You</span><span
-                      class="lb-steps">61,800</span>
-                  </div>
+                  <div class="leaderboard-row"><span class="lb-rank">1</span><div class="lb-avatar">🦅</div><span class="lb-name">Chidi M.</span><span class="lb-steps">74,200</span></div>
+                  <div class="leaderboard-row"><span class="lb-rank">2</span><div class="lb-avatar">💨</div><span class="lb-name">Fatima B.</span><span class="lb-steps">68,900</span></div>
+                  <div class="leaderboard-row"><span class="lb-rank you">You</span><div class="lb-avatar">😤</div><span class="lb-name you">You</span><span class="lb-steps">61,800</span></div>
                 </div>
                 <button class="ccard-join-btn">Keep Walking →</button>
               </div>
             </div>
-            <div class="phone-home-bar">
-              <div class="home-bar-line"></div>
-            </div>
+            <div class="phone-home-bar"><div class="home-bar-line"></div></div>
           </div>
         </div>
       </div>
@@ -2179,74 +1582,35 @@
         <div class="group-battle-text reveal-left">
           <div class="group-battle-label">New Feature</div>
           <h3 class="group-battle-title">Group vs Group Battles.</h3>
-          <p class="group-battle-desc">Challenge another group to a step battle. Scored by average steps per member — so
-            any group can win by walking harder. The winning team splits the brand reward.</p>
+          <p class="group-battle-desc">Challenge another group to a step battle. Scored by average steps per member — so any group can win by walking harder. The winning team splits the brand reward.</p>
           <a href="#waitlist" class="btn-primary">Join to Compete</a>
         </div>
         <div class="reveal-right" style="display:flex;justify-content:center;">
           <div class="battle-phone">
-            <div class="phone-notch">
-              <div class="notch-dot"></div>
-              <div class="notch-bar"></div>
-              <div class="notch-dot"></div>
-            </div>
+            <div class="phone-notch"><div class="notch-dot"></div><div class="notch-bar"></div><div class="notch-dot"></div></div>
             <div class="battle-screen">
               <div class="battle-top-bar">
                 <div class="battle-top-title">Chicken Republic Step War</div>
-                <div class="battle-live-badge">
-                  <div class="live-dot"></div>Live
-                </div>
+                <div class="battle-live-badge"><div class="live-dot"></div>Live</div>
               </div>
               <div class="battle-body">
-                <div class="battle-sponsor-tag">Sponsored by <span class="battle-sponsor-name">Chicken Republic</span>
-                </div>
+                <div class="battle-sponsor-tag">Sponsored by <span class="battle-sponsor-name">Chicken Republic</span></div>
                 <div class="battle-vs-row">
-                  <div class="b-team">
-                    <div class="b-team-icon b-team-icon-1">🏃</div>
-                    <div class="b-team-name">Abuja Runners</div>
-                    <div class="b-team-loc">📍 Abuja</div>
-                  </div>
+                  <div class="b-team"><div class="b-team-icon b-team-icon-1">🏃</div><div class="b-team-name">Abuja Runners</div><div class="b-team-loc">📍 Abuja</div></div>
                   <div class="vs-text">VS</div>
-                  <div class="b-team">
-                    <div class="b-team-icon b-team-icon-2">🚶</div>
-                    <div class="b-team-name">Lagos Walkers</div>
-                    <div class="b-team-loc">📍 Lagos</div>
-                  </div>
+                  <div class="b-team"><div class="b-team-icon b-team-icon-2">🚶</div><div class="b-team-name">Lagos Walkers</div><div class="b-team-loc">📍 Lagos</div></div>
                 </div>
                 <div class="battle-scores-box">
                   <div class="scores-label">Avg Steps Per Member</div>
-                  <div class="score-row">
-                    <div class="score-team">Abuja Runners</div>
-                    <div class="score-bar-wrap">
-                      <div class="score-bar">
-                        <div class="score-fill-1"></div>
-                      </div>
-                    </div>
-                    <div class="score-val">26.7K</div>
-                  </div>
-                  <div class="score-row">
-                    <div class="score-team">Lagos Walkers</div>
-                    <div class="score-bar-wrap">
-                      <div class="score-bar">
-                        <div class="score-fill-2"></div>
-                      </div>
-                    </div>
-                    <div class="score-val">20.4K</div>
-                  </div>
+                  <div class="score-row"><div class="score-team">Abuja Runners</div><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill-1"></div></div></div><div class="score-val">26.7K</div></div>
+                  <div class="score-row"><div class="score-team">Lagos Walkers</div><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill-2"></div></div></div><div class="score-val">20.4K</div></div>
                 </div>
-                <div class="battle-reward-box"><span style="font-size:20px;">🍗</span>
-                  <div>
-                    <div class="reward-label">Winning Team Reward</div>
-                    <div class="reward-val" style="font-size:13px;">₦2,000 Voucher · Per Member</div>
-                  </div>
-                </div>
+                <div class="battle-reward-box"><span style="font-size:20px;">🍗</span><div><div class="reward-label">Winning Team Reward</div><div class="reward-val" style="font-size:13px;">₦2,000 Voucher · Per Member</div></div></div>
                 <div class="battle-timer">3d 14h left · <strong>7 Day Battle</strong></div>
                 <button class="battle-join-btn">Challenge a Group →</button>
               </div>
             </div>
-            <div class="phone-home-bar">
-              <div class="home-bar-line"></div>
-            </div>
+            <div class="phone-home-bar"><div class="home-bar-line"></div></div>
           </div>
         </div>
       </div>
@@ -2261,17 +1625,12 @@
       <h2 class="waitlist-title reveal"><span>Your Streak</span><br>Starts Now.</h2>
       <p class="waitlist-sub reveal">Join the waitlist. Be first in when we launch.</p>
       <form class="waitlist-form reveal" action="https://formspree.io/f/mzdklpon" method="POST">
-
         <input type="text" name="name" class="waitlist-input" placeholder="Your name" required>
-
         <input type="email" name="email" class="waitlist-input" placeholder="Enter your email address" required>
-
         <input type="hidden" name="_subject" value="New Doer Waitlist Signup 🚀">
-        <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html">
-
         <button type="submit" class="waitlist-submit">Join the Waitlist</button>
-
       </form>
+      <p class="waitlist-success-msg" id="successMsg">You are on the list. iOS is coming soon — we will notify you the moment it drops.</p>
       <p class="waitlist-note reveal">No spam. Just your launch notification.</p>
     </div>
   </section>
@@ -2284,8 +1643,7 @@
             <img src="logo.png" alt="Doer" class="footer-logo-img">
             <span class="footer-logo-text">D<span>O</span>ER</span>
           </a>
-          <p class="footer-tagline">The app where brands sponsor your fitness goals — and reward you for hitting them.
-          </p>
+          <p class="footer-tagline">The app where brands sponsor your fitness goals — and reward you for hitting them.</p>
         </div>
         <div class="footer-links">
           <div class="footer-col">
@@ -2303,7 +1661,6 @@
               <li><a href="brands.html">For Brands</a></li>
               <li><a href="privacy.html">Privacy Policy</a></li>
               <li><a href="delete-account.html">Delete Account</a></li>
-              <li>contact@dedoers.com</li>
               <li>contact@dedoers.com</li>
             </ul>
           </div>
@@ -2400,19 +1757,26 @@
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
 
     // WAITLIST FORM
-    document.querySelector('.waitlist-form') && document.querySelector('.waitlist-form').addEventListener('submit', function(e) {
-      const btn = this.querySelector('.waitlist-submit');
-      btn.textContent = "You're on the list ✓";
-      btn.style.background = '#4ade80';
-    });
+    const waitlistForm = document.querySelector('.waitlist-form');
+    const successMsg = document.getElementById('successMsg');
+    if (waitlistForm) {
+      waitlistForm.addEventListener('submit', function (e) {
+        const btn = this.querySelector('.waitlist-submit');
+        btn.textContent = "You're on the list!";
+        btn.style.background = '#4ade80';
+        btn.style.color = '#0D0D0D';
+        setTimeout(() => {
+          successMsg.classList.add('visible');
+        }, 400);
+      });
+    }
 
     // SOCIAL PROOF TOASTS
-    (function() {
+    (function () {
       const events = [
         { name: 'Tunde', init: 'T', action: 'just hit 10,000 steps today', icon: '👣' },
         { name: 'Femi', init: 'F', action: 'joined the Chicken Republic Challenge', icon: '🍗' },
         { name: 'Tolu', init: 'T', action: 'is on a 5-day streak', icon: '🔥' },
-        { name: 'Charles', init: 'C', action: 'just created a new challenge', icon: '⚡' },
         { name: 'Amaka', init: 'A', action: 'unlocked the Gold Streak badge', icon: '🏅' },
         { name: 'Emeka', init: 'E', action: 'hit #1 on the leaderboard', icon: '👑' },
         { name: 'Sade', init: 'S', action: 'walked 15,000 steps before noon', icon: '👣' },
@@ -2421,35 +1785,52 @@
         { name: 'Dayo', init: 'D', action: 'is on a 14-day streak', icon: '🏆' },
         { name: 'Kemi', init: 'K', action: 'invited 3 friends to Doer', icon: '👥' },
         { name: 'Bola', init: 'B', action: 'just passed 100,000 lifetime steps', icon: '💎' },
-        { name: 'Jide', init: 'J', action: 'completed the Flutterwave 30-Day Grind', icon: '✅' },
         { name: 'Aisha', init: 'A', action: 'earned her first real reward', icon: '💰' },
         { name: 'Seun', init: 'S', action: 'hit a personal best — 22,400 steps', icon: '🚀' },
         { name: 'Nnamdi', init: 'N', action: 'started a group battle in Abuja', icon: '⚔️' },
         { name: 'Taiwo', init: 'T', action: 'is ranked #3 in Lagos this week', icon: '📊' },
-        { name: 'Ify', init: 'I', action: 'just got the Ignite Streak badge', icon: '🔥' },
-        { name: 'Rotimi', init: 'R', action: 'walked every day this month', icon: '💯' },
         { name: 'Adaeze', init: 'A', action: 'challenged her run club to a step war', icon: '⚔️' },
-        { name: 'Kunle', init: 'K', action: 'completed his 7-day challenge streak', icon: '✅' },
         { name: 'Halima', init: 'H', action: 'reached 50,000 total steps', icon: '🎉' },
-        { name: 'Biodun', init: 'B', action: 'just signed up from Port Harcourt', icon: '📍' },
-        { name: 'Zara', init: 'Z', action: 'topped the monthly leaderboard', icon: '🏆' },
         { name: 'Temi', init: 'T', action: 'logged her morning 8k run', icon: '🏃' },
+        { name: 'Rotimi', init: 'R', action: 'walked every day this month', icon: '💯' },
+        { name: 'Brian', init: 'B', action: 'is competing in a group challenge', icon: '⚔️' },
+        { name: 'Zara', init: 'Z', action: 'topped the monthly leaderboard', icon: '🏆' },
+        { name: 'Kunle', init: 'K', action: 'completed his 7-day challenge streak', icon: '✅' },
       ];
 
       const container = document.getElementById('toastContainer');
       let queue = [...events].sort(() => Math.random() - 0.5);
       let queueIndex = 0;
       let activeToasts = [];
-      const MAX_VISIBLE = 2;
+      const MAX_VISIBLE = 3;
 
       function shuffle() { queue = [...events].sort(() => Math.random() - 0.5); queueIndex = 0; }
       function nextEvent() { if (queueIndex >= queue.length) shuffle(); return queue[queueIndex++]; }
 
+      function getRandomPosition() {
+        const toastW = 280;
+        const toastH = 70;
+        const margin = 20;
+        const maxX = window.innerWidth - toastW - margin;
+        const maxY = window.innerHeight - toastH - margin;
+        const x = margin + Math.random() * Math.max(0, maxX - margin);
+        const y = margin + Math.random() * Math.max(0, maxY - margin);
+        return { x, y };
+      }
+
       function showToast() {
         if (activeToasts.length >= MAX_VISIBLE) return;
         const ev = nextEvent();
+        const pos = getRandomPosition();
+
         const toast = document.createElement('div');
         toast.className = 'sp-toast';
+        toast.style.left = pos.x + 'px';
+        toast.style.top = pos.y + 'px';
+        toast.style.opacity = '0';
+        toast.style.transform = 'scale(0.85) translateY(10px)';
+        toast.style.transition = 'opacity 0.45s ease, transform 0.45s cubic-bezier(0.16,1,0.3,1)';
+
         toast.innerHTML = `
           <div class="sp-avatar">${ev.init}</div>
           <div class="sp-text">
@@ -2459,25 +1840,34 @@
           <div class="sp-icon">${ev.icon}</div>
           <div class="sp-live"></div>
         `;
+
         container.appendChild(toast);
         activeToasts.push(toast);
-        requestAnimationFrame(() => requestAnimationFrame(() => toast.classList.add('visible')));
-        const holdTime = 3800 + Math.random() * 1500;
+
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          toast.style.opacity = '1';
+          toast.style.transform = 'scale(1) translateY(0)';
+        }));
+
+        const holdTime = 3500 + Math.random() * 1500;
         setTimeout(() => {
-          toast.classList.add('hiding');
-          toast.classList.remove('visible');
-          setTimeout(() => { toast.remove(); activeToasts = activeToasts.filter(t => t !== toast); }, 380);
+          toast.style.opacity = '0';
+          toast.style.transform = 'scale(0.9) translateY(-8px)';
+          setTimeout(() => {
+            toast.remove();
+            activeToasts = activeToasts.filter(t => t !== toast);
+          }, 450);
         }, holdTime);
       }
 
       setTimeout(() => {
         showToast();
         function scheduleNext() {
-          const delay = 2200 + Math.random() * 2800;
+          const delay = 2000 + Math.random() * 2500;
           setTimeout(() => { showToast(); scheduleNext(); }, delay);
         }
         scheduleNext();
-      }, 2000);
+      }, 1500);
     })();
   </script>
 </body>
