@@ -1757,19 +1757,39 @@
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
 
     // WAITLIST FORM
-    const waitlistForm = document.querySelector('.waitlist-form');
-    const successMsg = document.getElementById('successMsg');
-    if (waitlistForm) {
-      waitlistForm.addEventListener('submit', function (e) {
-        const btn = this.querySelector('.waitlist-submit');
+    // WAITLIST FORM
+const waitlistForm = document.querySelector('.waitlist-form');
+const successMsg = document.getElementById('successMsg');
+if (waitlistForm) {
+  waitlistForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const btn = this.querySelector('.waitlist-submit');
+    const formData = new FormData(this);
+    btn.textContent = 'Submitting...';
+    btn.style.opacity = '0.7';
+    fetch('https://formspree.io/f/mzdklpon', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(res => {
+      if (res.ok) {
         btn.textContent = "You're on the list!";
         btn.style.background = '#4ade80';
         btn.style.color = '#0D0D0D';
-        setTimeout(() => {
-          successMsg.classList.add('visible');
-        }, 400);
-      });
-    }
+        btn.style.opacity = '1';
+        waitlistForm.querySelector('input[type="text"]').value = '';
+        waitlistForm.querySelector('input[type="email"]').value = '';
+        setTimeout(() => { successMsg.classList.add('visible'); }, 400);
+      } else {
+        btn.textContent = 'Try again';
+        btn.style.opacity = '1';
+      }
+    }).catch(() => {
+      btn.textContent = 'Try again';
+      btn.style.opacity = '1';
+    });
+  });
+}
 
     // SOCIAL PROOF TOASTS
     (function () {
