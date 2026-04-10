@@ -1,215 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy Policy for The Doer fitness app">
-    <title>Privacy Policy - The Doer</title>
-    <link rel="icon" type="image/png" href="images/logo_icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #D4C5A0;
-            --green: #7FFF00;
-            --black: #0a0a0a;
-            --dark: #111111;
-            --gray-dark: #1a1a1a;
-            --gray: #888;
-            --gray-light: #bbb;
-            --white: #ffffff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy for the Doer fitness app">
+  <title>Privacy Policy — Doer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #D4A843;
+      --gold-dim: #a07c2a;
+      --dark: #0D0D0D;
+      --dark-2: #111111;
+      --dark-3: #181818;
+      --white: #F5F0E8;
+      --white-dim: rgba(245,240,232,0.72);
+      --white-dimmer: rgba(245,240,232,0.42);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'Cabinet Grotesk', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+      cursor: none;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    .cursor { width:10px; height:10px; background:var(--gold); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:99999; mix-blend-mode:difference; }
+    .cursor-ring { width:36px; height:36px; border:1px solid var(--gold); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:99998; transition:width .3s,height .3s,opacity .3s; opacity:0.5; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* NAV */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:1000;
+      padding: 20px 48px;
+      display: flex; align-items:center; justify-content:space-between;
+      transition: all .4s ease;
+    }
+    nav.scrolled {
+      background: rgba(13,13,13,0.93);
+      backdrop-filter: blur(20px);
+      padding: 14px 48px;
+      border-bottom: 1px solid rgba(212,168,67,0.1);
+    }
+    .nav-left { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav-logo-img { width:34px; height:34px; border-radius:8px; }
+    .nav-logo-text { font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:3px; color:var(--white); }
+    .nav-logo-text span { color:var(--gold); }
+    .nav-right { display:flex; align-items:center; gap:28px; }
+    .nav-back { color:var(--white-dim); text-decoration:none; font-size:13px; font-weight:500; transition:color .3s; }
+    .nav-back:hover { color:var(--white); }
+    .nav-home-btn {
+      border:1px solid var(--gold); color:var(--gold); padding:9px 20px;
+      font-size:12px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;
+      text-decoration:none; transition:all .3s; position:relative; overflow:hidden;
+    }
+    .nav-home-btn::before { content:''; position:absolute; inset:0; background:var(--gold); transform:translateX(-100%); transition:transform .3s ease; }
+    .nav-home-btn:hover::before { transform:translateX(0); }
+    .nav-home-btn:hover { color:var(--dark); }
+    .nav-home-btn span { position:relative; z-index:1; }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--black);
-            color: var(--white);
-            line-height: 1.7;
-        }
+    /* PAGE HERO */
+    .page-hero {
+      padding: 160px 48px 80px;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .page-hero::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      opacity: 0.3;
+      margin-top: 64px;
+    }
+    .page-label {
+      font-size: 10px; letter-spacing:4px; text-transform:uppercase;
+      color:var(--gold); display:flex; align-items:center; gap:12px;
+      margin-bottom:24px; font-weight:700;
+    }
+    .page-label::before { content:''; display:block; width:30px; height:1px; background:var(--gold); }
+    .page-title {
+      font-family:'Bebas Neue',sans-serif;
+      font-size: clamp(56px, 8vw, 100px);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .page-title span { color: var(--gold); }
+    .page-updated { font-size:14px; color:var(--white-dimmer); font-weight:400; }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 24px;
-        }
+    /* CONTENT */
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px 120px;
+    }
+    .doc-section { margin-bottom: 56px; }
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px; font-weight:700;
+      color:var(--gold);
+      margin-bottom:20px;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(212,168,67,0.15);
+    }
+    p { color:var(--white-dim); font-size:16px; margin-bottom:16px; line-height:1.8; }
+    ul { list-style:none; margin:16px 0; }
+    li {
+      color:var(--white-dim); font-size:16px; margin-bottom:14px;
+      padding-left:24px; position:relative; line-height:1.7;
+    }
+    li::before {
+      content:''; position:absolute; left:0; top:9px;
+      width:6px; height:6px; background:var(--gold); border-radius:50%;
+    }
+    li strong { color:var(--white); }
+    .highlight {
+      background:var(--dark-3);
+      border-radius:4px;
+      padding:24px 28px;
+      margin:24px 0;
+      border-left:3px solid var(--gold);
+    }
+    .highlight p { margin-bottom:0; }
+    .contact-box {
+      background:var(--dark-2);
+      border:1px solid rgba(212,168,67,0.15);
+      border-radius:4px;
+      padding:48px;
+      text-align:center;
+      margin-top:64px;
+    }
+    .contact-box h3 { font-family:'Syne',sans-serif; font-size:24px; font-weight:700; margin-bottom:14px; }
+    .contact-box p { margin-bottom:20px; }
+    .contact-box a { color:var(--gold); font-size:18px; text-decoration:none; font-weight:700; }
+    .contact-box a:hover { text-decoration:underline; }
 
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    /* FOOTER */
+    footer {
+      background: #080808;
+      border-top:1px solid rgba(255,255,255,0.05);
+      padding: 48px;
+    }
+    .footer-inner { max-width:1200px; margin:0 auto; }
+    .footer-top {
+      display:flex; justify-content:space-between; align-items:flex-start;
+      margin-bottom:36px; padding-bottom:36px;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+    .footer-brand { display:flex; align-items:center; gap:12px; text-decoration:none; margin-bottom:12px; }
+    .footer-logo-img { width:28px; height:28px; border-radius:7px; }
+    .footer-logo-text { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:3px; color:var(--white); }
+    .footer-logo-text span { color:var(--gold); }
+    .footer-tagline { font-size:13px; color:var(--white-dimmer); max-width:200px; line-height:1.6; }
+    .footer-links { display:flex; gap:72px; }
+    .footer-col h4 { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; font-weight:700; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:10px; padding-left:0; }
+    .footer-col ul li::before { display:none; }
+    .footer-col ul li a { color:var(--white-dimmer); text-decoration:none; font-size:13px; transition:color .3s; }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; }
+    .footer-copy { font-size:12px; color:rgba(255,255,255,0.22); }
+    .footer-gold-line { width:50px; height:1px; background:var(--gold); opacity:0.3; }
 
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 32px;
-            text-decoration: none;
-            color: var(--white);
-        }
-
-        .logo img {
-            height: 48px;
-        }
-
-        .logo span {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        h1 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .updated {
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        .section {
-            margin-bottom: 48px;
-        }
-
-        h2 {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(212, 197, 160, 0.2);
-        }
-
-        p {
-            color: var(--gray-light);
-            font-size: 16px;
-            margin-bottom: 16px;
-        }
-
-        ul {
-            list-style: none;
-            margin: 16px 0;
-        }
-
-        li {
-            color: var(--gray-light);
-            font-size: 16px;
-            margin-bottom: 14px;
-            padding-left: 24px;
-            position: relative;
-        }
-
-        li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 8px;
-            height: 8px;
-            background: var(--green);
-            border-radius: 50%;
-        }
-
-        li strong {
-            color: var(--white);
-        }
-
-        .highlight {
-            background: var(--gray-dark);
-            border-radius: 12px;
-            padding: 24px;
-            margin: 24px 0;
-            border-left: 4px solid var(--gold);
-        }
-
-        .highlight p {
-            margin-bottom: 0;
-        }
-
-        .contact-box {
-            background: var(--gray-dark);
-            border-radius: 16px;
-            padding: 40px;
-            text-align: center;
-            margin-top: 60px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .contact-box h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-
-        .contact-box p {
-            margin-bottom: 20px;
-        }
-
-        .contact-box a {
-            color: var(--gold);
-            font-size: 20px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .contact-box a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 60px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        footer a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 20px;
-            }
-
-            h1 {
-                font-size: 32px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-        }
-    </style>
+    @media (max-width:900px) {
+      nav { padding:16px 20px; }
+      .page-hero { padding:130px 20px 60px; }
+      .content { padding:0 20px 80px; }
+      .footer-top { flex-direction:column; gap:32px; }
+      .footer-links { gap:40px; }
+      footer { padding:40px 20px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="index.html" class="logo">
-                <img src="images/logo_icon.png" alt="The Doer">
-                <span>THE DOER</span>
-            </a>
-            <h1>Privacy Policy</h1>
-            <p class="updated">Last Updated: February 6, 2026</p>
-        </header>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-        <main>
+  <nav id="navbar">
+    <a href="index.html" class="nav-left">
+      <img src="logo.png" alt="Doer" class="nav-logo-img">
+      <span class="nav-logo-text">D<span>O</span>ER</span>
+    </a>
+    <div class="nav-right">
+      <a href="index.html" class="nav-back">← Back to Home</a>
+      <a href="#waitlist" onclick="window.location='index.html#waitlist'" class="nav-home-btn"><span>Join Waitlist</span></a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-label">Legal</div>
+    <h1 class="page-title">Privacy<br><span>Policy.</span></h1>
+    <p class="page-updated">Last Updated: February 6, 2026</p>
+  </div>
+
+  <div class="content">
+    <main>
+
             <div class="section">
                 <h2>1. Introduction</h2>
                 <p>The Doer ("we," "our," or "us") operates the The Doer mobile application (the "App"). This Privacy Policy explains what personal data we collect, how we use it, who we share it with, and your rights regarding your data.</p>
@@ -351,14 +352,59 @@
             <div class="contact-box">
                 <h3>Contact Us</h3>
                 <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
-                <a href="mailto:privacy@thedoer.app">privacy@thedoer.app</a>
+                <a href="/cdn-cgi/l/email-protection#a1d1d3c8d7c0c2d8e1d5c9c4c5cec4d38fc0d1d1"><span class="__cf_email__" data-cfemail="7e0e0c17081f1d073e0a161b1a111b0c501f0e0e">[email&#160;protected]</span></a>
             </div>
-        </main>
+        
+    </main>
+  </div>
 
-        <footer>
-            <p>&copy; 2026 The Doer. All rights reserved.</p>
-            <p style="margin-top: 8px;"><a href="index.html">Back to Home</a></p>
-        </footer>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="footer-brand">
+            <img src="logo.png" alt="Doer" class="footer-logo-img">
+            <span class="footer-logo-text">D<span>O</span>ER</span>
+          </a>
+          <p class="footer-tagline">The app where brands sponsor your fitness goals — and reward you for hitting them.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="index.html#how">How It Works</a></li>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#waitlist">Join Waitlist</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="delete-account.html">Delete Account</a></li>
+              <li><a href="brands.html">For Brands</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 De Doers Limited. All rights reserved.</p>
+        <div class="footer-gold-line"></div>
+      </div>
     </div>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cursor.style.transform=`translate(${mx-5}px,${my-5}px)`; });
+    (function animRing(){ rx+=(mx-rx-18)*.12; ry+=(my-ry-18)*.12; ring.style.transform=`translate(${rx}px,${ry}px)`; requestAnimationFrame(animRing); })();
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ring.style.width='52px';ring.style.height='52px';ring.style.opacity='1';});
+      el.addEventListener('mouseleave',()=>{ring.style.width='36px';ring.style.height='36px';ring.style.opacity='0.5';});
+    });
+    window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>50));
+  </script>
 </body>
 </html>
