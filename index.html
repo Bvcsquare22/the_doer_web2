@@ -218,8 +218,13 @@
     }
 
     @keyframes slowZoom {
-      from { transform: scale(1.05); }
-      to { transform: scale(1.13); }
+      from {
+        transform: scale(1.05);
+      }
+
+      to {
+        transform: scale(1.13);
+      }
     }
 
     .hero-gradient {
@@ -325,11 +330,27 @@
       animation: wordUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    .hero-headline .word:nth-child(1) { animation-delay: 0.6s; }
-    .hero-headline .word:nth-child(2) { animation-delay: 0.75s; color: var(--gold); }
-    .hero-headline .word:nth-child(3) { animation-delay: 0.9s; }
-    .hero-headline .word:nth-child(4) { animation-delay: 1.05s; color: var(--gold); }
-    .hero-headline .word:nth-child(5) { animation-delay: 1.2s; }
+    .hero-headline .word:nth-child(1) {
+      animation-delay: 0.6s;
+    }
+
+    .hero-headline .word:nth-child(2) {
+      animation-delay: 0.75s;
+      color: var(--gold);
+    }
+
+    .hero-headline .word:nth-child(3) {
+      animation-delay: 0.9s;
+    }
+
+    .hero-headline .word:nth-child(4) {
+      animation-delay: 1.05s;
+      color: var(--gold);
+    }
+
+    .hero-headline .word:nth-child(5) {
+      animation-delay: 1.2s;
+    }
 
     .hero-sub {
       font-size: 19px;
@@ -366,8 +387,15 @@
     }
 
     @keyframes goldPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(212, 168, 67, 0.4); }
-      50% { box-shadow: 0 0 0 14px rgba(212, 168, 67, 0); }
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(212, 168, 67, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 0 0 14px rgba(212, 168, 67, 0);
+      }
     }
 
     .btn-primary:hover {
@@ -387,57 +415,62 @@
       transition: color 0.3s;
     }
 
-    .btn-secondary:hover { color: var(--white); }
-    .btn-secondary .arrow { transition: transform 0.3s; }
-    .btn-secondary:hover .arrow { transform: translateX(4px); }
-
-    .hero-scroll-indicator {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 2.2s;
+    .btn-secondary:hover {
+      color: var(--white);
     }
 
-    .scroll-line {
-      width: 1px;
-      height: 60px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
+    .btn-secondary .arrow {
+      transition: transform 0.3s;
     }
 
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
+    .btn-secondary:hover .arrow {
+      transform: translateX(4px);
     }
 
-    .scroll-text {
-      font-size: 9px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      writing-mode: vertical-rl;
-      font-weight: 700;
-    }
+    
+
+    
+
+    
+
+    
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes wordUp {
-      from { opacity: 0; transform: translateY(60px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes livePulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.8); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+      }
     }
 
     /* SECTIONS */
@@ -488,7 +521,9 @@
       margin: 0 auto;
     }
 
-    .how-header { margin-bottom: 80px; }
+    .how-header {
+      margin-bottom: 80px;
+    }
 
     .how-title {
       font-family: 'Bebas Neue', sans-serif;
@@ -524,7 +559,9 @@
       transition: color 0.4s;
     }
 
-    .how-step:hover .step-num { color: rgba(212, 168, 67, 0.7); }
+    .how-step:hover .step-num {
+      color: rgba(212, 168, 67, 0.7);
+    }
 
     .step-icon {
       width: 44px;
@@ -615,8 +652,13 @@
       transform-origin: left;
     }
 
-    .feature-card:hover::before { transform: scaleX(1); }
-    .feature-card:hover { background: rgba(212, 168, 67, 0.03); }
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .feature-card:hover {
+      background: rgba(212, 168, 67, 0.03);
+    }
 
     .feature-icon {
       font-size: 30px;
@@ -661,7 +703,9 @@
       margin: 0 auto;
     }
 
-    .challenges-header { margin-bottom: 80px; }
+    .challenges-header {
+      margin-bottom: 80px;
+    }
 
     .challenges-title {
       font-family: 'Bebas Neue', sans-serif;
@@ -716,9 +760,23 @@
       gap: 6px;
     }
 
-    .notch-dot { width: 7px; height: 7px; background: #1c1c1c; border-radius: 50%; }
-    .notch-bar { width: 38px; height: 4px; background: #1c1c1c; border-radius: 2px; }
-    .phone-screen { background: #111; }
+    .notch-dot {
+      width: 7px;
+      height: 7px;
+      background: #1c1c1c;
+      border-radius: 50%;
+    }
+
+    .notch-bar {
+      width: 38px;
+      height: 4px;
+      background: #1c1c1c;
+      border-radius: 2px;
+    }
+
+    .phone-screen {
+      background: #111;
+    }
 
     .phone-home-bar {
       height: 32px;
@@ -742,8 +800,15 @@
       justify-content: space-between;
     }
 
-    .ccard-back { font-size: 18px; color: var(--white-dim); }
-    .ccard-menu { font-size: 18px; color: var(--white-dim); }
+    .ccard-back {
+      font-size: 18px;
+      color: var(--white-dim);
+    }
+
+    .ccard-menu {
+      font-size: 18px;
+      color: var(--white-dim);
+    }
 
     .ccard-brand-banner {
       padding: 18px;
@@ -764,9 +829,17 @@
       flex-shrink: 0;
     }
 
-    .cr-logo { background: linear-gradient(135deg, #8B0000, #CC0000); }
-    .ab-logo { background: linear-gradient(135deg, #001a5e, #003087); }
-    .fw-logo { background: linear-gradient(135deg, #0b2c6b, #00b9f1); }
+    .cr-logo {
+      background: linear-gradient(135deg, #8B0000, #CC0000);
+    }
+
+    .ab-logo {
+      background: linear-gradient(135deg, #001a5e, #003087);
+    }
+
+    .fw-logo {
+      background: linear-gradient(135deg, #0b2c6b, #00b9f1);
+    }
 
     .brand-sponsored-tag {
       font-size: 10px;
@@ -784,7 +857,9 @@
       color: var(--white);
     }
 
-    .ccard-body { padding: 18px; }
+    .ccard-body {
+      padding: 18px;
+    }
 
     .ccard-title {
       font-family: 'Syne', sans-serif;
@@ -831,9 +906,15 @@
       line-height: 1;
     }
 
-    .step-target-unit { font-size: 11px; color: var(--white-dimmer); font-weight: 500; }
+    .step-target-unit {
+      font-size: 11px;
+      color: var(--white-dimmer);
+      font-weight: 500;
+    }
 
-    .ccard-progress-wrap { margin-bottom: 16px; }
+    .ccard-progress-wrap {
+      margin-bottom: 16px;
+    }
 
     .ccard-progress-header {
       display: flex;
@@ -841,8 +922,17 @@
       margin-bottom: 8px;
     }
 
-    .ccard-progress-header span { font-size: 12px; color: var(--white-dimmer); font-weight: 500; }
-    .ccard-progress-header strong { font-size: 12px; color: var(--gold); font-weight: 700; }
+    .ccard-progress-header span {
+      font-size: 12px;
+      color: var(--white-dimmer);
+      font-weight: 500;
+    }
+
+    .ccard-progress-header strong {
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 700;
+    }
 
     .progress-bar {
       height: 5px;
@@ -867,9 +957,28 @@
       margin-bottom: 16px;
     }
 
-    .ccard-stat { background: rgba(255, 255, 255, 0.02); padding: 12px 8px; text-align: center; }
-    .cstat-val { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--white); display: block; margin-bottom: 3px; }
-    .cstat-label { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--white-dimmer); font-weight: 600; }
+    .ccard-stat {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 12px 8px;
+      text-align: center;
+    }
+
+    .cstat-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .cstat-label {
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--white-dimmer);
+      font-weight: 600;
+    }
 
     .ccard-reward {
       background: rgba(212, 168, 67, 0.08);
@@ -882,12 +991,38 @@
       margin-bottom: 16px;
     }
 
-    .reward-icon { font-size: 20px; }
-    .reward-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; font-weight: 700; }
-    .reward-val { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); }
+    .reward-icon {
+      font-size: 20px;
+    }
 
-    .ccard-leaderboard { margin-bottom: 16px; }
-    .leaderboard-title { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--white-dimmer); margin-bottom: 10px; font-weight: 700; }
+    .reward-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3px;
+      font-weight: 700;
+    }
+
+    .reward-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .ccard-leaderboard {
+      margin-bottom: 16px;
+    }
+
+    .leaderboard-title {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white-dimmer);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
 
     .leaderboard-row {
       display: flex;
@@ -897,13 +1032,50 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     }
 
-    .leaderboard-row:last-child { border-bottom: none; }
-    .lb-rank { font-family: 'Bebas Neue', sans-serif; font-size: 15px; color: var(--gold); width: 20px; }
-    .lb-rank.you { color: #4CAF50; }
-    .lb-avatar { width: 26px; height: 26px; border-radius: 50%; background: rgba(255, 255, 255, 0.07); display: flex; align-items: center; justify-content: center; font-size: 11px; }
-    .lb-name { flex: 1; font-size: 13px; color: var(--white-dim); font-weight: 500; }
-    .lb-name.you { color: #4CAF50; font-weight: 700; }
-    .lb-steps { font-size: 13px; font-weight: 700; color: var(--white); font-family: 'Syne', sans-serif; }
+    .leaderboard-row:last-child {
+      border-bottom: none;
+    }
+
+    .lb-rank {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      color: var(--gold);
+      width: 20px;
+    }
+
+    .lb-rank.you {
+      color: #4CAF50;
+    }
+
+    .lb-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .lb-name {
+      flex: 1;
+      font-size: 13px;
+      color: var(--white-dim);
+      font-weight: 500;
+    }
+
+    .lb-name.you {
+      color: #4CAF50;
+      font-weight: 700;
+    }
+
+    .lb-steps {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      font-family: 'Syne', sans-serif;
+    }
 
     .ccard-join-btn {
       width: 100%;
@@ -940,7 +1112,13 @@
       font-weight: 700;
     }
 
-    .group-battle-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
+    .group-battle-label::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+    }
 
     .group-battle-title {
       font-family: 'Bebas Neue', sans-serif;
@@ -969,7 +1147,9 @@
       box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 60px rgba(212, 168, 67, 0.05);
     }
 
-    .battle-screen { background: #111; }
+    .battle-screen {
+      background: #111;
+    }
 
     .battle-top-bar {
       background: linear-gradient(135deg, #1a1a2e, #16213e);
@@ -980,7 +1160,12 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .battle-top-title { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; color: var(--white); }
+    .battle-top-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--white);
+    }
 
     .battle-live-badge {
       display: flex;
@@ -997,11 +1182,32 @@
       font-weight: 700;
     }
 
-    .live-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: livePulse 1.5s ease-in-out infinite; }
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: livePulse 1.5s ease-in-out infinite;
+    }
 
-    .battle-body { padding: 16px; }
-    .battle-sponsor-tag { text-align: center; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--white-dimmer); margin-bottom: 14px; font-weight: 600; }
-    .battle-sponsor-name { color: var(--gold); font-weight: 700; }
+    .battle-body {
+      padding: 16px;
+    }
+
+    .battle-sponsor-tag {
+      text-align: center;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white-dimmer);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .battle-sponsor-name {
+      color: var(--gold);
+      font-weight: 700;
+    }
 
     .battle-vs-row {
       display: grid;
@@ -1011,7 +1217,9 @@
       margin-bottom: 18px;
     }
 
-    .b-team { text-align: center; }
+    .b-team {
+      text-align: center;
+    }
 
     .b-team-icon {
       width: 46px;
@@ -1025,10 +1233,26 @@
       border: 2px solid rgba(255, 255, 255, 0.07);
     }
 
-    .b-team-icon-1 { background: linear-gradient(135deg, #1a3a1a, #2d6a2d); }
-    .b-team-icon-2 { background: linear-gradient(135deg, #3a1a1a, #6a2d2d); }
-    .b-team-name { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
-    .b-team-loc { font-size: 10px; color: var(--white-dimmer); }
+    .b-team-icon-1 {
+      background: linear-gradient(135deg, #1a3a1a, #2d6a2d);
+    }
+
+    .b-team-icon-2 {
+      background: linear-gradient(135deg, #3a1a1a, #6a2d2d);
+    }
+
+    .b-team-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .b-team-loc {
+      font-size: 10px;
+      color: var(--white-dimmer);
+    }
 
     .vs-text {
       font-family: 'Bebas Neue', sans-serif;
@@ -1039,8 +1263,15 @@
     }
 
     @keyframes vsPulse {
-      0%, 100% { text-shadow: 0 0 10px rgba(212, 168, 67, 0.3); }
-      50% { text-shadow: 0 0 25px rgba(212, 168, 67, 0.9); }
+
+      0%,
+      100% {
+        text-shadow: 0 0 10px rgba(212, 168, 67, 0.3);
+      }
+
+      50% {
+        text-shadow: 0 0 25px rgba(212, 168, 67, 0.9);
+      }
     }
 
     .battle-scores-box {
@@ -1051,16 +1282,67 @@
       margin-bottom: 14px;
     }
 
-    .scores-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--white-dimmer); margin-bottom: 12px; font-weight: 700; }
+    .scores-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white-dimmer);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
 
-    .score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-    .score-row:last-child { margin-bottom: 0; }
-    .score-team { font-size: 11px; color: var(--white-dim); width: 85px; flex-shrink: 0; font-weight: 500; }
-    .score-bar-wrap { flex: 1; }
-    .score-bar { height: 5px; background: rgba(255, 255, 255, 0.06); border-radius: 3px; overflow: hidden; margin-bottom: 3px; }
-    .score-fill-1 { height: 100%; width: 68%; background: linear-gradient(90deg, #2d6a2d, #4CAF50); border-radius: 3px; }
-    .score-fill-2 { height: 100%; width: 52%; background: linear-gradient(90deg, #6a2d2d, #e53935); border-radius: 3px; }
-    .score-val { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; color: var(--white); white-space: nowrap; }
+    .score-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .score-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .score-team {
+      font-size: 11px;
+      color: var(--white-dim);
+      width: 85px;
+      flex-shrink: 0;
+      font-weight: 500;
+    }
+
+    .score-bar-wrap {
+      flex: 1;
+    }
+
+    .score-bar {
+      height: 5px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 3px;
+    }
+
+    .score-fill-1 {
+      height: 100%;
+      width: 68%;
+      background: linear-gradient(90deg, #2d6a2d, #4CAF50);
+      border-radius: 3px;
+    }
+
+    .score-fill-2 {
+      height: 100%;
+      width: 52%;
+      background: linear-gradient(90deg, #6a2d2d, #e53935);
+      border-radius: 3px;
+    }
+
+    .score-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--white);
+      white-space: nowrap;
+    }
 
     .battle-reward-box {
       background: rgba(212, 168, 67, 0.08);
@@ -1073,8 +1355,18 @@
       margin-bottom: 12px;
     }
 
-    .battle-timer { text-align: center; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--white-dimmer); font-weight: 600; }
-    .battle-timer strong { color: var(--gold); }
+    .battle-timer {
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white-dimmer);
+      font-weight: 600;
+    }
+
+    .battle-timer strong {
+      color: var(--gold);
+    }
 
     .battle-join-btn {
       width: 100%;
@@ -1092,121 +1384,20 @@
       cursor: none;
     }
 
-    /* WAITLIST */
-    .waitlist {
-      padding: 160px 48px;
-      background: var(--dark);
-      text-align: center;
-      position: relative;
-    }
-
-    .waitlist-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1800&q=80');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.06;
-    }
-
-    .waitlist-glow {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(212, 168, 67, 0.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .waitlist-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .waitlist-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(60px, 8vw, 110px);
-      line-height: 0.95;
-      letter-spacing: 2px;
-      margin-bottom: 24px;
-    }
-
-    .waitlist-title span { color: var(--gold); }
-
-    .waitlist-sub {
-      font-size: 18px;
-      color: var(--white-dim);
-      font-weight: 400;
-      line-height: 1.7;
-      margin-bottom: 48px;
-    }
-
-    .waitlist-form {
-      display: flex;
-      max-width: 500px;
-      margin: 0 auto 20px;
-    }
-
-    .waitlist-input {
-      flex: 1;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-right: none;
-      color: var(--white);
-      padding: 16px 20px;
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 15px;
-      outline: none;
-      transition: border-color 0.3s;
-    }
-
-    .waitlist-input::placeholder { color: var(--white-dimmer); }
-    .waitlist-input:focus { border-color: rgba(212, 168, 67, 0.5); }
-
-    .waitlist-submit {
-      background: var(--gold);
-      color: var(--dark);
-      border: none;
-      padding: 16px 28px;
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      cursor: none;
-      transition: background 0.3s;
-      white-space: nowrap;
-      animation: goldPulse 3s ease-in-out infinite;
-    }
-
-    .waitlist-submit:hover { background: #e8be5a; }
-
-    .waitlist-note {
-      font-size: 13px;
-      color: var(--white-dimmer);
-      font-weight: 400;
-    }
-
-    .waitlist-success-msg {
-      margin-top: 16px;
-      font-size: 15px;
-      color: var(--gold);
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .waitlist-success-msg.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /* FOOTER */
     footer {
       background: #080808;
@@ -1214,7 +1405,10 @@
       padding: 60px 48px 40px;
     }
 
-    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
     .footer-top {
       display: flex;
@@ -1225,64 +1419,207 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; text-decoration: none; }
-    .footer-logo-img { width: 30px; height: 30px; border-radius: 7px; }
-    .footer-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 3px; color: var(--white); }
-    .footer-logo-text span { color: var(--gold); }
-    .footer-tagline { font-size: 14px; color: var(--white-dimmer); font-weight: 400; max-width: 240px; line-height: 1.6; }
-    .footer-links { display: flex; gap: 80px; }
-    .footer-col h4 { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 700; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 12px; }
-    .footer-col ul li a { color: var(--white-dimmer); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.3s; }
-    .footer-col ul li a:hover { color: var(--white); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
-    .footer-copy { font-size: 13px; color: rgba(255, 255, 255, 0.25); }
-    .footer-gold-line { width: 60px; height: 1px; background: var(--gold); opacity: 0.3; }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      text-decoration: none;
+    }
+
+    .footer-logo-img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+    }
+
+    .footer-logo-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      letter-spacing: 3px;
+      color: var(--white);
+    }
+
+    .footer-logo-text span {
+      color: var(--gold);
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      color: var(--white-dimmer);
+      font-weight: 400;
+      max-width: 240px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 80px;
+    }
+
+    .footer-col h4 {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul li a {
+      color: var(--white-dimmer);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .footer-gold-line {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.3;
+    }
 
     /* REVEAL */
-    .js-ready .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; animation: revealFallback 0.8s ease 1.5s forwards; }
-    .js-ready .reveal.visible { opacity: 1; transform: translateY(0); animation: none; }
-    .js-ready .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; animation: revealFallback 0.8s ease 1.5s forwards; }
-    .js-ready .reveal-left.visible { opacity: 1; transform: translateX(0); animation: none; }
-    .js-ready .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; animation: revealFallback 0.8s ease 1.5s forwards; }
-    .js-ready .reveal-right.visible { opacity: 1; transform: translateX(0); animation: none; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
 
-    @keyframes revealFallback { to { opacity: 1; transform: none; } }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
-    .delay-5 { transition-delay: 0.5s; }
-    .delay-6 { transition-delay: 0.6s; }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .delay-5 {
+      transition-delay: 0.5s;
+    }
+
+    .delay-6 {
+      transition-delay: 0.6s;
+    }
 
     @media (max-width: 900px) {
-      nav { padding: 16px 20px; }
-      .nav-links { display: none; }
-      .hero-content { padding: 0 20px; margin-left: 0; }
-      .how, .features, .challenges, .waitlist { padding: 100px 20px; }
-      .how-steps, .features-grid, .challenge-cards { grid-template-columns: 1fr; }
-      .features-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .features-subtitle { text-align: left; }
-      .group-battle-layout { grid-template-columns: 1fr; gap: 48px; }
-      .footer-top { flex-direction: column; gap: 40px; }
-      .footer-links { gap: 40px; }
-      .footer-bottom { flex-direction: column; gap: 16px; }
-      footer { padding: 60px 20px 40px; }
+      nav {
+        padding: 16px 20px;
+      }
 
-      .waitlist-form {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content {
+        padding: 0 20px;
+        margin-left: 0;
+      }
+
+      .how,
+      .features,
+      .challenges,
+      .waitlist {
+        padding: 100px 20px;
+      }
+
+      .how-steps,
+      .features-grid,
+      .challenge-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .features-header {
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
+        gap: 16px;
       }
 
-      .waitlist-input {
-        border-right: 1px solid rgba(255, 255, 255, 0.12);
-        width: 100%;
+      .features-subtitle {
+        text-align: left;
       }
 
-      .waitlist-submit {
-        width: 100%;
+      .group-battle-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .footer-links {
+        gap: 40px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      footer {
+        padding: 60px 20px 40px;
       }
     }
 
@@ -1297,13 +1634,17 @@
     /* SOCIAL PROOF TOASTS */
     .toast-container {
       position: fixed;
-      inset: 0;
+      bottom: 24px;
+      left: 24px;
       z-index: 9000;
       pointer-events: none;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 10px;
+      width: 300px;
     }
 
     .sp-toast {
-      position: absolute;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -1314,7 +1655,7 @@
       border-radius: 12px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.55);
       pointer-events: none;
-      width: 280px;
+      width: 100%;
     }
 
     .sp-avatar {
@@ -1332,7 +1673,217 @@
     .sp-live { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; animation: livePulse 1.5s ease-in-out infinite; }
 
     @media (max-width: 600px) {
-      .sp-toast { width: calc(100vw - 40px); }
+      .toast-container { width: calc(100vw - 48px); }
+    }
+
+    /* WAITLIST MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-box {
+      background: #111;
+      border: 1px solid rgba(212,168,67,0.25);
+      border-radius: 20px;
+      padding: 48px 44px;
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.8), 0 0 60px rgba(212,168,67,0.05);
+    }
+    .modal-overlay.active .modal-box {
+      transform: translateY(0) scale(1);
+    }
+    .modal-close {
+      position: absolute;
+      top: 18px; right: 20px;
+      background: none;
+      border: none;
+      color: rgba(245,240,232,0.35);
+      font-size: 22px;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+      font-family: 'Cabinet Grotesk', sans-serif;
+    }
+    .modal-close:hover { color: var(--white); }
+    .modal-eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .modal-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .modal-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px;
+      line-height: 0.95;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+    .modal-title span { color: var(--gold); }
+    .modal-field {
+      margin-bottom: 14px;
+    }
+    .modal-input {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      padding: 14px 18px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 15px;
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .modal-input::placeholder { color: rgba(245,240,232,0.35); }
+    .modal-input:focus { border-color: rgba(212,168,67,0.5); }
+    .modal-platform-label {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.5);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .modal-platform-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .platform-btn {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(245,240,232,0.6);
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+    .platform-btn:hover {
+      border-color: rgba(212,168,67,0.4);
+      color: var(--white);
+    }
+    .platform-btn.selected {
+      background: rgba(212,168,67,0.12);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .modal-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      padding: 16px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s, opacity 0.3s;
+      animation: goldPulse 3s ease-in-out infinite;
+    }
+    .modal-submit:hover { background: #e8be5a; }
+    .modal-submit:disabled { opacity: 0.6; cursor: not-allowed; animation: none; }
+
+    /* SUCCESS SCREEN */
+    .modal-success {
+      display: none;
+      text-align: center;
+    }
+    .modal-success.active { display: block; }
+    .modal-form-wrap.hidden { display: none; }
+    .success-icon {
+      width: 64px; height: 64px;
+      background: rgba(212,168,67,0.12);
+      border: 1px solid rgba(212,168,67,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 24px;
+    }
+    .success-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 58px;
+      line-height: 0.95;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .success-headline span { color: var(--gold); }
+    .success-body {
+      font-size: 16px;
+      color: rgba(245,240,232,0.65);
+      line-height: 1.75;
+      font-weight: 400;
+      max-width: 360px;
+      margin: 0 auto 32px;
+    }
+    .success-body strong { color: var(--white); font-weight: 700; }
+    .success-close-btn {
+      background: transparent;
+      border: 1px solid rgba(212,168,67,0.35);
+      color: var(--gold);
+      padding: 13px 32px;
+      border-radius: 10px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .success-close-btn:hover {
+      background: rgba(212,168,67,0.1);
+      border-color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      .modal-box { padding: 36px 24px; }
+      .modal-title { font-size: 42px; }
+      .success-headline { font-size: 46px; }
     }
   </style>
 </head>
@@ -1343,6 +1894,51 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
   <div class="toast-container" id="toastContainer"></div>
+
+  <!-- WAITLIST MODAL -->
+  <div class="modal-overlay" id="waitlistModal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+
+      <!-- FORM VIEW -->
+      <div class="modal-form-wrap" id="modalFormWrap">
+        <div class="modal-eyebrow">Early Access</div>
+        <div class="modal-title">Your <span>Streak</span><br>Starts Now.</div>
+
+        <form id="modalForm" action="https://formspree.io/f/mzdklpon" method="POST">
+          <div class="modal-field">
+            <input type="text" name="name" class="modal-input" placeholder="Your name" required>
+          </div>
+          <div class="modal-field">
+            <input type="email" name="email" class="modal-input" placeholder="Your email address" required>
+          </div>
+          <input type="hidden" name="_subject" value="New Doer Waitlist Signup 🚀">
+          <input type="hidden" name="platform" id="platformField" value="Not specified">
+
+          <div class="modal-platform-label">Which phone are you on?</div>
+          <div class="modal-platform-btns">
+            <button type="button" class="platform-btn" data-platform="iPhone">🍎 iPhone</button>
+            <button type="button" class="platform-btn" data-platform="Android">🤖 Android</button>
+          </div>
+
+          <button type="submit" class="modal-submit" id="modalSubmitBtn">Join the Waitlist</button>
+        </form>
+      </div>
+
+      <!-- SUCCESS VIEW -->
+      <div class="modal-success" id="modalSuccess">
+        <div class="success-icon">🏅</div>
+        <div class="success-headline">Welcome to<br>the <span>Movement.</span></div>
+        <p class="success-body">
+          <strong>You're in.</strong> Thank you for joining the Doer waitlist. We're building something you're going to love — and you'll be among the first to experience it.<br><br>
+          iOS is coming very soon. We'll notify you the moment it drops.
+        </p>
+        <button class="success-close-btn" id="successCloseBtn">Got it →</button>
+      </div>
+
+    </div>
+  </div>
+
 
   <nav id="navbar">
     <a href="/" class="nav-left">
@@ -1370,17 +1966,15 @@
       </a>
       <div class="hero-eyebrow">The Fitness Revolution</div>
       <h1 class="hero-headline">
-        <span class="word">Get&nbsp;</span><span class="word">Paid&nbsp;</span><span class="word">to&nbsp;</span><span class="word">Get&nbsp;</span><span class="word">Fit.</span>
+        <span class="word">Get&nbsp;</span><span class="word">Paid&nbsp;</span><span class="word">to&nbsp;</span><span
+          class="word">Get&nbsp;</span><span class="word">Fit.</span>
       </h1>
-      <p class="hero-sub">Doer is the app where top brands sponsor your fitness goals — and reward you for hitting them.</p>
+      <p class="hero-sub">Doer is the app where top brands sponsor your fitness goals — and reward you for hitting them.
+      </p>
       <div class="hero-cta">
         <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
         <a href="#how" class="btn-secondary">See how it works <span class="arrow">→</span></a>
       </div>
-    </div>
-    <div class="hero-scroll-indicator">
-      <span class="scroll-text">scroll</span>
-      <div class="scroll-line"></div>
     </div>
   </section>
 
@@ -1396,19 +1990,22 @@
           <div class="step-num">01</div>
           <div class="step-icon">🏆</div>
           <div class="step-title">Join a Challenge</div>
-          <p class="step-desc">Pick a brand-sponsored fitness challenge. Walk, run, hit your step goal. The challenge starts the moment you do.</p>
+          <p class="step-desc">Pick a brand-sponsored fitness challenge. Walk, run, hit your step goal. The challenge
+            starts the moment you do.</p>
         </div>
-        <div class="how-step gold-card reveal delay-2">
+        <div class="how-step reveal delay-2">
           <div class="step-num">02</div>
           <div class="step-icon">🔥</div>
           <div class="step-title">Track Your Progress</div>
-          <p class="step-desc">Doer tracks every step. Your streak grows. Your rank climbs. Miss a day and it resets — so don't.</p>
+          <p class="step-desc">Doer tracks every step. Your streak grows. Your rank climbs. Miss a day and it resets —
+            so don't.</p>
         </div>
         <div class="how-step reveal delay-3">
           <div class="step-num">03</div>
           <div class="step-icon">🎁</div>
           <div class="step-title">Earn Real Rewards</div>
-          <p class="step-desc">Hit your goal, claim your reward. Not points. Not virtual coins. Actual rewards from actual brands, redeemable in the real world.</p>
+          <p class="step-desc">Hit your goal, claim your reward. Not points. Not virtual coins. Actual rewards from
+            actual brands, redeemable in the real world.</p>
         </div>
       </div>
     </div>
@@ -1418,7 +2015,8 @@
     <div class="features-inner">
       <div class="features-header reveal">
         <h2 class="features-title">Built to Keep You Moving.</h2>
-        <p class="features-subtitle">Every feature on Doer exists for one reason — to make sure you show up tomorrow.</p>
+        <p class="features-subtitle">Every feature on Doer exists for one reason — to make sure you show up tomorrow.
+        </p>
       </div>
       <div class="features-grid">
         <div class="feature-card reveal delay-1"><span class="feature-icon">🏅</span>
@@ -1427,7 +2025,8 @@
         </div>
         <div class="feature-card reveal delay-2"><span class="feature-icon">👣</span>
           <div class="feature-title">Step & Streak Tracking</div>
-          <p class="feature-desc">Every step counts. Every day you show up builds your streak. Miss a day and it resets — so don't.</p>
+          <p class="feature-desc">Every step counts. Every day you show up builds your streak. Miss a day and it resets
+            — so don't.</p>
         </div>
         <div class="feature-card reveal delay-3"><span class="feature-icon">📊</span>
           <div class="feature-title">Leaderboards</div>
@@ -1435,11 +2034,13 @@
         </div>
         <div class="feature-card reveal delay-4"><span class="feature-icon">🎖️</span>
           <div class="feature-title">Badges & Milestones</div>
-          <p class="feature-desc">From your first 1,000 steps to 3 million — every milestone you hit is a badge you keep forever.</p>
+          <p class="feature-desc">From your first 1,000 steps to 3 million — every milestone you hit is a badge you keep
+            forever.</p>
         </div>
         <div class="feature-card reveal delay-5"><span class="feature-icon">💰</span>
           <div class="feature-title">Real Rewards</div>
-          <p class="feature-desc">Not points. Not virtual coins. Actual rewards from actual brands, redeemable in the real world.</p>
+          <p class="feature-desc">Not points. Not virtual coins. Actual rewards from actual brands, redeemable in the
+            real world.</p>
         </div>
         <div class="feature-card reveal delay-6"><span class="feature-icon">👥</span>
           <div class="feature-title">Community & Run Clubs</div>
@@ -1455,124 +2056,224 @@
       <div class="challenges-header reveal">
         <div class="section-label">Live Challenges</div>
         <h2 class="challenges-title">Pick Your Challenge.<br>Earn Your Reward.</h2>
-        <p class="challenges-sub">Every challenge on Doer is sponsored by a real brand with a real reward waiting at the finish line.</p>
+        <p class="challenges-sub">Every challenge on Doer is sponsored by a real brand with a real reward waiting at the
+          finish line.</p>
       </div>
       <div class="challenge-cards">
         <!-- Chicken Republic -->
         <div class="reveal delay-1">
           <div class="phone-frame">
-            <div class="phone-notch"><div class="notch-dot"></div><div class="notch-bar"></div><div class="notch-dot"></div></div>
+            <div class="phone-notch">
+              <div class="notch-dot"></div>
+              <div class="notch-bar"></div>
+              <div class="notch-dot"></div>
+            </div>
             <div class="phone-screen">
               <div class="ccard-header"><span class="ccard-back">←</span><span class="ccard-menu">⋮</span></div>
               <div class="ccard-brand-banner">
                 <div class="brand-logo-circle cr-logo">🍗</div>
-                <div><div class="brand-sponsored-tag">Sponsored by</div><div class="brand-name-large">Chicken Republic</div></div>
+                <div>
+                  <div class="brand-sponsored-tag">Sponsored by</div>
+                  <div class="brand-name-large">Chicken Republic</div>
+                </div>
               </div>
               <div class="ccard-body">
                 <div class="ccard-title">The 10K Daily Challenge</div>
                 <div class="ccard-duration">7 Day Challenge</div>
                 <div class="ccard-step-target">
-                  <div><div class="step-target-label">Daily Target</div><div class="step-target-val">10,000</div></div>
-                  <div style="text-align:right"><div class="step-target-label">Steps Per Day</div><div class="step-target-unit">👣 steps/day</div></div>
+                  <div>
+                    <div class="step-target-label">Daily Target</div>
+                    <div class="step-target-val">10,000</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="step-target-label">Steps Per Day</div>
+                    <div class="step-target-unit">👣 steps/day</div>
+                  </div>
                 </div>
                 <div class="ccard-progress-wrap">
                   <div class="ccard-progress-header"><span>Day 4 of 7</span><strong>57%</strong></div>
-                  <div class="progress-bar"><div class="progress-fill" style="width:57%"></div></div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:57%"></div>
+                  </div>
                 </div>
                 <div class="ccard-stats">
-                  <div class="ccard-stat"><span class="cstat-val">2,841</span><span class="cstat-label">Joined</span></div>
-                  <div class="ccard-stat"><span class="cstat-val">#12</span><span class="cstat-label">Your Rank</span></div>
+                  <div class="ccard-stat"><span class="cstat-val">2,841</span><span class="cstat-label">Joined</span>
+                  </div>
+                  <div class="ccard-stat"><span class="cstat-val">#12</span><span class="cstat-label">Your Rank</span>
+                  </div>
                   <div class="ccard-stat"><span class="cstat-val">3d</span><span class="cstat-label">Left</span></div>
                 </div>
-                <div class="ccard-reward"><span class="reward-icon">🎁</span><div><div class="reward-label">Reward</div><div class="reward-val">Free Meal Voucher</div></div></div>
+                <div class="ccard-reward"><span class="reward-icon">🎁</span>
+                  <div>
+                    <div class="reward-label">Reward</div>
+                    <div class="reward-val">Free Meal Voucher</div>
+                  </div>
+                </div>
                 <div class="ccard-leaderboard">
                   <div class="leaderboard-title">Leaderboard</div>
-                  <div class="leaderboard-row"><span class="lb-rank">1</span><div class="lb-avatar">😤</div><span class="lb-name">Tunde A.</span><span class="lb-steps">42,100</span></div>
-                  <div class="leaderboard-row"><span class="lb-rank you">You</span><div class="lb-avatar">😊</div><span class="lb-name you">You</span><span class="lb-steps">31,420</span></div>
-                  <div class="leaderboard-row"><span class="lb-rank">3</span><div class="lb-avatar">💪</div><span class="lb-name">Adaeze K.</span><span class="lb-steps">28,900</span></div>
+                  <div class="leaderboard-row"><span class="lb-rank">1</span>
+                    <div class="lb-avatar">😤</div><span class="lb-name">Tunde A.</span><span
+                      class="lb-steps">42,100</span>
+                  </div>
+                  <div class="leaderboard-row"><span class="lb-rank you">You</span>
+                    <div class="lb-avatar">😊</div><span class="lb-name you">You</span><span
+                      class="lb-steps">31,420</span>
+                  </div>
+                  <div class="leaderboard-row"><span class="lb-rank">3</span>
+                    <div class="lb-avatar">💪</div><span class="lb-name">Adaeze K.</span><span
+                      class="lb-steps">28,900</span>
+                  </div>
                 </div>
                 <button class="ccard-join-btn">Keep Walking →</button>
               </div>
             </div>
-            <div class="phone-home-bar"><div class="home-bar-line"></div></div>
+            <div class="phone-home-bar">
+              <div class="home-bar-line"></div>
+            </div>
           </div>
         </div>
         <!-- Access Bank -->
         <div class="reveal delay-2">
           <div class="phone-frame">
-            <div class="phone-notch"><div class="notch-dot"></div><div class="notch-bar"></div><div class="notch-dot"></div></div>
+            <div class="phone-notch">
+              <div class="notch-dot"></div>
+              <div class="notch-bar"></div>
+              <div class="notch-dot"></div>
+            </div>
             <div class="phone-screen">
               <div class="ccard-header"><span class="ccard-back">←</span><span class="ccard-menu">⋮</span></div>
               <div class="ccard-brand-banner">
                 <div class="brand-logo-circle ab-logo">🏦</div>
-                <div><div class="brand-sponsored-tag">Sponsored by</div><div class="brand-name-large">Access Bank</div></div>
+                <div>
+                  <div class="brand-sponsored-tag">Sponsored by</div>
+                  <div class="brand-name-large">Access Bank</div>
+                </div>
               </div>
               <div class="ccard-body">
                 <div class="ccard-title">The Fortnight Hustle</div>
                 <div class="ccard-duration">14 Day Challenge</div>
                 <div class="ccard-step-target">
-                  <div><div class="step-target-label">Daily Target</div><div class="step-target-val">8,000</div></div>
-                  <div style="text-align:right"><div class="step-target-label">Steps Per Day</div><div class="step-target-unit">👣 steps/day</div></div>
+                  <div>
+                    <div class="step-target-label">Daily Target</div>
+                    <div class="step-target-val">8,000</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="step-target-label">Steps Per Day</div>
+                    <div class="step-target-unit">👣 steps/day</div>
+                  </div>
                 </div>
                 <div class="ccard-progress-wrap">
                   <div class="ccard-progress-header"><span>Day 9 of 14</span><strong>64%</strong></div>
-                  <div class="progress-bar"><div class="progress-fill" style="width:64%"></div></div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:64%"></div>
+                  </div>
                 </div>
                 <div class="ccard-stats">
-                  <div class="ccard-stat"><span class="cstat-val">1,563</span><span class="cstat-label">Joined</span></div>
-                  <div class="ccard-stat"><span class="cstat-val">#5</span><span class="cstat-label">Your Rank</span></div>
+                  <div class="ccard-stat"><span class="cstat-val">1,563</span><span class="cstat-label">Joined</span>
+                  </div>
+                  <div class="ccard-stat"><span class="cstat-val">#5</span><span class="cstat-label">Your Rank</span>
+                  </div>
                   <div class="ccard-stat"><span class="cstat-val">5d</span><span class="cstat-label">Left</span></div>
                 </div>
-                <div class="ccard-reward"><span class="reward-icon">💳</span><div><div class="reward-label">Reward</div><div class="reward-val">₦5,000 Cashback</div></div></div>
+                <div class="ccard-reward"><span class="reward-icon">💳</span>
+                  <div>
+                    <div class="reward-label">Reward</div>
+                    <div class="reward-val">₦5,000 Cashback</div>
+                  </div>
+                </div>
                 <div class="ccard-leaderboard">
                   <div class="leaderboard-title">Leaderboard</div>
-                  <div class="leaderboard-row"><span class="lb-rank">1</span><div class="lb-avatar">🔥</div><span class="lb-name">Emeka O.</span><span class="lb-steps">68,400</span></div>
-                  <div class="leaderboard-row"><span class="lb-rank you">You</span><div class="lb-avatar">😎</div><span class="lb-name you">You</span><span class="lb-steps">55,200</span></div>
-                  <div class="leaderboard-row"><span class="lb-rank">3</span><div class="lb-avatar">⚡</div><span class="lb-name">Ngozi F.</span><span class="lb-steps">51,700</span></div>
+                  <div class="leaderboard-row"><span class="lb-rank">1</span>
+                    <div class="lb-avatar">🔥</div><span class="lb-name">Emeka O.</span><span
+                      class="lb-steps">68,400</span>
+                  </div>
+                  <div class="leaderboard-row"><span class="lb-rank you">You</span>
+                    <div class="lb-avatar">😎</div><span class="lb-name you">You</span><span
+                      class="lb-steps">55,200</span>
+                  </div>
+                  <div class="leaderboard-row"><span class="lb-rank">3</span>
+                    <div class="lb-avatar">⚡</div><span class="lb-name">Ngozi F.</span><span
+                      class="lb-steps">51,700</span>
+                  </div>
                 </div>
                 <button class="ccard-join-btn">Keep Walking →</button>
               </div>
             </div>
-            <div class="phone-home-bar"><div class="home-bar-line"></div></div>
+            <div class="phone-home-bar">
+              <div class="home-bar-line"></div>
+            </div>
           </div>
         </div>
         <!-- Flutterwave -->
         <div class="reveal delay-3">
           <div class="phone-frame">
-            <div class="phone-notch"><div class="notch-dot"></div><div class="notch-bar"></div><div class="notch-dot"></div></div>
+            <div class="phone-notch">
+              <div class="notch-dot"></div>
+              <div class="notch-bar"></div>
+              <div class="notch-dot"></div>
+            </div>
             <div class="phone-screen">
               <div class="ccard-header"><span class="ccard-back">←</span><span class="ccard-menu">⋮</span></div>
               <div class="ccard-brand-banner">
                 <div class="brand-logo-circle fw-logo">⚡</div>
-                <div><div class="brand-sponsored-tag">Sponsored by</div><div class="brand-name-large">Flutterwave</div></div>
+                <div>
+                  <div class="brand-sponsored-tag">Sponsored by</div>
+                  <div class="brand-name-large">Flutterwave</div>
+                </div>
               </div>
               <div class="ccard-body">
                 <div class="ccard-title">The Monthly Grind</div>
                 <div class="ccard-duration">30 Day Challenge</div>
                 <div class="ccard-step-target">
-                  <div><div class="step-target-label">Total Target</div><div class="step-target-val">100K</div></div>
-                  <div style="text-align:right"><div class="step-target-label">Total Steps</div><div class="step-target-unit">👣 in 30 days</div></div>
+                  <div>
+                    <div class="step-target-label">Total Target</div>
+                    <div class="step-target-val">100K</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="step-target-label">Total Steps</div>
+                    <div class="step-target-unit">👣 in 30 days</div>
+                  </div>
                 </div>
                 <div class="ccard-progress-wrap">
                   <div class="ccard-progress-header"><span>Day 18 of 30</span><strong>60%</strong></div>
-                  <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:60%"></div>
+                  </div>
                 </div>
                 <div class="ccard-stats">
-                  <div class="ccard-stat"><span class="cstat-val">984</span><span class="cstat-label">Joined</span></div>
-                  <div class="ccard-stat"><span class="cstat-val">#3</span><span class="cstat-label">Your Rank</span></div>
+                  <div class="ccard-stat"><span class="cstat-val">984</span><span class="cstat-label">Joined</span>
+                  </div>
+                  <div class="ccard-stat"><span class="cstat-val">#3</span><span class="cstat-label">Your Rank</span>
+                  </div>
                   <div class="ccard-stat"><span class="cstat-val">12d</span><span class="cstat-label">Left</span></div>
                 </div>
-                <div class="ccard-reward"><span class="reward-icon">🏆</span><div><div class="reward-label">Reward</div><div class="reward-val">₦20,000 Transfer</div></div></div>
+                <div class="ccard-reward"><span class="reward-icon">🏆</span>
+                  <div>
+                    <div class="reward-label">Reward</div>
+                    <div class="reward-val">₦20,000 Transfer</div>
+                  </div>
+                </div>
                 <div class="ccard-leaderboard">
                   <div class="leaderboard-title">Leaderboard</div>
-                  <div class="leaderboard-row"><span class="lb-rank">1</span><div class="lb-avatar">🦅</div><span class="lb-name">Chidi M.</span><span class="lb-steps">74,200</span></div>
-                  <div class="leaderboard-row"><span class="lb-rank">2</span><div class="lb-avatar">💨</div><span class="lb-name">Fatima B.</span><span class="lb-steps">68,900</span></div>
-                  <div class="leaderboard-row"><span class="lb-rank you">You</span><div class="lb-avatar">😤</div><span class="lb-name you">You</span><span class="lb-steps">61,800</span></div>
+                  <div class="leaderboard-row"><span class="lb-rank">1</span>
+                    <div class="lb-avatar">🦅</div><span class="lb-name">Chidi M.</span><span
+                      class="lb-steps">74,200</span>
+                  </div>
+                  <div class="leaderboard-row"><span class="lb-rank">2</span>
+                    <div class="lb-avatar">💨</div><span class="lb-name">Fatima B.</span><span
+                      class="lb-steps">68,900</span>
+                  </div>
+                  <div class="leaderboard-row"><span class="lb-rank you">You</span>
+                    <div class="lb-avatar">😤</div><span class="lb-name you">You</span><span
+                      class="lb-steps">61,800</span>
+                  </div>
                 </div>
                 <button class="ccard-join-btn">Keep Walking →</button>
               </div>
             </div>
-            <div class="phone-home-bar"><div class="home-bar-line"></div></div>
+            <div class="phone-home-bar">
+              <div class="home-bar-line"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1582,58 +2283,80 @@
         <div class="group-battle-text reveal-left">
           <div class="group-battle-label">New Feature</div>
           <h3 class="group-battle-title">Group vs Group Battles.</h3>
-          <p class="group-battle-desc">Challenge another group to a step battle. Scored by average steps per member — so any group can win by walking harder. The winning team splits the brand reward.</p>
+          <p class="group-battle-desc">Challenge another group to a step battle. Scored by average steps per member — so
+            any group can win by walking harder. The winning team splits the brand reward.</p>
           <a href="#waitlist" class="btn-primary">Join to Compete</a>
         </div>
         <div class="reveal-right" style="display:flex;justify-content:center;">
           <div class="battle-phone">
-            <div class="phone-notch"><div class="notch-dot"></div><div class="notch-bar"></div><div class="notch-dot"></div></div>
+            <div class="phone-notch">
+              <div class="notch-dot"></div>
+              <div class="notch-bar"></div>
+              <div class="notch-dot"></div>
+            </div>
             <div class="battle-screen">
               <div class="battle-top-bar">
                 <div class="battle-top-title">Chicken Republic Step War</div>
-                <div class="battle-live-badge"><div class="live-dot"></div>Live</div>
+                <div class="battle-live-badge">
+                  <div class="live-dot"></div>Live
+                </div>
               </div>
               <div class="battle-body">
-                <div class="battle-sponsor-tag">Sponsored by <span class="battle-sponsor-name">Chicken Republic</span></div>
+                <div class="battle-sponsor-tag">Sponsored by <span class="battle-sponsor-name">Chicken Republic</span>
+                </div>
                 <div class="battle-vs-row">
-                  <div class="b-team"><div class="b-team-icon b-team-icon-1">🏃</div><div class="b-team-name">Abuja Runners</div><div class="b-team-loc">📍 Abuja</div></div>
+                  <div class="b-team">
+                    <div class="b-team-icon b-team-icon-1">🏃</div>
+                    <div class="b-team-name">Abuja Runners</div>
+                    <div class="b-team-loc">📍 Abuja</div>
+                  </div>
                   <div class="vs-text">VS</div>
-                  <div class="b-team"><div class="b-team-icon b-team-icon-2">🚶</div><div class="b-team-name">Lagos Walkers</div><div class="b-team-loc">📍 Lagos</div></div>
+                  <div class="b-team">
+                    <div class="b-team-icon b-team-icon-2">🚶</div>
+                    <div class="b-team-name">Lagos Walkers</div>
+                    <div class="b-team-loc">📍 Lagos</div>
+                  </div>
                 </div>
                 <div class="battle-scores-box">
                   <div class="scores-label">Avg Steps Per Member</div>
-                  <div class="score-row"><div class="score-team">Abuja Runners</div><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill-1"></div></div></div><div class="score-val">26.7K</div></div>
-                  <div class="score-row"><div class="score-team">Lagos Walkers</div><div class="score-bar-wrap"><div class="score-bar"><div class="score-fill-2"></div></div></div><div class="score-val">20.4K</div></div>
+                  <div class="score-row">
+                    <div class="score-team">Abuja Runners</div>
+                    <div class="score-bar-wrap">
+                      <div class="score-bar">
+                        <div class="score-fill-1"></div>
+                      </div>
+                    </div>
+                    <div class="score-val">26.7K</div>
+                  </div>
+                  <div class="score-row">
+                    <div class="score-team">Lagos Walkers</div>
+                    <div class="score-bar-wrap">
+                      <div class="score-bar">
+                        <div class="score-fill-2"></div>
+                      </div>
+                    </div>
+                    <div class="score-val">20.4K</div>
+                  </div>
                 </div>
-                <div class="battle-reward-box"><span style="font-size:20px;">🍗</span><div><div class="reward-label">Winning Team Reward</div><div class="reward-val" style="font-size:13px;">₦2,000 Voucher · Per Member</div></div></div>
+                <div class="battle-reward-box"><span style="font-size:20px;">🍗</span>
+                  <div>
+                    <div class="reward-label">Winning Team Reward</div>
+                    <div class="reward-val" style="font-size:13px;">₦2,000 Voucher · Per Member</div>
+                  </div>
+                </div>
                 <div class="battle-timer">3d 14h left · <strong>7 Day Battle</strong></div>
                 <button class="battle-join-btn">Challenge a Group →</button>
               </div>
             </div>
-            <div class="phone-home-bar"><div class="home-bar-line"></div></div>
+            <div class="phone-home-bar">
+              <div class="home-bar-line"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="waitlist" id="waitlist">
-    <div class="waitlist-bg"></div>
-    <div class="waitlist-glow"></div>
-    <div class="waitlist-inner">
-      <div class="section-label reveal" style="justify-content:center;">Early Access</div>
-      <h2 class="waitlist-title reveal"><span>Your Streak</span><br>Starts Now.</h2>
-      <p class="waitlist-sub reveal">Join the waitlist. Be first in when we launch.</p>
-      <form class="waitlist-form reveal" action="https://formspree.io/f/mzdklpon" method="POST">
-        <input type="text" name="name" class="waitlist-input" placeholder="Your name" required>
-        <input type="email" name="email" class="waitlist-input" placeholder="Enter your email address" required>
-        <input type="hidden" name="_subject" value="New Doer Waitlist Signup 🚀">
-        <button type="submit" class="waitlist-submit">Join the Waitlist</button>
-      </form>
-      <p class="waitlist-success-msg" id="successMsg">You are on the list. iOS is coming soon — we will notify you the moment it drops.</p>
-      <p class="waitlist-note reveal">No spam. Just your launch notification.</p>
-    </div>
-  </section>
 
   <footer>
     <div class="footer-inner">
@@ -1643,7 +2366,8 @@
             <img src="logo.png" alt="Doer" class="footer-logo-img">
             <span class="footer-logo-text">D<span>O</span>ER</span>
           </a>
-          <p class="footer-tagline">The app where brands sponsor your fitness goals — and reward you for hitting them.</p>
+          <p class="footer-tagline">The app where brands sponsor your fitness goals — and reward you for hitting them.
+          </p>
         </div>
         <div class="footer-links">
           <div class="footer-col">
@@ -1659,9 +2383,9 @@
             <h4>Company</h4>
             <ul>
               <li><a href="brands.html">For Brands</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="delete-account.html">Delete Account</a></li>
-              <li>contact@dedoers.com</li>
+              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#52212722223d2026123637363d37207c313d3f">Contact Us</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#e1918093958f84939289889192a18584858e8493cf828e8c">Partnerships</a></li>
             </ul>
           </div>
         </div>
@@ -1673,7 +2397,7 @@
     </div>
   </footer>
 
-  <script>
+<script>
     // UNDERWATER ANIMATION
     const canvas = document.getElementById('underwater-canvas');
     const ctx = canvas.getContext('2d');
@@ -1684,24 +2408,32 @@
     const particles = [];
     for (let i = 0; i < 90; i++) {
       const p = {
-        x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
         r: Math.random() * 2.5 + 0.5,
-        speedY: -(Math.random() * 0.35 + 0.08), speedX: (Math.random() - 0.5) * 0.2,
+        speedY: -(Math.random() * 0.35 + 0.08),
+        speedX: (Math.random() - 0.5) * 0.2,
         opacity: Math.random() * 0.3 + 0.05,
-        wobble: Math.random() * Math.PI * 2, wobbleSpeed: Math.random() * 0.012 + 0.004,
+        wobble: Math.random() * Math.PI * 2,
+        wobbleSpeed: Math.random() * 0.012 + 0.004,
         isGold: Math.random() > 0.55
       };
       particles.push(p);
     }
+
     const rays = Array.from({ length: 5 }, () => ({
-      x: Math.random() * canvas.width, w: Math.random() * 90 + 30,
-      op: Math.random() * 0.025 + 0.008, speed: Math.random() * 0.0008 + 0.0003,
+      x: Math.random() * canvas.width,
+      w: Math.random() * 90 + 30,
+      op: Math.random() * 0.025 + 0.008,
+      speed: Math.random() * 0.0008 + 0.0003,
       phase: Math.random() * Math.PI * 2
     }));
+
     let t = 0;
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       t += 0.004;
+
       rays.forEach(ray => {
         ray.phase += ray.speed;
         const x = ray.x + Math.sin(ray.phase) * 120;
@@ -1711,9 +2443,12 @@
         grad.addColorStop(1, `rgba(212,168,67,0)`);
         ctx.beginPath();
         ctx.moveTo(x, 0); ctx.lineTo(x + ray.w, 0);
-        ctx.lineTo(x + ray.w * 0.5, canvas.height); ctx.lineTo(x - ray.w * 0.5, canvas.height);
-        ctx.closePath(); ctx.fillStyle = grad; ctx.fill();
+        ctx.lineTo(x + ray.w * 0.5, canvas.height);
+        ctx.lineTo(x - ray.w * 0.5, canvas.height);
+        ctx.closePath();
+        ctx.fillStyle = grad; ctx.fill();
       });
+
       for (let w = 0; w < 4; w++) {
         ctx.beginPath();
         for (let x = 0; x <= canvas.width; x += 8) {
@@ -1723,14 +2458,18 @@
         ctx.strokeStyle = `rgba(212,168,67,${0.018 - w * 0.004})`;
         ctx.lineWidth = 1; ctx.stroke();
       }
+
       particles.forEach(p => {
         p.wobble += p.wobbleSpeed;
-        p.x += p.speedX + Math.sin(p.wobble) * 0.4; p.y += p.speedY;
+        p.x += p.speedX + Math.sin(p.wobble) * 0.4;
+        p.y += p.speedY;
         if (p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = p.isGold ? `rgba(212,168,67,${p.opacity})` : `rgba(255,255,255,${p.opacity * 0.4})`;
         ctx.fill();
       });
+
       requestAnimationFrame(draw);
     }
     draw();
@@ -1750,46 +2489,43 @@
     window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', scrollY > 50));
 
     // REVEAL
-    document.body.classList.add('js-ready');
-    const obs = new IntersectionObserver(entries => entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('visible');
-    }), { threshold: 0.05 });
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible');
+    }), { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
 
     // WAITLIST FORM
-    // WAITLIST FORM
-const waitlistForm = document.querySelector('.waitlist-form');
-const successMsg = document.getElementById('successMsg');
-if (waitlistForm) {
-  waitlistForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const btn = this.querySelector('.waitlist-submit');
-    const formData = new FormData(this);
-    btn.textContent = 'Submitting...';
-    btn.style.opacity = '0.7';
-    fetch('https://formspree.io/f/mzdklpon', {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(res => {
-      if (res.ok) {
-        btn.textContent = "You're on the list!";
-        btn.style.background = '#4ade80';
-        btn.style.color = '#0D0D0D';
-        btn.style.opacity = '1';
-        waitlistForm.querySelector('input[type="text"]').value = '';
-        waitlistForm.querySelector('input[type="email"]').value = '';
-        setTimeout(() => { successMsg.classList.add('visible'); }, 400);
-      } else {
-        btn.textContent = 'Try again';
-        btn.style.opacity = '1';
-      }
-    }).catch(() => {
-      btn.textContent = 'Try again';
-      btn.style.opacity = '1';
-    });
-  });
-}
+    const waitlistForm = document.querySelector('.waitlist-form');
+    const successMsg = document.getElementById('successMsg');
+    if (waitlistForm) {
+      waitlistForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const btn = this.querySelector('.waitlist-submit');
+        const formData = new FormData(this);
+        btn.textContent = 'Submitting...';
+        btn.style.opacity = '0.7';
+        fetch('https://formspree.io/f/mzdklpon', {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        }).then(res => {
+          if (res.ok) {
+            btn.textContent = "You're on the list!";
+            btn.style.background = '#4ade80';
+            btn.style.color = '#0D0D0D';
+            btn.style.opacity = '1';
+            waitlistForm.querySelector('input[type="text"]').value = '';
+            waitlistForm.querySelector('input[type="email"]').value = '';
+            setTimeout(() => { successMsg.classList.add('visible'); }, 400);
+          } else {
+            btn.textContent = 'Try again';
+            btn.style.opacity = '1';
+          }
+        }).catch(() => {
+          btn.textContent = 'Try again';
+          btn.style.opacity = '1';
+        });
+      });
+    }
 
     // SOCIAL PROOF TOASTS
     (function () {
@@ -1827,28 +2563,14 @@ if (waitlistForm) {
       function shuffle() { queue = [...events].sort(() => Math.random() - 0.5); queueIndex = 0; }
       function nextEvent() { if (queueIndex >= queue.length) shuffle(); return queue[queueIndex++]; }
 
-      function getRandomPosition() {
-        const toastW = 280;
-        const toastH = 70;
-        const margin = 20;
-        const maxX = window.innerWidth - toastW - margin;
-        const maxY = window.innerHeight - toastH - margin;
-        const x = margin + Math.random() * Math.max(0, maxX - margin);
-        const y = margin + Math.random() * Math.max(0, maxY - margin);
-        return { x, y };
-      }
-
       function showToast() {
         if (activeToasts.length >= MAX_VISIBLE) return;
         const ev = nextEvent();
-        const pos = getRandomPosition();
 
         const toast = document.createElement('div');
         toast.className = 'sp-toast';
-        toast.style.left = pos.x + 'px';
-        toast.style.top = pos.y + 'px';
         toast.style.opacity = '0';
-        toast.style.transform = 'scale(0.85) translateY(10px)';
+        toast.style.transform = 'translateX(-110%)';
         toast.style.transition = 'opacity 0.45s ease, transform 0.45s cubic-bezier(0.16,1,0.3,1)';
 
         toast.innerHTML = `
@@ -1866,13 +2588,13 @@ if (waitlistForm) {
 
         requestAnimationFrame(() => requestAnimationFrame(() => {
           toast.style.opacity = '1';
-          toast.style.transform = 'scale(1) translateY(0)';
+          toast.style.transform = 'translateX(0)';
         }));
 
         const holdTime = 3500 + Math.random() * 1500;
         setTimeout(() => {
           toast.style.opacity = '0';
-          toast.style.transform = 'scale(0.9) translateY(-8px)';
+          toast.style.transform = 'translateX(-110%)';
           setTimeout(() => {
             toast.remove();
             activeToasts = activeToasts.filter(t => t !== toast);
@@ -1888,6 +2610,90 @@ if (waitlistForm) {
         }
         scheduleNext();
       }, 1500);
+    })();
+
+    // WAITLIST MODAL
+    (function() {
+      const overlay = document.getElementById('waitlistModal');
+      const modalClose = document.getElementById('modalClose');
+      const successCloseBtn = document.getElementById('successCloseBtn');
+      const formWrap = document.getElementById('modalFormWrap');
+      const successView = document.getElementById('modalSuccess');
+      const platformField = document.getElementById('platformField');
+      const submitBtn = document.getElementById('modalSubmitBtn');
+      const modalForm = document.getElementById('modalForm');
+
+      // Platform selection
+      document.querySelectorAll('.platform-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.platform-btn').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          platformField.value = btn.dataset.platform;
+        });
+      });
+
+      function openModal() {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Open on all waitlist CTA clicks
+      document.querySelectorAll('a[href="#waitlist"], .nav-waitlist-btn').forEach(el => {
+        el.addEventListener('click', e => {
+          e.preventDefault();
+          openModal();
+        });
+      });
+
+      // Close
+      modalClose.addEventListener('click', closeModal);
+      successCloseBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+      // Form submit
+      if (modalForm) {
+        modalForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          submitBtn.textContent = 'Joining...';
+          submitBtn.disabled = true;
+          const formData = new FormData(this);
+          fetch('https://formspree.io/f/mzdklpon', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          }).then(res => {
+            if (res.ok) {
+              formWrap.classList.add('hidden');
+              successView.classList.add('active');
+            } else {
+              submitBtn.textContent = 'Try again';
+              submitBtn.disabled = false;
+            }
+          }).catch(() => {
+            submitBtn.textContent = 'Try again';
+            submitBtn.disabled = false;
+          });
+        });
+      }
+
+      // Reset modal state on close
+      overlay.addEventListener('transitionend', () => {
+        if (!overlay.classList.contains('active')) {
+          formWrap.classList.remove('hidden');
+          successView.classList.remove('active');
+          submitBtn.textContent = 'Join the Waitlist';
+          submitBtn.disabled = false;
+          modalForm.reset();
+          platformField.value = 'Not specified';
+          document.querySelectorAll('.platform-btn').forEach(b => b.classList.remove('selected'));
+        }
+      });
     })();
   </script>
 </body>
