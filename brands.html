@@ -249,10 +249,11 @@
   /* SECTION COMMONS */
   section { position: relative; overflow: hidden; }
   .section-label {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--gold);
+    font-weight: 700;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -274,10 +275,10 @@
   .why-header { margin-bottom: 80px; }
   .why-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 6vw, 80px);
-    line-height: 1;
-    letter-spacing: 2px;
-    max-width: 700px;
+    font-size: clamp(52px, 6.5vw, 96px);
+    line-height: 0.95;
+    letter-spacing: 1px;
+    max-width: 760px;
     color: var(--ink);
   }
   .why .section-label { color: var(--gold); }
@@ -320,11 +321,11 @@
   .why-card:hover .why-num { opacity: 1; }
   .why-card-title {
     font-family: 'Syne', sans-serif;
-    font-size: 23px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 800;
     color: var(--ink);
     margin-bottom: 16px;
-    line-height: 1.2;
+    line-height: 1.15;
   }
   .why-card-desc {
     font-size: 16px;
@@ -342,9 +343,9 @@
   .how-brands-header { margin-bottom: 80px; }
   .how-brands-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 6vw, 80px);
-    line-height: 1;
-    letter-spacing: 2px;
+    font-size: clamp(52px, 6.5vw, 96px);
+    line-height: 0.95;
+    letter-spacing: 1px;
     color: var(--ink);
   }
   .steps-timeline {
@@ -395,8 +396,8 @@
   }
   .timeline-step-title {
     font-family: 'Syne', sans-serif;
-    font-size: 17px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 800;
     color: var(--ink);
     margin-bottom: 12px;
   }
@@ -422,10 +423,10 @@
   .wyg-left {}
   .wyg-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 5vw, 72px);
-    line-height: 1;
-    letter-spacing: 2px;
-    margin-bottom: 24px;
+    font-size: clamp(52px, 6vw, 88px);
+    line-height: 0.95;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
     color: var(--ink);
   }
   .what-you-get .section-label { color: var(--gold); }
@@ -521,8 +522,8 @@
   .wyg-item-content {}
   .wyg-item-title {
     font-family: 'Syne', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 800;
     color: var(--ink);
     margin-bottom: 8px;
   }
@@ -542,10 +543,10 @@
   .ct-header { margin-bottom: 80px; }
   .ct-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 6vw, 80px);
-    line-height: 1;
-    letter-spacing: 2px;
-    margin-bottom: 16px;
+    font-size: clamp(52px, 6.5vw, 96px);
+    line-height: 0.95;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
     color: var(--ink);
   }
   .ct-sub {
@@ -594,8 +595,8 @@
   .ct-card:hover .ct-duration { opacity: 1; }
   .ct-card-title {
     font-family: 'Syne', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 800;
     color: var(--ink);
     margin-bottom: 14px;
   }
@@ -641,10 +642,10 @@
   .contact-left {}
   .contact-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 6vw, 80px);
-    line-height: 1;
-    letter-spacing: 2px;
-    margin-bottom: 24px;
+    font-size: clamp(52px, 6.5vw, 96px);
+    line-height: 0.95;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
     color: var(--ink);
   }
   .contact-title span { color: var(--gold); }
@@ -713,6 +714,40 @@
     align-self: flex-start;
   }
   .form-submit:hover { background: #e8be5a; transform: translateY(-2px); }
+
+  /* CONTACT CTA BLOCK */
+  .contact-cta-block {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    justify-content: center;
+    height: 100%;
+    padding: 52px 48px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid var(--ink-border);
+  }
+  .contact-cta-quote {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.4;
+    font-style: italic;
+  }
+  .contact-cta-sub {
+    font-size: 16px;
+    color: var(--ink-dim);
+    font-weight: 400;
+    line-height: 1.7;
+  }
+  .contact-cta-btn {
+    align-self: flex-start;
+  }
+  .contact-cta-note {
+    font-size: 14px;
+    color: var(--ink-dimmer);
+    font-weight: 400;
+  }
 
   /* FOOTER */
   footer {
@@ -1210,8 +1245,8 @@
         <div class="contact-info-item">
           <div class="contact-info-icon">✉️</div>
           <div class="contact-info-text">
-            <strong>Email</strong>
-            <a href="mailto:hello@dedoer.com" style="color:var(--ink);text-decoration:none;">hello@dedoer.com</a>
+            <strong>Partnerships</strong>
+            <a href="mailto:partnerships@dedoer.com" style="color:var(--ink);text-decoration:none;">partnerships@dedoer.com</a>
           </div>
         </div>
         <div class="contact-info-item">
@@ -1231,43 +1266,11 @@
       </div>
     </div>
     <div class="contact-right reveal-right">
-      <div class="contact-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Brand Name</label>
-            <input type="text" placeholder="e.g. Chicken Republic">
-          </div>
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" placeholder="Full name">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Work Email</label>
-            <input type="email" placeholder="you@brand.com">
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="+234 000 000 0000">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Challenge Type</label>
-          <select>
-            <option value="">Select a challenge format</option>
-            <option>7 Day Challenge</option>
-            <option>14 Day Challenge</option>
-            <option>30 Day Challenge</option>
-            <option>Group Battle Sponsorship</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Tell Us About Your Campaign</label>
-          <textarea rows="5" placeholder="What are you trying to achieve? Who's your target audience? Any specific ideas?"></textarea>
-        </div>
-        <button class="form-submit" onclick="handleSubmit()">Sponsor a Challenge </button>
+      <div class="contact-cta-block">
+        <p class="contact-cta-quote">"The brands inside Doer don't advertise. They belong."</p>
+        <p class="contact-cta-sub">Tap below to fill out your sponsorship inquiry. Our team responds within 48 hours and we only move with brands that are serious.</p>
+        <a href="#" class="btn-primary contact-cta-btn" onclick="event.preventDefault();openSponsorModal()">Sponsor a Challenge</a>
+        <p class="contact-cta-note">Or reach us directly at <a href="mailto:partnerships@dedoer.com" style="color:var(--gold);font-weight:600;">partnerships@dedoer.com</a></p>
       </div>
     </div>
   </div>
@@ -1322,7 +1325,7 @@
         <textarea id="spMessage" class="sp-input sp-textarea" rows="4" placeholder="What are you trying to achieve? Who is your target audience?"></textarea>
       </div>
       <button class="sp-submit" id="spSubmitBtn" onclick="submitSponsorModal()">Send Inquiry</button>
-      <p class="sp-note">Sent directly to <a href="mailto:hello@dedoer.com" style="color:var(--gold);">hello@dedoer.com</a></p>
+      <p class="sp-note">Reach us at <a href="mailto:partnerships@dedoer.com" style="color:var(--gold);">partnerships@dedoer.com</a></p>
     </div>
     <div class="sp-success" id="spSuccess" style="display:none;">
       <div class="sp-success-icon">✓</div>
@@ -1359,7 +1362,7 @@
             <li><a href="brands.html">For Brands</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="delete-account.html">Delete Account</a></li>
-            <li><a href="mailto:hello@dedoer.com">Partnerships</a></li>
+            <li><a href="mailto:partnerships@dedoer.com">Partnerships</a></li>
           </ul>
         </div>
       </div>
@@ -1494,41 +1497,7 @@
     }
   }
 
-  // FORM SUBMIT
-  async function handleSubmit() {
-    const btn = document.querySelector('.form-submit');
-    const inputs = document.querySelectorAll('input, select, textarea');
-    let valid = true;
 
-    inputs.forEach(inp => {
-      if (!inp.value.trim()) { inp.style.borderColor = 'rgba(212,68,67,0.5)'; valid = false; }
-      else inp.style.borderColor = '';
-    });
-    if (!valid) return;
-
-    const brandName = document.querySelectorAll('input')[0].value;
-    const name = document.querySelectorAll('input')[1].value;
-    const email = document.querySelectorAll('input')[2].value;
-    const phone = document.querySelectorAll('input')[3].value;
-    const challengeType = document.querySelector('select').value;
-    const message = document.querySelector('textarea').value;
-
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-
-    try {
-      await fetch('https://formspree.io/f/mzdklpon', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          _subject: 'Brand Partnership Inquiry, Doer',
-          brand: brandName,
-          name,
-          email,
-          phone,
-          challengeType,
-          message
-        })
-      });
-      btn.textContent = 'Sent. We will be in touch within 48 hours.';
-      btn.style.background = 'rgba(212,16
+</script>
+</body>
+</html>
