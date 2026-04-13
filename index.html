@@ -256,41 +256,36 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(212, 168, 67, 0.1);
-      border: 1px solid rgba(212, 168, 67, 0.4);
-      padding: 10px 20px;
-      margin-bottom: 32px;
-      text-decoration: none;
+      background: #D4A843 !important;
+      border: none !important;
+      padding: 16px 28px;
+      margin-bottom: 40px;
+      text-decoration: none !important;
       opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.2s;
-      transition: all 0.3s ease;
+      animation: fadeUp 0.8s ease forwards 0.3s, goldPulse 3s ease-in-out infinite 3s;
+      transition: background 0.3s;
       cursor: none;
     }
 
     .hero-brands-badge:hover {
-      background: rgba(212, 168, 67, 0.2);
-      border-color: var(--gold);
+      background: #e8be5a;
     }
 
     .hero-brands-badge-dot {
-      width: 7px;
-      height: 7px;
-      background: var(--gold);
-      border-radius: 50%;
-      animation: livePulse 1.5s ease-in-out infinite;
+      display: none;
     }
 
     .hero-brands-badge-text {
-      font-size: 12px;
-      letter-spacing: 2px;
+      font-size: 13px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
+      color: #0D0D0D !important;
+      font-weight: 800;
+      font-family: 'Cabinet Grotesk', sans-serif;
     }
 
     .hero-brands-badge-arrow {
-      font-size: 14px;
-      color: var(--gold);
+      display: none;
     }
 
     .hero-eyebrow {
@@ -357,10 +352,58 @@
       line-height: 1.7;
       color: var(--white-dim);
       max-width: 520px;
-      margin-bottom: 48px;
+      margin-bottom: 28px;
       opacity: 0;
       animation: fadeUp 0.8s ease forwards 1.5s;
       font-weight: 400;
+    }
+
+    .hero-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 1.6s;
+    }
+
+    .hero-counter-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      color: var(--gold);
+      line-height: 1;
+      letter-spacing: 2px;
+    }
+
+    .hero-counter-label {
+      font-size: 13px;
+      color: var(--white-dimmer);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-launching {
+      font-size: 11px;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.1s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-launching::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: livePulse 1.5s ease-in-out infinite;
     }
 
     .hero-cta {
@@ -427,13 +470,46 @@
       transform: translateX(4px);
     }
 
-    
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 2.2s;
+    }
 
-    
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
 
-    
+    @keyframes scrollPulse {
 
-    
+      0%,
+      100% {
+        opacity: 0.3;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .scroll-text {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      writing-mode: vertical-rl;
+      font-weight: 700;
+    }
 
     @keyframes fadeUp {
       from {
@@ -628,36 +704,33 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(212, 168, 67, 0.15);
     }
 
     .feature-card {
-      background: var(--dark);
+      background: #161616;
       padding: 48px 36px;
       transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
+      border-top: 2px solid var(--gold);
     }
 
     .feature-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-      transform-origin: left;
+      inset: 0;
+      background: rgba(212, 168, 67, 0.04);
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
     .feature-card:hover::before {
-      transform: scaleX(1);
+      opacity: 1;
     }
 
     .feature-card:hover {
-      background: rgba(212, 168, 67, 0.03);
+      background: #1a1a1a;
     }
 
     .feature-icon {
@@ -671,7 +744,7 @@
       font-size: 19px;
       font-weight: 700;
       margin-bottom: 12px;
-      color: var(--white);
+      color: var(--gold);
     }
 
     .feature-desc {
@@ -1384,20 +1457,263 @@
       cursor: none;
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    /* WAITLIST */
+    .waitlist {
+      padding: 160px 48px;
+      background: var(--dark);
+      text-align: center;
+      position: relative;
+    }
+
+    .waitlist-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1800&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.06;
+    }
+
+    .waitlist-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212, 168, 67, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .waitlist-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .waitlist-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(60px, 8vw, 110px);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .waitlist-title span {
+      color: var(--gold);
+    }
+
+    .waitlist-sub {
+      font-size: 18px;
+      color: var(--white-dim);
+      font-weight: 400;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    .waitlist-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto 20px;
+    }
+
+    .waitlist-input {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-right: none;
+      color: var(--white);
+      padding: 16px 20px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .waitlist-input::placeholder {
+      color: var(--white-dimmer);
+    }
+
+    .waitlist-input:focus {
+      border-color: rgba(212, 168, 67, 0.5);
+    }
+
+    .waitlist-submit {
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      padding: 16px 28px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: none;
+      transition: background 0.3s;
+      white-space: nowrap;
+      animation: goldPulse 3s ease-in-out infinite;
+    }
+
+    .waitlist-submit:hover {
+      background: #e8be5a;
+    }
+
+    .waitlist-note {
+      font-size: 13px;
+      color: var(--white-dimmer);
+      font-weight: 400;
+    }
+
+    .waitlist-counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 36px;
+      padding: 14px 28px;
+      border: 1px solid rgba(212, 168, 67, 0.2);
+      background: rgba(212, 168, 67, 0.05);
+      display: inline-flex;
+    }
+
+    .waitlist-counter-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      color: var(--gold);
+      line-height: 1;
+      letter-spacing: 2px;
+    }
+
+    .waitlist-counter-label {
+      font-size: 13px;
+      color: var(--white-dim);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 140px 48px;
+      background: var(--dark-2);
+    }
+
+    .faq-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-header {
+      margin-bottom: 72px;
+    }
+
+    .faq-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 6vw, 80px);
+      line-height: 1;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .faq-sub {
+      font-size: 17px;
+      color: var(--white-dim);
+      font-weight: 400;
+      max-width: 500px;
+      line-height: 1.7;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .faq-item {
+      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.02);
+      transition: all 0.3s ease;
+    }
+
+    .faq-item.open {
+      background: rgba(212,168,67,0.04);
+      border-color: rgba(212,168,67,0.2);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      cursor: none;
+      text-align: left;
+    }
+
+    .faq-question-text {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      transition: color 0.3s;
+    }
+
+    .faq-item.open .faq-question-text {
+      color: var(--gold);
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(212,168,67,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+      color: var(--gold);
+      transition: transform 0.3s ease;
+      font-weight: 300;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 32px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+      padding: 0 32px 28px;
+    }
+
+    .faq-answer p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--white-dim);
+      font-weight: 400;
+    }
+
+    .faq-tag {
+      display: inline-block;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(212,168,67,0.3);
+      padding: 3px 8px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
     /* FOOTER */
     footer {
       background: #080808;
@@ -1417,6 +1733,146 @@
       margin-bottom: 48px;
       padding-bottom: 48px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* BRANDS CTA SECTION */
+    .brands-cta {
+      padding: 120px 48px;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brands-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(212,168,67,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .brands-cta-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212,168,67,0.5), transparent);
+    }
+
+    .brands-cta-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .brands-cta-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+
+    .brands-cta-label::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .brands-cta-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(44px, 5.5vw, 76px);
+      line-height: 1;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .brands-cta-title span {
+      color: var(--gold);
+    }
+
+    .brands-cta-sub {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--white-dim);
+      max-width: 560px;
+      font-weight: 400;
+    }
+
+    .brands-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold) !important;
+      color: var(--dark) !important;
+      border: none;
+      padding: 16px 28px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none !important;
+      white-space: nowrap;
+      cursor: none;
+      transition: background 0.3s;
+      animation: goldPulse 3s ease-in-out infinite;
+    }
+
+    .brands-cta-btn:hover {
+      background: #e8be5a !important;
+      color: var(--dark) !important;
+    }
+
+    .brands-cta-btn-arrow {
+      font-size: 14px;
+    }
+
+    .brands-cta-perks {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    .brands-cta-perk {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--white-dimmer);
+      font-weight: 500;
+    }
+
+    .brands-cta-perk-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .brands-cta-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .brands-cta-btn {
+        align-self: flex-start;
+      }
+      .brands-cta-perks {
+        flex-direction: column;
+        gap: 16px;
+      }
     }
 
     .footer-brand {
@@ -1508,7 +1964,7 @@
     .reveal {
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .reveal.visible {
@@ -1519,7 +1975,7 @@
     .reveal-left {
       opacity: 0;
       transform: translateX(-40px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .reveal-left.visible {
@@ -1530,12 +1986,37 @@
     .reveal-right {
       opacity: 0;
       transform: translateX(40px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .reveal-right.visible {
       opacity: 1;
       transform: translateX(0);
+    }
+
+    /* TOASTS */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 32px;
+      background: #1a1a1a;
+      border: 1px solid rgba(212, 168, 67, 0.35);
+      color: var(--white);
+      padding: 14px 20px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      z-index: 99997;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      max-width: 320px;
+      pointer-events: none;
+    }
+
+    .toast.toast-show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .delay-1 {
@@ -1622,138 +2103,79 @@
         padding: 60px 20px 40px;
       }
     }
-
-    /* HOW-IT-WORKS GOLD CARD */
-    .how-step.gold-card { background: var(--gold); border-color: var(--gold); }
-    .how-step.gold-card .step-num { color: rgba(13,13,13,0.18); }
-    .how-step.gold-card .step-icon { border-color: rgba(13,13,13,0.3); }
-    .how-step.gold-card .step-title { color: var(--dark); }
-    .how-step.gold-card .step-desc { color: rgba(13,13,13,0.7); }
-    .how-step.gold-card:hover { background: #e8c14d; border-color: #e8c14d; }
-
-    /* SOCIAL PROOF TOASTS */
-    .toast-container {
-      position: fixed;
-      bottom: 24px;
-      left: 24px;
-      z-index: 9000;
-      pointer-events: none;
-      display: flex;
-      flex-direction: column-reverse;
-      gap: 10px;
-      width: 300px;
-    }
-
-    .sp-toast {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: rgba(13,13,13,0.93);
-      border: 1px solid rgba(212,168,67,0.28);
-      backdrop-filter: blur(20px);
-      padding: 12px 16px;
-      border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.55);
-      pointer-events: none;
-      width: 100%;
-    }
-
-    .sp-avatar {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: var(--gold); color: var(--dark);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px; font-weight: 800;
-      font-family: 'Bebas Neue', sans-serif; flex-shrink: 0;
-    }
-
-    .sp-text { flex: 1; min-width: 0; }
-    .sp-name { font-size: 13px; font-weight: 700; color: var(--white); font-family: 'Cabinet Grotesk', sans-serif; }
-    .sp-action { font-size: 12px; color: rgba(245,240,232,0.58); font-family: 'Cabinet Grotesk', sans-serif; line-height: 1.4; margin-top: 1px; }
-    .sp-icon { font-size: 18px; flex-shrink: 0; }
-    .sp-live { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; animation: livePulse 1.5s ease-in-out infinite; }
-
-    @media (max-width: 600px) {
-      .toast-container { width: calc(100vw - 48px); }
-    }
-
     /* WAITLIST MODAL */
-    .modal-overlay {
+    .wl-modal {
       position: fixed;
       inset: 0;
-      z-index: 10000;
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(8px);
+      background: rgba(0,0,0,0.85);
+      z-index: 99999;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.35s ease;
+      transition: opacity 0.3s ease;
+      padding: 20px;
     }
-    .modal-overlay.active {
+
+    .wl-modal.active {
       opacity: 1;
       pointer-events: all;
     }
-    .modal-box {
-      background: #111;
+
+    .wl-modal-box {
+      background: #111111;
       border: 1px solid rgba(212,168,67,0.25);
-      border-radius: 20px;
       padding: 48px 44px;
-      width: 100%;
       max-width: 480px;
+      width: 100%;
       position: relative;
-      transform: translateY(24px) scale(0.97);
-      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-      box-shadow: 0 40px 100px rgba(0,0,0,0.8), 0 0 60px rgba(212,168,67,0.05);
+      transform: translateY(24px);
+      transition: transform 0.3s ease;
     }
-    .modal-overlay.active .modal-box {
-      transform: translateY(0) scale(1);
+
+    .wl-modal.active .wl-modal-box {
+      transform: translateY(0);
     }
-    .modal-close {
+
+    .wl-modal-close {
       position: absolute;
-      top: 18px; right: 20px;
+      top: 16px;
+      right: 20px;
       background: none;
       border: none;
-      color: rgba(245,240,232,0.35);
-      font-size: 22px;
-      cursor: pointer;
-      line-height: 1;
+      color: var(--white-dimmer);
+      font-size: 18px;
+      cursor: none;
       transition: color 0.2s;
-      font-family: 'Cabinet Grotesk', sans-serif;
     }
-    .modal-close:hover { color: var(--white); }
-    .modal-eyebrow {
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
+
+    .wl-modal-close:hover {
+      color: var(--white);
     }
-    .modal-eyebrow::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: var(--gold);
+
+    .wl-modal-emoji {
+      font-size: 36px;
+      margin-bottom: 16px;
     }
-    .modal-title {
+
+    .wl-modal-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 52px;
-      line-height: 0.95;
+      font-size: 36px;
       letter-spacing: 2px;
       color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .wl-modal-desc {
+      font-size: 15px;
+      color: var(--white-dim);
+      line-height: 1.7;
       margin-bottom: 28px;
+      font-weight: 400;
     }
-    .modal-title span { color: var(--gold); }
-    .modal-field {
-      margin-bottom: 14px;
-    }
-    .modal-input {
+
+    .wl-input {
       width: 100%;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
@@ -1761,52 +2183,59 @@
       padding: 14px 18px;
       font-family: 'Cabinet Grotesk', sans-serif;
       font-size: 15px;
-      border-radius: 10px;
       outline: none;
+      margin-bottom: 4px;
       transition: border-color 0.3s;
     }
-    .modal-input::placeholder { color: rgba(245,240,232,0.35); }
-    .modal-input:focus { border-color: rgba(212,168,67,0.5); }
-    .modal-platform-label {
+
+    .wl-input:focus {
+      border-color: rgba(212,168,67,0.5);
+    }
+
+    .wl-error {
       font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(245,240,232,0.5);
-      font-weight: 700;
-      margin-bottom: 10px;
+      color: #e05c5c;
+      margin-bottom: 14px;
+      display: none;
     }
-    .modal-platform-btns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
+
+    .wl-error.visible {
+      display: block;
     }
-    .platform-btn {
-      background: rgba(255,255,255,0.04);
+
+    .wl-platform-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .wl-platform-row input[type="radio"] {
+      display: none;
+    }
+
+    .wl-platform-label {
+      flex: 1;
       border: 1px solid rgba(255,255,255,0.1);
-      color: rgba(245,240,232,0.6);
-      padding: 12px 16px;
-      border-radius: 10px;
-      font-family: 'Cabinet Grotesk', sans-serif;
+      padding: 12px;
+      text-align: center;
       font-size: 14px;
       font-weight: 600;
-      cursor: pointer;
+      color: var(--white-dim);
+      cursor: none;
+      transition: all 0.2s;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      transition: all 0.25s ease;
     }
-    .platform-btn:hover {
-      border-color: rgba(212,168,67,0.4);
-      color: var(--white);
-    }
-    .platform-btn.selected {
-      background: rgba(212,168,67,0.12);
+
+    .wl-platform-row input[type="radio"]:checked + .wl-platform-label {
       border-color: var(--gold);
       color: var(--gold);
+      background: rgba(212,168,67,0.08);
     }
-    .modal-submit {
+
+    .wl-submit {
       width: 100%;
       background: var(--gold);
       color: var(--dark);
@@ -1815,76 +2244,42 @@
       font-family: 'Cabinet Grotesk', sans-serif;
       font-size: 13px;
       font-weight: 800;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s, opacity 0.3s;
-      animation: goldPulse 3s ease-in-out infinite;
+      cursor: none;
+      margin-top: 20px;
+      transition: background 0.3s;
     }
-    .modal-submit:hover { background: #e8be5a; }
-    .modal-submit:disabled { opacity: 0.6; cursor: not-allowed; animation: none; }
 
-    /* SUCCESS SCREEN */
-    .modal-success {
-      display: none;
-      text-align: center;
+    .wl-submit:hover {
+      background: #e8be5a;
     }
-    .modal-success.active { display: block; }
-    .modal-form-wrap.hidden { display: none; }
-    .success-icon {
-      width: 64px; height: 64px;
-      background: rgba(212,168,67,0.12);
-      border: 1px solid rgba(212,168,67,0.3);
+
+    .wl-success {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .wl-success-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(212,168,67,0.15);
+      border: 1px solid var(--gold);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      font-size: 24px;
+      color: var(--gold);
       margin: 0 auto 24px;
     }
-    .success-headline {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 58px;
-      line-height: 0.95;
-      letter-spacing: 2px;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
-    .success-headline span { color: var(--gold); }
-    .success-body {
-      font-size: 16px;
-      color: rgba(245,240,232,0.65);
-      line-height: 1.75;
-      font-weight: 400;
-      max-width: 360px;
-      margin: 0 auto 32px;
-    }
-    .success-body strong { color: var(--white); font-weight: 700; }
-    .success-close-btn {
-      background: transparent;
-      border: 1px solid rgba(212,168,67,0.35);
-      color: var(--gold);
-      padding: 13px 32px;
-      border-radius: 10px;
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .success-close-btn:hover {
-      background: rgba(212,168,67,0.1);
-      border-color: var(--gold);
+
+    @media (max-width: 520px) {
+      .wl-modal-box {
+        padding: 36px 24px;
+      }
     }
 
-    @media (max-width: 600px) {
-      .modal-box { padding: 36px 24px; }
-      .modal-title { font-size: 42px; }
-      .success-headline { font-size: 46px; }
-    }
   </style>
 </head>
 
@@ -1893,52 +2288,6 @@
   <canvas id="underwater-canvas"></canvas>
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
-  <div class="toast-container" id="toastContainer"></div>
-
-  <!-- WAITLIST MODAL -->
-  <div class="modal-overlay" id="waitlistModal">
-    <div class="modal-box">
-      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
-
-      <!-- FORM VIEW -->
-      <div class="modal-form-wrap" id="modalFormWrap">
-        <div class="modal-eyebrow">Early Access</div>
-        <div class="modal-title">Your <span>Streak</span><br>Starts Now.</div>
-
-        <form id="modalForm" action="https://formspree.io/f/mzdklpon" method="POST">
-          <div class="modal-field">
-            <input type="text" name="name" class="modal-input" placeholder="Your name" required>
-          </div>
-          <div class="modal-field">
-            <input type="email" name="email" class="modal-input" placeholder="Your email address" required>
-          </div>
-          <input type="hidden" name="_subject" value="New Doer Waitlist Signup 🚀">
-          <input type="hidden" name="platform" id="platformField" value="Not specified">
-
-          <div class="modal-platform-label">Which phone are you on?</div>
-          <div class="modal-platform-btns">
-            <button type="button" class="platform-btn" data-platform="iPhone">🍎 iPhone</button>
-            <button type="button" class="platform-btn" data-platform="Android">🤖 Android</button>
-          </div>
-
-          <button type="submit" class="modal-submit" id="modalSubmitBtn">Join the Waitlist</button>
-        </form>
-      </div>
-
-      <!-- SUCCESS VIEW -->
-      <div class="modal-success" id="modalSuccess">
-        <div class="success-icon">🏅</div>
-        <div class="success-headline">Welcome to<br>the <span>Movement.</span></div>
-        <p class="success-body">
-          <strong>You're in.</strong> Thank you for joining the Doer waitlist. We're building something you're going to love — and you'll be among the first to experience it.<br><br>
-          iOS is coming very soon. We'll notify you the moment it drops.
-        </p>
-        <button class="success-close-btn" id="successCloseBtn">Got it →</button>
-      </div>
-
-    </div>
-  </div>
-
 
   <nav id="navbar">
     <a href="/" class="nav-left">
@@ -1950,7 +2299,7 @@
       <li><a href="#features">Features</a></li>
       <li><a href="#challenges">Challenges</a></li>
       <li><a href="brands.html" class="nav-brand-btn"><span>For Brands →</span></a></li>
-      <li><a href="#waitlist" class="nav-waitlist-btn">Join Waitlist</a></li>
+      <li><a href="#" class="nav-waitlist-btn" onclick="event.preventDefault();openWaitlistModal()">Join Waitlist</a></li>
     </ul>
   </nav>
 
@@ -1959,22 +2308,29 @@
     <div class="hero-gradient"></div>
     <div class="hero-glow"></div>
     <div class="hero-content">
+      <p class="hero-launching">Launching soon</p>
       <a href="brands.html" class="hero-brands-badge">
         <div class="hero-brands-badge-dot"></div>
-        <span class="hero-brands-badge-text">For Brands — Sponsor a Challenge</span>
-        <span class="hero-brands-badge-arrow">→</span>
+        <span class="hero-brands-badge-text">Are you a brand? Click here →</span>
       </a>
       <div class="hero-eyebrow">The Fitness Revolution</div>
       <h1 class="hero-headline">
         <span class="word">Get&nbsp;</span><span class="word">Paid&nbsp;</span><span class="word">to&nbsp;</span><span
           class="word">Get&nbsp;</span><span class="word">Fit.</span>
       </h1>
-      <p class="hero-sub">Doer is the app where top brands sponsor your fitness goals — and reward you for hitting them.
-      </p>
+      <p class="hero-sub">Doer is the app where top brands sponsor your fitness goals and reward you for hitting them.</p>
+      <div class="hero-counter">
+        <span class="hero-counter-num" id="waitlistCount">412</span>
+        <span class="hero-counter-label">people already on the waitlist</span>
+      </div>
       <div class="hero-cta">
-        <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+        <a href="#waitlist" class="btn-primary" onclick="event.preventDefault();openWaitlistModal()">Join the Waitlist</a>
         <a href="#how" class="btn-secondary">See how it works <span class="arrow">→</span></a>
       </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span class="scroll-text">scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
@@ -2357,6 +2713,123 @@
     </div>
   </section>
 
+  <section class="brands-cta" id="brands">
+    <div class="brands-cta-border"></div>
+    <div class="brands-cta-inner">
+      <div class="brands-cta-left">
+        <div class="brands-cta-label">For Brands</div>
+        <h2 class="brands-cta-title">Are You a<br><span>Brand?</span></h2>
+        <p class="brands-cta-sub">Sponsor walking challenges. Put your logo in front of thousands of active Nigerians. Pay only for real movement — not impressions.</p>
+        <div class="brands-cta-perks">
+          <div class="brands-cta-perk"><div class="brands-cta-perk-dot"></div>Performance-based sponsorship</div>
+          <div class="brands-cta-perk"><div class="brands-cta-perk-dot"></div>Real engagement, not ads</div>
+          <div class="brands-cta-perk"><div class="brands-cta-perk-dot"></div>Limited brand slots</div>
+        </div>
+      </div>
+      <div>
+        <button class="waitlist-submit" onclick="window.location.href='brands.html'">Click Here if You Are a Brand →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="faq-inner">
+      <div class="faq-header reveal">
+        <div class="section-label">FAQ</div>
+        <h2 class="faq-title">Questions.<br><span style="color:var(--gold)">Answered.</span></h2>
+        <p class="faq-sub">Everything you need to know before you start moving.</p>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item reveal">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-question-text">Is Doer free to use?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Doer is completely free to download and use. Brands fund the rewards — you just show up and move.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-question-text">How do I actually get paid — is it real money?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, real rewards. When you complete a challenge, you earn vouchers and prizes from the brand that sponsored it. Redeemable in the real world, not points on a screen.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-question-text">How does Doer track my steps?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Doer connects to your phone's built-in health data — Apple Health on iPhone and Google Fit on Android — only when you give permission. No extra hardware needed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-question-text">When is Doer launching?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We are launching soon. Join the waitlist and you will be the first to know when we go live in your city.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-question-text">What cities and countries is Doer available in?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Doer is launching first in Nigeria. Abuja and Lagos are our first cities. More cities and countries will follow as we grow.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-question-text">Is my data safe?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Your personal data and health information are never sold to anyone. Brands see campaign performance only — steps logged, challenge completions, and redemptions. Never your personal details.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <div>
+              <div class="faq-tag">For Brands</div>
+              <div class="faq-question-text">How much does it cost to sponsor a challenge?</div>
+            </div>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sponsorship is structured around your campaign goals and audience size. Get in touch and we will build a package that fits.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <div>
+              <div class="faq-tag">For Brands</div>
+              <div class="faq-question-text">How do we measure ROI?</div>
+            </div>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You get a real-time dashboard — steps logged, challenge completions, redemptions, and reach. Every naira tracked.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="footer-inner">
@@ -2384,8 +2857,14 @@
             <ul>
               <li><a href="brands.html">For Brands</a></li>
               <li><a href="/privacy.html">Privacy Policy</a></li>
-              <li><a href="/cdn-cgi/l/email-protection#52212722223d2026123637363d37207c313d3f">Contact Us</a></li>
-              <li><a href="/cdn-cgi/l/email-protection#e1918093958f84939289889192a18584858e8493cf828e8c">Partnerships</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#2f5c5a5f5f405d5b6f4b4a4b404a5d014c4042">Contact Us</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#7b0b1a090f151e090813120b083b1f1e1f141e0955181416">Partnerships</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <ul>
+              <li><a href="https://instagram.com/doers.app" target="_blank">Instagram</a></li>
             </ul>
           </div>
         </div>
@@ -2397,7 +2876,40 @@
     </div>
   </footer>
 
-<script>
+  <!-- WAITLIST MODAL -->
+  <div class="wl-modal" id="wlModal" onclick="if(event.target===this)closeWaitlistModal()">
+    <div class="wl-modal-box">
+      <button class="wl-modal-close" onclick="closeWaitlistModal()">✕</button>
+      <div id="wlFormWrap">
+        <div class="wl-modal-emoji">🔥</div>
+        <h3 class="wl-modal-title">Get Early Access</h3>
+        <p class="wl-modal-desc">Android is live. iOS is coming soon. Drop your details and we will notify you the moment your platform drops.</p>
+        <input type="text" id="wlName" class="wl-input" placeholder="Your name">
+        <div class="wl-error" id="wlNameErr">Please enter your name.</div>
+        <input type="email" id="wlEmail" class="wl-input" placeholder="Your email address">
+        <div class="wl-error" id="wlEmailErr">Please enter a valid email.</div>
+        <div class="wl-platform-row">
+          <input type="radio" id="wlAndroid" name="wlPlatform" value="Android">
+          <label for="wlAndroid" class="wl-platform-label">
+            <span class="wl-platform-icon">🤖</span> Android
+          </label>
+          <input type="radio" id="wlIos" name="wlPlatform" value="iOS">
+          <label for="wlIos" class="wl-platform-label">
+            <span class="wl-platform-icon"></span> iOS
+          </label>
+        </div>
+        <div class="wl-error" id="wlPlatErr">Please select your device.</div>
+        <button class="wl-submit" onclick="submitWaitlistModal()">Notify Me →</button>
+      </div>
+      <div class="wl-success" id="wlSuccess" style="display:none;">
+        <div class="wl-success-icon">✓</div>
+        <h3 class="wl-modal-title">You are in.</h3>
+        <p class="wl-modal-desc" id="wlSuccessMsg">We will notify you the moment Doer goes live.</p>
+      </div>
+    </div>
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // UNDERWATER ANIMATION
     const canvas = document.getElementById('underwater-canvas');
     const ctx = canvas.getContext('2d');
@@ -2489,212 +3001,101 @@
     window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', scrollY > 50));
 
     // REVEAL
-    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible');
-    }), { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.15 });
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
 
-    // WAITLIST FORM
-    const waitlistForm = document.querySelector('.waitlist-form');
-    const successMsg = document.getElementById('successMsg');
-    if (waitlistForm) {
-      waitlistForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const btn = this.querySelector('.waitlist-submit');
-        const formData = new FormData(this);
-        btn.textContent = 'Submitting...';
-        btn.style.opacity = '0.7';
-        fetch('https://formspree.io/f/mzdklpon', {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        }).then(res => {
-          if (res.ok) {
-            btn.textContent = "You're on the list!";
-            btn.style.background = '#4ade80';
-            btn.style.color = '#0D0D0D';
-            btn.style.opacity = '1';
-            waitlistForm.querySelector('input[type="text"]').value = '';
-            waitlistForm.querySelector('input[type="email"]').value = '';
-            setTimeout(() => { successMsg.classList.add('visible'); }, 400);
-          } else {
-            btn.textContent = 'Try again';
-            btn.style.opacity = '1';
-          }
-        }).catch(() => {
-          btn.textContent = 'Try again';
-          btn.style.opacity = '1';
-        });
-      });
+    // TOASTS
+    const toasts = [
+      "Chidi from Lagos just earned ₦1,500 🎉",
+      "Amaka completed the Chicken Republic 10K ✅",
+      "Tunde hit 50,000 steps this week 🔥",
+      "Ngozi just joined the waitlist 👟",
+      "REA vs NNPC battle is LIVE ⚡",
+      "Emeka redeemed a Chicken Republic voucher 🍗",
+    ];
+    let toastIdx = 0;
+    function showToast() {
+      const t = document.createElement('div');
+      t.className = 'toast';
+      t.textContent = toasts[toastIdx % toasts.length];
+      toastIdx++;
+      document.body.appendChild(t);
+      setTimeout(() => t.classList.add('toast-show'), 100);
+      setTimeout(() => { t.classList.remove('toast-show'); setTimeout(() => t.remove(), 500); }, 4000);
     }
-
-    // SOCIAL PROOF TOASTS
-    (function () {
-      const events = [
-        { name: 'Tunde', init: 'T', action: 'just hit 10,000 steps today', icon: '👣' },
-        { name: 'Femi', init: 'F', action: 'joined the Chicken Republic Challenge', icon: '🍗' },
-        { name: 'Tolu', init: 'T', action: 'is on a 5-day streak', icon: '🔥' },
-        { name: 'Amaka', init: 'A', action: 'unlocked the Gold Streak badge', icon: '🏅' },
-        { name: 'Emeka', init: 'E', action: 'hit #1 on the leaderboard', icon: '👑' },
-        { name: 'Sade', init: 'S', action: 'walked 15,000 steps before noon', icon: '👣' },
-        { name: 'Chidi', init: 'C', action: 'redeemed a Chicken Republic voucher', icon: '🎁' },
-        { name: 'Ngozi', init: 'N', action: 'joined the Access Bank Challenge', icon: '🏦' },
-        { name: 'Dayo', init: 'D', action: 'is on a 14-day streak', icon: '🏆' },
-        { name: 'Kemi', init: 'K', action: 'invited 3 friends to Doer', icon: '👥' },
-        { name: 'Bola', init: 'B', action: 'just passed 100,000 lifetime steps', icon: '💎' },
-        { name: 'Aisha', init: 'A', action: 'earned her first real reward', icon: '💰' },
-        { name: 'Seun', init: 'S', action: 'hit a personal best — 22,400 steps', icon: '🚀' },
-        { name: 'Nnamdi', init: 'N', action: 'started a group battle in Abuja', icon: '⚔️' },
-        { name: 'Taiwo', init: 'T', action: 'is ranked #3 in Lagos this week', icon: '📊' },
-        { name: 'Adaeze', init: 'A', action: 'challenged her run club to a step war', icon: '⚔️' },
-        { name: 'Halima', init: 'H', action: 'reached 50,000 total steps', icon: '🎉' },
-        { name: 'Temi', init: 'T', action: 'logged her morning 8k run', icon: '🏃' },
-        { name: 'Rotimi', init: 'R', action: 'walked every day this month', icon: '💯' },
-        { name: 'Brian', init: 'B', action: 'is competing in a group challenge', icon: '⚔️' },
-        { name: 'Zara', init: 'Z', action: 'topped the monthly leaderboard', icon: '🏆' },
-        { name: 'Kunle', init: 'K', action: 'completed his 7-day challenge streak', icon: '✅' },
-      ];
-
-      const container = document.getElementById('toastContainer');
-      let queue = [...events].sort(() => Math.random() - 0.5);
-      let queueIndex = 0;
-      let activeToasts = [];
-      const MAX_VISIBLE = 3;
-
-      function shuffle() { queue = [...events].sort(() => Math.random() - 0.5); queueIndex = 0; }
-      function nextEvent() { if (queueIndex >= queue.length) shuffle(); return queue[queueIndex++]; }
-
-      function showToast() {
-        if (activeToasts.length >= MAX_VISIBLE) return;
-        const ev = nextEvent();
-
-        const toast = document.createElement('div');
-        toast.className = 'sp-toast';
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateX(-110%)';
-        toast.style.transition = 'opacity 0.45s ease, transform 0.45s cubic-bezier(0.16,1,0.3,1)';
-
-        toast.innerHTML = `
-          <div class="sp-avatar">${ev.init}</div>
-          <div class="sp-text">
-            <div class="sp-name">${ev.name}</div>
-            <div class="sp-action">${ev.action}</div>
-          </div>
-          <div class="sp-icon">${ev.icon}</div>
-          <div class="sp-live"></div>
-        `;
-
-        container.appendChild(toast);
-        activeToasts.push(toast);
-
-        requestAnimationFrame(() => requestAnimationFrame(() => {
-          toast.style.opacity = '1';
-          toast.style.transform = 'translateX(0)';
-        }));
-
-        const holdTime = 3500 + Math.random() * 1500;
-        setTimeout(() => {
-          toast.style.opacity = '0';
-          toast.style.transform = 'translateX(-110%)';
-          setTimeout(() => {
-            toast.remove();
-            activeToasts = activeToasts.filter(t => t !== toast);
-          }, 450);
-        }, holdTime);
-      }
-
-      setTimeout(() => {
-        showToast();
-        function scheduleNext() {
-          const delay = 2000 + Math.random() * 2500;
-          setTimeout(() => { showToast(); scheduleNext(); }, delay);
-        }
-        scheduleNext();
-      }, 1500);
-    })();
+    setTimeout(() => { showToast(); setInterval(showToast, 7000); }, 3000);
 
     // WAITLIST MODAL
-    (function() {
-      const overlay = document.getElementById('waitlistModal');
-      const modalClose = document.getElementById('modalClose');
-      const successCloseBtn = document.getElementById('successCloseBtn');
-      const formWrap = document.getElementById('modalFormWrap');
-      const successView = document.getElementById('modalSuccess');
-      const platformField = document.getElementById('platformField');
-      const submitBtn = document.getElementById('modalSubmitBtn');
-      const modalForm = document.getElementById('modalForm');
+    const countEl = document.getElementById('waitlistCount');
+    let currentCount = parseInt(sessionStorage.getItem('doerCount') || '412');
+    countEl.textContent = currentCount.toLocaleString();
 
-      // Platform selection
-      document.querySelectorAll('.platform-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.platform-btn').forEach(b => b.classList.remove('selected'));
-          btn.classList.add('selected');
-          platformField.value = btn.dataset.platform;
+    function openWaitlistModal() {
+      document.getElementById('wlModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeWaitlistModal() {
+      document.getElementById('wlModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    async function submitWaitlistModal() {
+      const name = document.getElementById('wlName').value.trim();
+      const email = document.getElementById('wlEmail').value.trim();
+      const platform = document.querySelector('input[name="wlPlatform"]:checked');
+
+      const nameErr = document.getElementById('wlNameErr');
+      const emailErr = document.getElementById('wlEmailErr');
+      const platErr = document.getElementById('wlPlatErr');
+
+      let valid = true;
+      nameErr.classList.remove('visible');
+      emailErr.classList.remove('visible');
+      platErr.classList.remove('visible');
+
+      if (!name) { nameErr.classList.add('visible'); valid = false; }
+      if (!email || !email.includes('@')) { emailErr.classList.add('visible'); valid = false; }
+      if (!platform) { platErr.classList.add('visible'); valid = false; }
+      if (!valid) return;
+
+      const btn = document.querySelector('.wl-submit');
+      btn.textContent = 'Joining...';
+      btn.disabled = true;
+
+      try {
+        await fetch('https://formspree.io/f/mzdklpon', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, platform: platform.value, _subject: 'New Doer Waitlist Signup 🚀' })
         });
-      });
 
-      function openModal() {
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        currentCount++;
+        sessionStorage.setItem('doerCount', currentCount);
+        countEl.textContent = currentCount.toLocaleString();
+
+        document.getElementById('wlFormWrap').style.display = 'none';
+        document.getElementById('wlSuccess').style.display = 'block';
+
+        const isIos = platform.value === 'iOS';
+        document.getElementById('wlSuccessMsg').textContent = isIos
+          ? 'iOS is coming soon. We will notify you the moment it drops on the App Store.'
+          : 'We will notify you the moment Doer goes live on Android.';
+
+      } catch {
+        btn.textContent = 'Try Again';
+        btn.disabled = false;
       }
+    }
 
-      function closeModal() {
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      }
+    // FAQ
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
 
-      // Open on all waitlist CTA clicks
-      document.querySelectorAll('a[href="#waitlist"], .nav-waitlist-btn').forEach(el => {
-        el.addEventListener('click', e => {
-          e.preventDefault();
-          openModal();
-        });
-      });
-
-      // Close
-      modalClose.addEventListener('click', closeModal);
-      successCloseBtn.addEventListener('click', closeModal);
-      overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-      // Form submit
-      if (modalForm) {
-        modalForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          submitBtn.textContent = 'Joining...';
-          submitBtn.disabled = true;
-          const formData = new FormData(this);
-          fetch('https://formspree.io/f/mzdklpon', {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-          }).then(res => {
-            if (res.ok) {
-              formWrap.classList.add('hidden');
-              successView.classList.add('active');
-            } else {
-              submitBtn.textContent = 'Try again';
-              submitBtn.disabled = false;
-            }
-          }).catch(() => {
-            submitBtn.textContent = 'Try again';
-            submitBtn.disabled = false;
-          });
-        });
-      }
-
-      // Reset modal state on close
-      overlay.addEventListener('transitionend', () => {
-        if (!overlay.classList.contains('active')) {
-          formWrap.classList.remove('hidden');
-          successView.classList.remove('active');
-          submitBtn.textContent = 'Join the Waitlist';
-          submitBtn.disabled = false;
-          modalForm.reset();
-          platformField.value = 'Not specified';
-          document.querySelectorAll('.platform-btn').forEach(b => b.classList.remove('selected'));
-        }
-      });
-    })();
   </script>
 </body>
 </html>

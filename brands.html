@@ -1015,7 +1015,7 @@
           <div class="contact-info-icon">✉️</div>
           <div class="contact-info-text">
             <strong>Email</strong>
-            <a href="mailto:partnerships@dedoer.com">partnerships@dedoer.com</a>
+            <a href="/cdn-cgi/l/email-protection#5727362523393225243f3e2724173332333832257934383a"><span class="__cf_email__" data-cfemail="f4849586809a9186879c9d8487b49091909b9186da979b99">[email&#160;protected]</span></a>
           </div>
         </div>
         <div class="contact-info-item">
@@ -1097,7 +1097,7 @@
             <li><a href="brands.html">For Brands</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="delete-account.html">Delete Account</a></li>
-            <li><a href="mailto:partnerships@dedoer.com">Partnerships</a></li>
+            <li><a href="/cdn-cgi/l/email-protection#5c2c3d2e2832392e2f34352c2f1c38393833392e723f3331">Partnerships</a></li>
           </ul>
         </div>
       </div>
@@ -1109,7 +1109,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // CURSOR
   const cursor = document.getElementById('cursor');
   const cursorRing = document.getElementById('cursorRing');
@@ -1157,25 +1157,50 @@
   reveals.forEach(el => observer.observe(el));
 
   // FORM SUBMIT
-  function handleSubmit() {
+  async function handleSubmit() {
     const btn = document.querySelector('.form-submit');
     const inputs = document.querySelectorAll('input, select, textarea');
     let valid = true;
+
     inputs.forEach(inp => {
-      if (!inp.value.trim()) { inp.style.borderColor = 'rgba(212,68,67,0.4)'; valid = false; }
+      if (!inp.value.trim()) { inp.style.borderColor = 'rgba(212,68,67,0.5)'; valid = false; }
       else inp.style.borderColor = '';
     });
     if (!valid) return;
-    
-    // Compose mailto
+
     const brandName = document.querySelectorAll('input')[0].value;
     const name = document.querySelectorAll('input')[1].value;
     const email = document.querySelectorAll('input')[2].value;
     const phone = document.querySelectorAll('input')[3].value;
     const challengeType = document.querySelector('select').value;
     const message = document.querySelector('textarea').value;
-    
-    const subject = encodeURIComponent(`Brand Partnership Inquiry — ${brandName}`);
-    const body = encodeURIComponent(`Brand: ${brandName}\nContact: ${name}\nEmail: ${email}\nPhone: ${phone}\nChallenge Type: ${challengeType}\n\nCampaign Details:\n${message}`);
-    
-    window.location.href = `mailto:partnerships@dedoer.com?subject=${subject}&body=${bo
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    try {
+      await fetch('https://formspree.io/f/mzdklpon', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'Brand Partnership Inquiry — Doer',
+          brand: brandName,
+          name,
+          email,
+          phone,
+          challengeType,
+          message
+        })
+      });
+      btn.textContent = 'Sent. We will be in touch within 48 hours.';
+      btn.style.background = 'rgba(212,168,67,0.15)';
+      btn.style.color = 'var(--gold)';
+      inputs.forEach(inp => inp.value = '');
+    } catch {
+      btn.textContent = 'Something went wrong. Try again.';
+      btn.disabled = false;
+    }
+  }
+</script>
+</body>
+</html>
