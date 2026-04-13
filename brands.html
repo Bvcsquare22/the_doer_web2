@@ -775,6 +775,164 @@
     .footer-links { gap: 40px; }
     .footer-bottom { flex-direction: column; gap: 12px; }
   }
+  /* SPONSOR MODAL */
+  .sp-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  .sp-modal.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .sp-modal-box {
+    background: #111111;
+    border: 1px solid rgba(212,168,67,0.2);
+    padding: 48px 44px;
+    max-width: 640px;
+    width: 100%;
+    position: relative;
+    transform: translateY(24px);
+    transition: transform 0.3s ease;
+    margin: auto;
+  }
+  .sp-modal.active .sp-modal-box {
+    transform: translateY(0);
+  }
+  .sp-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: rgba(245,240,232,0.35);
+    font-size: 18px;
+    cursor: none;
+    transition: color 0.2s;
+  }
+  .sp-modal-close:hover { color: var(--white); }
+  .sp-modal-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .sp-modal-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .sp-modal-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .sp-modal-desc {
+    font-size: 15px;
+    color: var(--white-dim);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  .sp-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .sp-form-group {
+    margin-bottom: 16px;
+  }
+  .sp-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .sp-input {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--white);
+    padding: 13px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+  }
+  .sp-input:focus { border-color: rgba(212,168,67,0.4); }
+  .sp-textarea { resize: none; }
+  .sp-error {
+    font-size: 11px;
+    color: #e05c5c;
+    margin-top: 5px;
+    display: none;
+  }
+  .sp-error.visible { display: block; }
+  .sp-submit {
+    width: 100%;
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: none;
+    margin-top: 8px;
+    transition: background 0.3s;
+  }
+  .sp-submit:hover { background: #e8be5a; }
+  .sp-note {
+    font-size: 12px;
+    color: rgba(245,240,232,0.3);
+    text-align: center;
+    margin-top: 12px;
+  }
+  .sp-success {
+    text-align: center;
+    padding: 20px 0;
+  }
+  .sp-success-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(212,168,67,0.1);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: var(--gold);
+    margin: 0 auto 24px;
+  }
+  @media (max-width: 600px) {
+    .sp-modal-box { padding: 36px 20px; }
+    .sp-form-row { grid-template-columns: 1fr; }
+  }
+
 </style>
 </head>
 <body>
@@ -787,7 +945,7 @@
   <a href="index.html" class="nav-logo"><img src="logo.png" alt="Doer" class="nav-logo-img">D<span>O</span>ER</a>
   <div class="nav-right">
     <a href="index.html" class="nav-back">← Back to App</a>
-    <a href="#contact" class="nav-contact-btn">Sponsor a Challenge</a>
+    <a href="#" class="nav-contact-btn" onclick="event.preventDefault();openSponsorModal()">Sponsor a Challenge</a>
   </div>
 </nav>
 
@@ -805,7 +963,7 @@
     </h1>
     <p class="hero-sub">Thousands of people will complete a Doer challenge this year. <strong>Only a few brands will be there when they do.</strong> The question is whether yours is one of them.</p>
     <div class="hero-cta">
-      <a href="#contact" class="btn-primary">Sponsor a Challenge</a>
+      <a href="#" class="btn-primary" onclick="event.preventDefault();openSponsorModal()">Sponsor a Challenge</a>
     </div>
   </div>
 </section>
@@ -1070,6 +1228,65 @@
   </div>
 </section>
 
+<!-- SPONSOR MODAL -->
+<div class="sp-modal" id="spModal" onclick="if(event.target===this)closeSponsorModal()">
+  <div class="sp-modal-box">
+    <button class="sp-modal-close" onclick="closeSponsorModal()">✕</button>
+    <div id="spFormWrap">
+      <div class="sp-modal-label">Brand Partnerships</div>
+      <h3 class="sp-modal-title">Sponsor a Challenge</h3>
+      <p class="sp-modal-desc">Fill this out and our partnerships team will be in touch within 48 hours.</p>
+      <div class="sp-form-row">
+        <div class="sp-form-group">
+          <label class="sp-label">Brand Name</label>
+          <input type="text" id="spBrand" class="sp-input" placeholder="e.g. Chicken Republic">
+          <div class="sp-error" id="spBrandErr">Required</div>
+        </div>
+        <div class="sp-form-group">
+          <label class="sp-label">Your Name</label>
+          <input type="text" id="spName" class="sp-input" placeholder="Full name">
+          <div class="sp-error" id="spNameErr">Required</div>
+        </div>
+      </div>
+      <div class="sp-form-row">
+        <div class="sp-form-group">
+          <label class="sp-label">Work Email</label>
+          <input type="email" id="spEmail" class="sp-input" placeholder="you@brand.com">
+          <div class="sp-error" id="spEmailErr">Enter a valid email</div>
+        </div>
+        <div class="sp-form-group">
+          <label class="sp-label">Phone Number</label>
+          <input type="tel" id="spPhone" class="sp-input" placeholder="+234 000 000 0000">
+          <div class="sp-error" id="spPhoneErr">Required</div>
+        </div>
+      </div>
+      <div class="sp-form-group">
+        <label class="sp-label">Challenge Type</label>
+        <select id="spChallenge" class="sp-input">
+          <option value="">Select a challenge format</option>
+          <option>7 Day Challenge</option>
+          <option>14 Day Challenge</option>
+          <option>30 Day Challenge</option>
+          <option>Group Battle Sponsorship</option>
+          <option>Not sure yet</option>
+        </select>
+        <div class="sp-error" id="spChallengeErr">Please select a format</div>
+      </div>
+      <div class="sp-form-group">
+        <label class="sp-label">Tell Us About Your Campaign</label>
+        <textarea id="spMessage" class="sp-input sp-textarea" rows="4" placeholder="What are you trying to achieve? Who is your target audience?"></textarea>
+      </div>
+      <button class="sp-submit" id="spSubmitBtn" onclick="submitSponsorModal()">Send Inquiry →</button>
+      <p class="sp-note">Sent directly to partnerships@dedoer.com</p>
+    </div>
+    <div class="sp-success" id="spSuccess" style="display:none;">
+      <div class="sp-success-icon">✓</div>
+      <h3 class="sp-modal-title">Inquiry Received.</h3>
+      <p class="sp-modal-desc">We will be in touch within 48 hours at the email you provided.</p>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -1155,6 +1372,75 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
+
+  // SPONSOR MODAL
+  function openSponsorModal() {
+    document.getElementById('spModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSponsorModal() {
+    document.getElementById('spModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  async function submitSponsorModal() {
+    const fields = {
+      brand: document.getElementById('spBrand'),
+      name: document.getElementById('spName'),
+      email: document.getElementById('spEmail'),
+      phone: document.getElementById('spPhone'),
+      challenge: document.getElementById('spChallenge'),
+      message: document.getElementById('spMessage'),
+    };
+
+    const errors = {
+      brand: document.getElementById('spBrandErr'),
+      name: document.getElementById('spNameErr'),
+      email: document.getElementById('spEmailErr'),
+      phone: document.getElementById('spPhoneErr'),
+      challenge: document.getElementById('spChallengeErr'),
+    };
+
+    Object.values(errors).forEach(e => e.classList.remove('visible'));
+    Object.values(fields).forEach(f => f.style.borderColor = '');
+
+    let valid = true;
+    if (!fields.brand.value.trim()) { errors.brand.classList.add('visible'); fields.brand.style.borderColor = 'rgba(224,92,92,0.4)'; valid = false; }
+    if (!fields.name.value.trim()) { errors.name.classList.add('visible'); fields.name.style.borderColor = 'rgba(224,92,92,0.4)'; valid = false; }
+    if (!fields.email.value.trim() || !fields.email.value.includes('@')) { errors.email.classList.add('visible'); fields.email.style.borderColor = 'rgba(224,92,92,0.4)'; valid = false; }
+    if (!fields.phone.value.trim()) { errors.phone.classList.add('visible'); fields.phone.style.borderColor = 'rgba(224,92,92,0.4)'; valid = false; }
+    if (!fields.challenge.value) { errors.challenge.classList.add('visible'); fields.challenge.style.borderColor = 'rgba(224,92,92,0.4)'; valid = false; }
+    if (!valid) return;
+
+    const btn = document.getElementById('spSubmitBtn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    try {
+      await fetch('https://formspree.io/f/mqewkzag', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'Brand Partnership Inquiry — Doer',
+          _replyto: fields.email.value,
+          brand: fields.brand.value,
+          name: fields.name.value,
+          email: fields.email.value,
+          phone: fields.phone.value,
+          challengeType: fields.challenge.value,
+          message: fields.message.value || 'No additional message provided.',
+        })
+      });
+
+      document.getElementById('spFormWrap').style.display = 'none';
+      document.getElementById('spSuccess').style.display = 'block';
+
+    } catch {
+      btn.textContent = 'Something went wrong. Try again.';
+      btn.disabled = false;
+    }
+  }
 
   // FORM SUBMIT
   async function handleSubmit() {
