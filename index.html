@@ -131,6 +131,12 @@
       color: var(--gold);
     }
 
+    .nav-right-group {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -184,7 +190,7 @@
       z-index: 1;
     }
 
-    .nav-waitlist-btn {
+    .nav-download-btn {
       background: var(--gold) !important;
       color: var(--dark) !important;
       padding: 9px 20px;
@@ -194,7 +200,7 @@
       text-transform: uppercase;
     }
 
-    .nav-waitlist-btn:hover {
+    .nav-download-btn:hover {
       background: #e8be5a !important;
     }
 
@@ -288,6 +294,34 @@
       display: none;
     }
 
+    .hero-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(76, 175, 80, 0.1);
+      border: 1px solid rgba(76, 175, 80, 0.4);
+      padding: 10px 20px;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.1s;
+    }
+
+    .hero-live-badge-dot {
+      width: 7px;
+      height: 7px;
+      background: #4CAF50;
+      border-radius: 50%;
+      animation: livePulse 1.5s ease-in-out infinite;
+    }
+
+    .hero-live-badge-text {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4CAF50;
+      font-weight: 700;
+    }
+
     .hero-eyebrow {
       font-size: 11px;
       letter-spacing: 4px;
@@ -358,53 +392,6 @@
       font-weight: 400;
     }
 
-    .hero-counter {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 1.6s;
-    }
-
-    .hero-counter-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px;
-      color: var(--gold);
-      line-height: 1;
-      letter-spacing: 2px;
-    }
-
-    .hero-counter-label {
-      font-size: 13px;
-      color: var(--white-dimmer);
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-
-    .hero-launching {
-      font-size: 11px;
-      color: var(--gold);
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.1s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .hero-launching::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      animation: livePulse 1.5s ease-in-out infinite;
-    }
 
     .hero-cta {
       display: flex;
@@ -468,6 +455,71 @@
 
     .btn-secondary:hover .arrow {
       transform: translateX(4px);
+    }
+
+    /* STORE BUTTONS */
+    .store-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 13px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-store:hover {
+      background: #e8be5a;
+      transform: translateY(-2px);
+    }
+
+    .btn-store svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .btn-store-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+      text-align: left;
+    }
+
+    .btn-store-text .small {
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      font-weight: 600;
+    }
+
+    .btn-store-text .big {
+      font-size: 15px;
+      font-weight: 800;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .btn-store.large {
+      padding: 17px 28px;
+    }
+
+    .btn-store.large svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .btn-store.large .big {
+      font-size: 17px;
     }
 
     .hero-scroll-indicator {
@@ -2103,183 +2155,6 @@
         padding: 60px 20px 40px;
       }
     }
-    /* WAITLIST MODAL */
-    .wl-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      padding: 20px;
-    }
-
-    .wl-modal.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .wl-modal-box {
-      background: #111111;
-      border: 1px solid rgba(212,168,67,0.25);
-      padding: 48px 44px;
-      max-width: 480px;
-      width: 100%;
-      position: relative;
-      transform: translateY(24px);
-      transition: transform 0.3s ease;
-    }
-
-    .wl-modal.active .wl-modal-box {
-      transform: translateY(0);
-    }
-
-    .wl-modal-close {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      background: none;
-      border: none;
-      color: var(--white-dimmer);
-      font-size: 18px;
-      cursor: none;
-      transition: color 0.2s;
-    }
-
-    .wl-modal-close:hover {
-      color: var(--white);
-    }
-
-    .wl-modal-emoji {
-      font-size: 36px;
-      margin-bottom: 16px;
-    }
-
-    .wl-modal-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 36px;
-      letter-spacing: 2px;
-      color: var(--white);
-      margin-bottom: 10px;
-    }
-
-    .wl-modal-desc {
-      font-size: 15px;
-      color: var(--white-dim);
-      line-height: 1.7;
-      margin-bottom: 28px;
-      font-weight: 400;
-    }
-
-    .wl-input {
-      width: 100%;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--white);
-      padding: 14px 18px;
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 15px;
-      outline: none;
-      margin-bottom: 4px;
-      transition: border-color 0.3s;
-    }
-
-    .wl-input:focus {
-      border-color: rgba(212,168,67,0.5);
-    }
-
-    .wl-error {
-      font-size: 12px;
-      color: #e05c5c;
-      margin-bottom: 14px;
-      display: none;
-    }
-
-    .wl-error.visible {
-      display: block;
-    }
-
-    .wl-platform-row {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 4px;
-    }
-
-    .wl-platform-row input[type="radio"] {
-      display: none;
-    }
-
-    .wl-platform-label {
-      flex: 1;
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 12px;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--white-dim);
-      cursor: none;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .wl-platform-row input[type="radio"]:checked + .wl-platform-label {
-      border-color: var(--gold);
-      color: var(--gold);
-      background: rgba(212,168,67,0.08);
-    }
-
-    .wl-submit {
-      width: 100%;
-      background: var(--gold);
-      color: var(--dark);
-      border: none;
-      padding: 16px;
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      cursor: none;
-      margin-top: 20px;
-      transition: background 0.3s;
-    }
-
-    .wl-submit:hover {
-      background: #e8be5a;
-    }
-
-    .wl-success {
-      text-align: center;
-      padding: 20px 0;
-    }
-
-    .wl-success-icon {
-      width: 56px;
-      height: 56px;
-      background: rgba(212,168,67,0.15);
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: var(--gold);
-      margin: 0 auto 24px;
-    }
-
-    @media (max-width: 520px) {
-      .wl-modal-box {
-        padding: 36px 24px;
-      }
-    }
-
   </style>
 </head>
 
@@ -2294,13 +2169,15 @@
       <img src="logo.png" alt="Doer" class="nav-logo-img">
       <span class="nav-logo-text">D<span>O</span>ER</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#challenges">Challenges</a></li>
-      <li><a href="brands.html" class="nav-brand-btn"><span>For Brands </span></a></li>
-      <li><a href="#" class="nav-waitlist-btn" onclick="event.preventDefault();openWaitlistModal()">Join Waitlist</a></li>
-    </ul>
+    <div class="nav-right-group">
+      <ul class="nav-links">
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#challenges">Challenges</a></li>
+        <li><a href="brands.html" class="nav-brand-btn"><span>For Brands </span></a></li>
+      </ul>
+      <a href="#download" class="nav-download-btn">Download</a>
+    </div>
   </nav>
 
   <section class="hero">
@@ -2308,7 +2185,10 @@
     <div class="hero-gradient"></div>
     <div class="hero-glow"></div>
     <div class="hero-content">
-      <p class="hero-launching">Launching soon</p>
+      <div class="hero-live-badge">
+        <div class="hero-live-badge-dot"></div>
+        <span class="hero-live-badge-text">Now Live on iOS &amp; Android</span>
+      </div>
       <a href="brands.html" class="hero-brands-badge">
         <div class="hero-brands-badge-dot"></div>
         <span class="hero-brands-badge-text">Are you a brand? Click here </span>
@@ -2319,12 +2199,17 @@
           class="word">Get&nbsp;</span><span class="word">Fit.</span>
       </h1>
       <p class="hero-sub">Doer is the app where top brands sponsor your fitness goals and reward you for hitting them.</p>
-      <div class="hero-counter">
-        <span class="hero-counter-num" id="waitlistCount">412</span>
-        <span class="hero-counter-label">people already on the waitlist</span>
-      </div>
-      <div class="hero-cta">
-        <a href="#waitlist" class="btn-primary" onclick="event.preventDefault();openWaitlistModal()">Join the Waitlist</a>
+      <div class="hero-cta" style="flex-wrap:wrap;">
+        <div class="store-buttons">
+          <a href="https://apps.apple.com/ng/app/doer-walk-and-earn/id6778184789" class="btn-store" target="_blank" rel="noopener">
+            <svg viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            <span class="btn-store-text"><span class="small">Download on the</span><span class="big">App Store</span></span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.dedoers.doer" class="btn-store" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 3.5v17a1 1 0 0 0 1.5.87l14-8.5a1 1 0 0 0 0-1.74l-14-8.5a1 1 0 0 0-1.5.87z"/></svg>
+            <span class="btn-store-text"><span class="small">Get it on</span><span class="big">Google Play</span></span>
+          </a>
+        </div>
         <a href="#how" class="btn-secondary">See how it works <span class="arrow"></span></a>
       </div>
     </div>
@@ -2410,10 +2295,10 @@
     <div class="challenges-bg"></div>
     <div class="challenges-inner">
       <div class="challenges-header reveal">
-        <div class="section-label">Live Challenges</div>
+        <div class="section-label">Example Challenges</div>
         <h2 class="challenges-title">Pick Your Challenge.<br>Earn Your Reward.</h2>
         <p class="challenges-sub">Every challenge on Doer is sponsored by a real brand with a real reward waiting at the
-          finish line.</p>
+          finish line. The brands below are illustrative examples of what a sponsored challenge looks like.</p>
       </div>
       <div class="challenge-cards">
         <!-- Chicken Republic -->
@@ -2641,7 +2526,7 @@
           <h3 class="group-battle-title">Group vs Group Battles.</h3>
           <p class="group-battle-desc">Challenge another group to a step battle. Scored by average steps per member, so
             any group can win by walking harder. The winning team splits the brand reward.</p>
-          <a href="#waitlist" class="btn-primary">Join to Compete</a>
+          <a href="#download" class="btn-primary">Join to Compete</a>
         </div>
         <div class="reveal-right" style="display:flex;justify-content:center;">
           <div class="battle-phone">
@@ -2713,6 +2598,27 @@
     </div>
   </section>
 
+  <section class="waitlist" id="download">
+    <div class="waitlist-bg"></div>
+    <div class="waitlist-glow"></div>
+    <div class="waitlist-inner">
+      <div class="section-label reveal" style="justify-content:center;">Available Now</div>
+      <h2 class="waitlist-title reveal"><span>Your Streak</span><br>Starts Now.</h2>
+      <p class="waitlist-sub reveal">Doer is live. Download the app and join your first challenge today.</p>
+      <div class="store-buttons reveal" style="justify-content:center;">
+        <a href="https://apps.apple.com/ng/app/doer-walk-and-earn/id6778184789" class="btn-store large" target="_blank" rel="noopener">
+          <svg viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="btn-store-text"><span class="small">Download on the</span><span class="big">App Store</span></span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.dedoers.doer" class="btn-store large" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 3.5v17a1 1 0 0 0 1.5.87l14-8.5a1 1 0 0 0 0-1.74l-14-8.5a1 1 0 0 0-1.5.87z"/></svg>
+          <span class="btn-store-text"><span class="small">Get it on</span><span class="big">Google Play</span></span>
+        </a>
+      </div>
+      <p class="waitlist-note reveal">Free to join. Real brands. Real rewards.</p>
+    </div>
+  </section>
+
   <section class="brands-cta" id="brands">
     <div class="brands-cta-border"></div>
     <div class="brands-cta-inner">
@@ -2773,11 +2679,11 @@
 
         <div class="faq-item reveal">
           <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-question-text">When is Doer launching?</span>
+            <span class="faq-question-text">Is Doer available now?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>We are launching soon. Join the waitlist and you will be the first to know when we go live in your city.</p>
+            <p>Yes. Doer is live now on the App Store and Google Play. Download it and join your first challenge today.</p>
           </div>
         </div>
 
@@ -2849,7 +2755,7 @@
               <li><a href="#how">How It Works</a></li>
               <li><a href="#features">Features</a></li>
               <li><a href="#challenges">Challenges</a></li>
-              <li><a href="#waitlist">Join Waitlist</a></li>
+              <li><a href="#download">Download</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -2857,8 +2763,9 @@
             <ul>
               <li><a href="brands.html">For Brands</a></li>
               <li><a href="/privacy.html">Privacy Policy</a></li>
-              <li><a href="mailto:hello@dedoer.com">Contact Us</a></li>
-              <li><a href="mailto:hello@dedoer.com">Partnerships</a></li>
+              <li><a href="/delete-account.html">Delete Account</a></li>
+              <li><a href="mailto:dedoersapp@gmail.com">Contact Us</a></li>
+              <li><a href="mailto:partnerships@dedoer.com">Partnerships</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -2875,39 +2782,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- WAITLIST MODAL -->
-  <div class="wl-modal" id="wlModal" onclick="if(event.target===this)closeWaitlistModal()">
-    <div class="wl-modal-box">
-      <button class="wl-modal-close" onclick="closeWaitlistModal()">✕</button>
-      <div id="wlFormWrap">
-        <div class="wl-modal-emoji">🔥</div>
-        <h3 class="wl-modal-title">Get Early Access</h3>
-        <p class="wl-modal-desc">Android is live. iOS is coming soon. Drop your details and we will notify you the moment your platform drops.</p>
-        <input type="text" id="wlName" class="wl-input" placeholder="Your name">
-        <div class="wl-error" id="wlNameErr">Please enter your name.</div>
-        <input type="email" id="wlEmail" class="wl-input" placeholder="Your email address">
-        <div class="wl-error" id="wlEmailErr">Please enter a valid email.</div>
-        <div class="wl-platform-row">
-          <input type="radio" id="wlAndroid" name="wlPlatform" value="Android">
-          <label for="wlAndroid" class="wl-platform-label">
-            <span class="wl-platform-icon">🤖</span> Android
-          </label>
-          <input type="radio" id="wlIos" name="wlPlatform" value="iOS">
-          <label for="wlIos" class="wl-platform-label">
-            <span class="wl-platform-icon"></span> iOS
-          </label>
-        </div>
-        <div class="wl-error" id="wlPlatErr">Please select your device.</div>
-        <button class="wl-submit" onclick="submitWaitlistModal()">Notify Me </button>
-      </div>
-      <div class="wl-success" id="wlSuccess" style="display:none;">
-        <div class="wl-success-icon">✓</div>
-        <h3 class="wl-modal-title">You are in.</h3>
-        <p class="wl-modal-desc" id="wlSuccessMsg">We will notify you the moment Doer goes live.</p>
-      </div>
-    </div>
-  </div>
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // UNDERWATER ANIMATION
@@ -3009,7 +2883,7 @@
       "Chidi from Lagos just earned ₦1,500 🎉",
       "Amaka completed the Chicken Republic 10K ✅",
       "Tunde hit 50,000 steps this week 🔥",
-      "Ngozi just joined the waitlist 👟",
+      "Ngozi just downloaded Doer 👟",
       "REA vs NNPC battle is LIVE ⚡",
       "Emeka redeemed a Chicken Republic voucher 🍗",
     ];
@@ -3024,70 +2898,6 @@
       setTimeout(() => { t.classList.remove('toast-show'); setTimeout(() => t.remove(), 500); }, 4000);
     }
     setTimeout(() => { showToast(); setInterval(showToast, 7000); }, 3000);
-
-    // WAITLIST MODAL
-    const countEl = document.getElementById('waitlistCount');
-    let currentCount = parseInt(sessionStorage.getItem('doerCount') || '412');
-    countEl.textContent = currentCount.toLocaleString();
-
-    function openWaitlistModal() {
-      document.getElementById('wlModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeWaitlistModal() {
-      document.getElementById('wlModal').classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    async function submitWaitlistModal() {
-      const name = document.getElementById('wlName').value.trim();
-      const email = document.getElementById('wlEmail').value.trim();
-      const platform = document.querySelector('input[name="wlPlatform"]:checked');
-
-      const nameErr = document.getElementById('wlNameErr');
-      const emailErr = document.getElementById('wlEmailErr');
-      const platErr = document.getElementById('wlPlatErr');
-
-      let valid = true;
-      nameErr.classList.remove('visible');
-      emailErr.classList.remove('visible');
-      platErr.classList.remove('visible');
-
-      if (!name) { nameErr.classList.add('visible'); valid = false; }
-      if (!email || !email.includes('@')) { emailErr.classList.add('visible'); valid = false; }
-      if (!platform) { platErr.classList.add('visible'); valid = false; }
-      if (!valid) return;
-
-      const btn = document.querySelector('.wl-submit');
-      btn.textContent = 'Joining...';
-      btn.disabled = true;
-
-      try {
-        await fetch('https://formspree.io/f/mzdklpon', {
-          method: 'POST',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, platform: platform.value, _subject: 'New Doer Waitlist Signup 🚀' })
-        });
-
-        currentCount++;
-        sessionStorage.setItem('doerCount', currentCount);
-        countEl.textContent = currentCount.toLocaleString();
-
-        document.getElementById('wlFormWrap').style.display = 'none';
-        document.getElementById('wlSuccess').style.display = 'block';
-
-        const isIos = platform.value === 'iOS';
-        document.getElementById('wlSuccessMsg').textContent = isIos
-          ? 'iOS is coming soon. We will notify you the moment it drops on the App Store.'
-          : 'We will notify you the moment Doer goes live on Android.';
-
-      } catch {
-        btn.textContent = 'Try Again';
-        btn.disabled = false;
-      }
-    }
-
     // FAQ
     function toggleFaq(btn) {
       const item = btn.closest('.faq-item');
