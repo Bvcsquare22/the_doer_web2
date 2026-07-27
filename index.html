@@ -627,6 +627,72 @@
       background: var(--gold);
     }
 
+    /* STAY IN THE LOOP */
+    .stay-loop {
+      padding: 100px 48px;
+      background: var(--dark-2);
+      text-align: center;
+    }
+
+    .stay-loop-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .stay-loop-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .stay-loop-title span {
+      color: var(--gold);
+    }
+
+    .stay-loop-sub {
+      font-size: 17px;
+      color: var(--white-dim);
+      font-weight: 400;
+      line-height: 1.7;
+      margin-bottom: 44px;
+    }
+
+    .stay-loop-form-outer {
+      width: 510px;
+      max-width: 100%;
+      margin: 0 auto;
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .stay-loop-form-scale {
+      width: 510px;
+      height: 320px;
+    }
+
+    .stay-loop-form-scale iframe {
+      display: block;
+      border: none;
+    }
+
+    .stay-loop-form-hint {
+      display: none;
+      font-size: 12px;
+      color: var(--white-dimmer);
+      margin-top: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .stay-loop-form-hint {
+        display: block;
+      }
+    }
+
     /* HOW IT WORKS */
     .how {
       padding: 140px 48px;
@@ -2112,7 +2178,8 @@
       .how,
       .features,
       .challenges,
-      .waitlist {
+      .waitlist,
+      .stay-loop {
         padding: 100px 20px;
       }
 
@@ -2216,6 +2283,20 @@
     <div class="hero-scroll-indicator">
       <span class="scroll-text">scroll</span>
       <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <section class="stay-loop" id="stay-loop">
+    <div class="stay-loop-inner">
+      <div class="section-label reveal" style="justify-content:center;">Newsletter</div>
+      <h2 class="stay-loop-title reveal">Stay In <span>The Loop.</span></h2>
+      <p class="stay-loop-sub reveal">Sign up for updates on new features, brand partnerships, and challenges.</p>
+      <div class="stay-loop-form-outer reveal">
+        <div class="stay-loop-form-scale">
+          <iframe id="iframeform" src="https://secure.campaigner.com/CSB/Public/Form.aspx?fid=2013637&ac=gwhp" frameborder="0" data-acc-id="gwhp" height="320" width="510" scrolling="no">If you can see this, your browser does not support IFRAME.  Please use a supported browser</iframe>
+        </div>
+      </div>
+      <p class="stay-loop-form-hint">← Scroll within the box to see the full form →</p>
     </div>
   </section>
 
