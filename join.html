@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join on Doer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #0a0a0a;
+      color: #f2eee4;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+    }
+    .card {
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 28px;
+      border-radius: 50%;
+      border: 3px solid #2c2a26;
+      border-top-color: #e8be5a;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.02em;
+      margin: 0 0 12px;
+      color: #ffffff;
+    }
+    p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: #a39f94;
+      margin: 0 0 28px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+    .btn-primary {
+      background: #e8be5a;
+      color: #0d0d0d;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #f2eee4;
+      border: 1px solid #2c2a26;
+    }
+    .hidden { display: none; }
+    @media (prefers-color-scheme: light) {
+      html, body { background: #fbf9f4; color: #1c1a16; }
+      p { color: #6b665c; }
+      h1 { color: #1c1a16; }
+      .spinner { border-color: #e4dfd3; border-top-color: #a9803d; }
+      .btn-primary { background: #a9803d; color: #fff; }
+      .btn-secondary { color: #1c1a16; border-color: #e4dfd3; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div id="opening" >
+        <div class="spinner"></div>
+        <h1>Opening Doer&hellip;</h1>
+        <p>If nothing happens in a few seconds, use the button below.</p>
+      </div>
+
+      <div id="fallback" class="hidden">
+        <h1>Join on Doer</h1>
+        <p id="fallback-copy">Get the app to join, or open it if you already have it installed.</p>
+        <a id="store-link" class="btn btn-primary" href="#">Get the app</a>
+        <a class="btn btn-secondary" href="https://www.dedoer.com/">Visit dedoer.com</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var type = params.get('type');   // 'challenge' | 'group'
+      var code = params.get('code');
+
+      var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.dedoers.doer';
+      // Filled in once Doer is live on the iOS App Store — mirrors
+      // AppStoreLinks.iosAppStoreId (lib/app/utils/constants/app_store_links.dart),
+      // which is still null as of this page's creation.
+      var APP_STORE_URL = null;
+
+      var ua = navigator.userAgent || '';
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+      var isAndroid = /Android/i.test(ua);
+      var isMobile = isIOS || isAndroid;
+
+      var openingEl = document.getElementById('opening');
+      var fallbackEl = document.getElementById('fallback');
+      var storeLinkEl = document.getElementById('store-link');
+      var fallbackCopyEl = document.getElementById('fallback-copy');
+
+      function showFallback() {
+        openingEl.classList.add('hidden');
+        fallbackEl.classList.remove('hidden');
+      }
+
+      // No code/type, or a desktop visitor — nothing to deep-link into,
+      // just show the normal "get the app" card immediately.
+      if (!code || !type || !isMobile) {
+        showFallback();
+      }
+
+      if (isIOS && !APP_STORE_URL) {
+        // Not on the App Store yet — no valid store link to send anyone to.
+        fallbackCopyEl.textContent = "Doer isn't on the iOS App Store just yet — join from an Android device for now, or check back soon.";
+        storeLinkEl.classList.add('hidden');
+      } else {
+        storeLinkEl.href = isIOS ? APP_STORE_URL : PLAY_STORE_URL;
+      }
+
+      if (code && type && isMobile) {
+        var scheme = type === 'challenge'
+          ? 'com.dedoers.doer://join-challenge/' + encodeURIComponent(code)
+          : 'com.dedoers.doer://join/' + encodeURIComponent(code);
+
+        // Standard app-link pattern: attempt the custom scheme, and if the
+        // page is still here (foregrounded) after a couple seconds, assume
+        // the OS had nothing registered for it — i.e. Doer isn't installed —
+        // and show the store fallback instead of hanging forever.
+        var fallbackTimer = setTimeout(showFallback, 2000);
+
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) clearTimeout(fallbackTimer);
+        });
+
+        window.location.href = scheme;
+      }
+    })();
+  </script>
+</body>
+</html>
