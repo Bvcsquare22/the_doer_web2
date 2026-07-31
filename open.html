@@ -110,9 +110,10 @@
     // nothing happens.
     (function () {
       var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.dedoers.doer';
-      // Filled in once Doer is live on the iOS App Store — mirrors
-      // AppStoreLinks.iosAppStoreId (lib/app/utils/constants/app_store_links.dart).
-      var APP_STORE_URL = null;
+      // Same App Store id as AppStoreLinks.iosAppStoreId
+      // (lib/app/utils/constants/app_store_links.dart) and index.html's own
+      // download links — Doer is live on the App Store now.
+      var APP_STORE_URL = 'https://apps.apple.com/app/id6778184789';
 
       var ua = navigator.userAgent || '';
       var isIOS = /iPhone|iPad|iPod/i.test(ua);
@@ -122,23 +123,20 @@
       var openingEl = document.getElementById('opening');
       var fallbackEl = document.getElementById('fallback');
       var storeLinkEl = document.getElementById('store-link');
-      var fallbackCopyEl = document.getElementById('fallback-copy');
 
       function showFallback() {
         openingEl.classList.add('hidden');
         fallbackEl.classList.remove('hidden');
       }
 
+      // Set before the mobile/desktop branch below — this used to sit after
+      // the desktop early-return, so a desktop visitor's "Get the app"
+      // button had no real href at all (stuck on the placeholder "#").
+      storeLinkEl.href = isIOS ? APP_STORE_URL : PLAY_STORE_URL;
+
       if (!isMobile) {
         showFallback();
         return;
-      }
-
-      if (isIOS && !APP_STORE_URL) {
-        fallbackCopyEl.textContent = "Doer isn't on the iOS App Store just yet — open on an Android device for now, or check back soon.";
-        storeLinkEl.classList.add('hidden');
-      } else {
-        storeLinkEl.href = isIOS ? APP_STORE_URL : PLAY_STORE_URL;
       }
 
       var fallbackTimer = setTimeout(showFallback, 2000);

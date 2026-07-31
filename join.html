@@ -108,10 +108,10 @@
       var code = params.get('code');
 
       var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.dedoers.doer';
-      // Filled in once Doer is live on the iOS App Store — mirrors
-      // AppStoreLinks.iosAppStoreId (lib/app/utils/constants/app_store_links.dart),
-      // which is still null as of this page's creation.
-      var APP_STORE_URL = null;
+      // Same App Store id as AppStoreLinks.iosAppStoreId
+      // (lib/app/utils/constants/app_store_links.dart) and index.html's own
+      // download links — Doer is live on the App Store now.
+      var APP_STORE_URL = 'https://apps.apple.com/app/id6778184789';
 
       var ua = navigator.userAgent || '';
       var isIOS = /iPhone|iPad|iPod/i.test(ua);
@@ -121,7 +121,6 @@
       var openingEl = document.getElementById('opening');
       var fallbackEl = document.getElementById('fallback');
       var storeLinkEl = document.getElementById('store-link');
-      var fallbackCopyEl = document.getElementById('fallback-copy');
 
       function showFallback() {
         openingEl.classList.add('hidden');
@@ -134,13 +133,7 @@
         showFallback();
       }
 
-      if (isIOS && !APP_STORE_URL) {
-        // Not on the App Store yet — no valid store link to send anyone to.
-        fallbackCopyEl.textContent = "Doer isn't on the iOS App Store just yet — join from an Android device for now, or check back soon.";
-        storeLinkEl.classList.add('hidden');
-      } else {
-        storeLinkEl.href = isIOS ? APP_STORE_URL : PLAY_STORE_URL;
-      }
+      storeLinkEl.href = isIOS ? APP_STORE_URL : PLAY_STORE_URL;
 
       if (code && type && isMobile) {
         var scheme = type === 'challenge'
