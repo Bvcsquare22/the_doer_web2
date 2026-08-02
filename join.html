@@ -86,10 +86,11 @@
 <body>
   <div class="wrap">
     <div class="card">
-      <div id="opening" >
-        <div class="spinner"></div>
-        <h1>Opening Doer&hellip;</h1>
-        <p>If nothing happens in a few seconds, use the button below.</p>
+      <div id="opening">
+        <div class="spinner" style="visibility:hidden"></div>
+        <h1 id="opening-title">Join on Doer</h1>
+        <p>Tap below to open the challenge in the app.</p>
+        <a id="open-link" class="btn btn-primary" href="#">Open in Doer</a>
       </div>
 
       <div id="fallback" class="hidden">
@@ -121,37 +122,54 @@
       var openingEl = document.getElementById('opening');
       var fallbackEl = document.getElementById('fallback');
       var storeLinkEl = document.getElementById('store-link');
+      var openLinkEl = document.getElementById('open-link');
 
       function showFallback() {
         openingEl.classList.add('hidden');
         fallbackEl.classList.remove('hidden');
       }
 
+      storeLinkEl.href = isIOS ? APP_STORE_URL : PLAY_STORE_URL;
+
       // No code/type, or a desktop visitor — nothing to deep-link into,
       // just show the normal "get the app" card immediately.
       if (!code || !type || !isMobile) {
         showFallback();
+        return;
       }
 
-      storeLinkEl.href = isIOS ? APP_STORE_URL : PLAY_STORE_URL;
+      var scheme = type === 'challenge'
+        ? 'com.dedoers.doer://join-challenge/' + encodeURIComponent(code)
+        : 'com.dedoers.doer://join/' + encodeURIComponent(code);
 
-      if (code && type && isMobile) {
-        var scheme = type === 'challenge'
-          ? 'com.dedoers.doer://join-challenge/' + encodeURIComponent(code)
-          : 'com.dedoers.doer://join/' + encodeURIComponent(code);
-
-        // Standard app-link pattern: attempt the custom scheme, and if the
-        // page is still here (foregrounded) after a couple seconds, assume
-        // the OS had nothing registered for it — i.e. Doer isn't installed —
-        // and show the store fallback instead of hanging forever.
+      // iOS Safari (and, on newer Android/Chrome, to a lesser extent)
+      // silently ignores a script-triggered navigation to a custom URL
+      // scheme that didn't originate from a direct tap — this used to fire
+      // window.location.href = scheme automatically on page load, which is
+      // exactly that case. The app being installed made no difference: the
+      // OS never even considered opening it, so every visit fell through to
+      // the "get the app" fallback after 2s, indistinguishable from Doer
+      // not being installed at all. Anchoring the same navigation to a real
+      // tap on a normal link element is the standard fix — that link's own
+      // default-prevented click handler below is a genuine user gesture,
+      // which the OS will honor.
+      openLinkEl.href = scheme;
+      openLinkEl.addEventListener('click', function (e) {
+        e.preventDefault();
         var fallbackTimer = setTimeout(showFallback, 2000);
-
         document.addEventListener('visibilitychange', function () {
           if (document.hidden) clearTimeout(fallbackTimer);
         });
-
         window.location.href = scheme;
-      }
+      });
+
+      // Still worth one automatic attempt first — some browsers/versions do
+      // honor it, and this costs nothing since the button above is right
+      // there as the real fallback the moment this doesn't work.
+      window.location.href = scheme;
+      setTimeout(function () {
+        if (!document.hidden) showFallback();
+      }, 2000);
     })();
   </script>
 </body>

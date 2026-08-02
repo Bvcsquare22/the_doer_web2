@@ -87,9 +87,10 @@
   <div class="wrap">
     <div class="card">
       <div id="opening">
-        <div class="spinner"></div>
-        <h1>Opening Doer&hellip;</h1>
-        <p>If nothing happens in a few seconds, use the button below.</p>
+        <div class="spinner" style="visibility:hidden"></div>
+        <h1>Open Doer</h1>
+        <p>Tap below to open the app.</p>
+        <a id="open-link" class="btn btn-primary" href="#">Open in Doer</a>
       </div>
 
       <div id="fallback" class="hidden">
@@ -102,18 +103,22 @@
   </div>
 
   <script>
-    // Same pattern as join.html: email links are real https:// URLs (Gmail
-    // and most mail clients strip non-http(s) hrefs entirely), so this page
-    // is the middle step — attempt the app's custom scheme via a script-
-    // triggered navigation (which mail clients' embedded browsers do
-    // respect, unlike a raw email link), and fall back to the store if
-    // nothing happens.
+    // Email links are real https:// URLs (Gmail and most mail clients strip
+    // non-http(s) hrefs entirely), so this page is the middle step: get to
+    // a real tap as fast as possible, then attempt the app's custom scheme
+    // from that tap's own click handler. iOS Safari (and, on newer
+    // Android/Chrome, to a lesser extent) silently ignores a navigation to
+    // a custom URL scheme that isn't a direct result of a user gesture —
+    // this used to fire window.location.href on page load with no tap
+    // involved at all, so it could get ignored even with Doer installed,
+    // landing on the "get the app" fallback regardless.
     (function () {
       var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.dedoers.doer';
       // Same App Store id as AppStoreLinks.iosAppStoreId
       // (lib/app/utils/constants/app_store_links.dart) and index.html's own
       // download links — Doer is live on the App Store now.
       var APP_STORE_URL = 'https://apps.apple.com/app/id6778184789';
+      var SCHEME = 'com.dedoers.doer://open';
 
       var ua = navigator.userAgent || '';
       var isIOS = /iPhone|iPad|iPod/i.test(ua);
@@ -123,6 +128,7 @@
       var openingEl = document.getElementById('opening');
       var fallbackEl = document.getElementById('fallback');
       var storeLinkEl = document.getElementById('store-link');
+      var openLinkEl = document.getElementById('open-link');
 
       function showFallback() {
         openingEl.classList.add('hidden');
@@ -139,12 +145,24 @@
         return;
       }
 
-      var fallbackTimer = setTimeout(showFallback, 2000);
-      document.addEventListener('visibilitychange', function () {
-        if (document.hidden) clearTimeout(fallbackTimer);
+      openLinkEl.href = SCHEME;
+      openLinkEl.addEventListener('click', function (e) {
+        e.preventDefault();
+        var fallbackTimer = setTimeout(showFallback, 2000);
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) clearTimeout(fallbackTimer);
+        });
+        window.location.href = SCHEME;
       });
 
-      window.location.href = 'com.dedoers.doer://open';
+      // Still worth one automatic attempt first — some mail clients'
+      // embedded browsers do honor a script-triggered navigation here even
+      // though plain Safari/Chrome often don't — and the button above is
+      // right there as the real fallback the instant this doesn't work.
+      window.location.href = SCHEME;
+      setTimeout(function () {
+        if (!document.hidden) showFallback();
+      }, 2000);
     })();
   </script>
 </body>
