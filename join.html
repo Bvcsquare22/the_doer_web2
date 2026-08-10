@@ -105,7 +105,7 @@
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
-      var type = params.get('type');   // 'challenge' | 'group'
+      var type = params.get('type');   // 'challenge' | 'group' | 'org'
       var code = params.get('code');
 
       var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.dedoers.doer';
@@ -140,6 +140,8 @@
 
       var scheme = type === 'challenge'
         ? 'com.dedoers.doer://join-challenge/' + encodeURIComponent(code)
+        : type === 'org'
+        ? 'com.dedoers.doer://join-org/' + encodeURIComponent(code)
         : 'com.dedoers.doer://join/' + encodeURIComponent(code);
 
       // iOS Safari (and, on newer Android/Chrome, to a lesser extent)
