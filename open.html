@@ -118,7 +118,17 @@
       // (lib/app/utils/constants/app_store_links.dart) and index.html's own
       // download links — Doer is live on the App Store now.
       var APP_STORE_URL = 'https://apps.apple.com/app/id6778184789';
-      var SCHEME = 'com.dedoers.doer://open';
+      // ?challenge=<id> routes straight to that challenge's detail screen
+      // (deep_link_observer.dart's "challenge" host) instead of just
+      // foregrounding the app — cash-claim win emails use this so tapping
+      // lands on the in-app "YOU WON — CLAIM NOW" card. Only takes effect
+      // on an app build that includes that handler; on an older install the
+      // scheme still opens the app itself, just without the extra routing,
+      // so this is always safe to link to.
+      var challengeId = new URLSearchParams(window.location.search).get('challenge');
+      var SCHEME = challengeId
+        ? 'com.dedoers.doer://challenge/' + encodeURIComponent(challengeId)
+        : 'com.dedoers.doer://open';
 
       var ua = navigator.userAgent || '';
       var isIOS = /iPhone|iPad|iPod/i.test(ua);
