@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["9Y8W6FS5Z8.com.dedoers.doer"],
+        "components": [
+          { "/": "/join.html", "?": { "code": "?*" }, "comment": "org, group and challenge invite links" },
+          { "/": "/open.html", "comment": "generic open-the-app link used in emails" }
+        ],
+        "paths": ["/join.html", "/open.html"]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["9Y8W6FS5Z8.com.dedoers.doer"]
+  }
+}
