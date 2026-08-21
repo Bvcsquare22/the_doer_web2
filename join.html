@@ -95,8 +95,9 @@
 
       <div id="fallback" class="hidden">
         <h1>Join on Doer</h1>
-        <p id="fallback-copy">Get the app to join, or open it if you already have it installed.</p>
-        <a id="store-link" class="btn btn-primary" href="#">Get the app</a>
+        <p id="fallback-copy">Already installed? Tap Open in Doer. If nothing happens, install the app first, open it once, then come back and tap Open in Doer.</p>
+        <a id="open-link-2" class="btn btn-primary" href="#">Open in Doer</a>
+        <a id="store-link" class="btn btn-secondary" href="#">Get the app</a>
         <a class="btn btn-secondary" href="https://www.dedoer.com/">Visit dedoer.com</a>
       </div>
     </div>
@@ -155,15 +156,31 @@
       // tap on a normal link element is the standard fix — that link's own
       // default-prevented click handler below is a genuine user gesture,
       // which the OS will honor.
-      openLinkEl.href = scheme;
-      openLinkEl.addEventListener('click', function (e) {
-        e.preventDefault();
-        var fallbackTimer = setTimeout(showFallback, 2000);
-        document.addEventListener('visibilitychange', function () {
-          if (document.hidden) clearTimeout(fallbackTimer);
+      // Real bug found 2026-08-21: the ONLY tap-anchored "Open in Doer"
+      // button lived inside #opening, and the 2s timer below calls
+      // showFallback(), which hides #opening. So the one control that can
+      // actually launch the app vanished two seconds after page load, and
+      // everyone who took longer than that to tap (i.e. almost everyone)
+      // was left with nothing but "Get the app" and got bounced to the
+      // store even with Doer already installed. An REA admin hit this
+      // twice and ended up with two accounts and no membership.
+      // The fallback card now carries its own Open button, so a tap-driven
+      // launch stays available no matter how long the page has been open.
+      var openLinkEl2 = document.getElementById('open-link-2');
+      function wireOpen(el) {
+        if (!el) return;
+        el.href = scheme;
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+          var fallbackTimer = setTimeout(showFallback, 2000);
+          document.addEventListener('visibilitychange', function () {
+            if (document.hidden) clearTimeout(fallbackTimer);
+          });
+          window.location.href = scheme;
         });
-        window.location.href = scheme;
-      });
+      }
+      wireOpen(openLinkEl);
+      wireOpen(openLinkEl2);
 
       // Still worth one automatic attempt first — some browsers/versions do
       // honor it, and this costs nothing since the button above is right
