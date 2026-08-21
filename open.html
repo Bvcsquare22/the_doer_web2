@@ -95,8 +95,9 @@
 
       <div id="fallback" class="hidden">
         <h1>Open Doer</h1>
-        <p id="fallback-copy">Get the app, or open it if you already have it installed.</p>
-        <a id="store-link" class="btn btn-primary" href="#">Get the app</a>
+        <p id="fallback-copy">Already installed? Tap Open in Doer. If nothing happens, install the app first, open it once, then come back and tap Open in Doer.</p>
+        <a id="open-link-2" class="btn btn-primary" href="#">Open in Doer</a>
+        <a id="store-link" class="btn btn-secondary" href="#">Get the app</a>
         <a class="btn btn-secondary" href="https://www.dedoer.com/">Visit dedoer.com</a>
       </div>
     </div>
@@ -155,15 +156,26 @@
         return;
       }
 
-      openLinkEl.href = SCHEME;
-      openLinkEl.addEventListener('click', function (e) {
-        e.preventDefault();
-        var fallbackTimer = setTimeout(showFallback, 2000);
-        document.addEventListener('visibilitychange', function () {
-          if (document.hidden) clearTimeout(fallbackTimer);
+      // Same bug join.html had (fixed 2026-08-21): the only tap-anchored
+      // launch control sat inside #opening, which showFallback() hides two
+      // seconds after load, so anyone slower than that lost the one button
+      // that can actually open the app and got pushed to the store instead.
+      // The fallback card carries its own Open button now.
+      var openLinkEl2 = document.getElementById('open-link-2');
+      function wireOpen(el) {
+        if (!el) return;
+        el.href = SCHEME;
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+          var fallbackTimer = setTimeout(showFallback, 2000);
+          document.addEventListener('visibilitychange', function () {
+            if (document.hidden) clearTimeout(fallbackTimer);
+          });
+          window.location.href = SCHEME;
         });
-        window.location.href = SCHEME;
-      });
+      }
+      wireOpen(openLinkEl);
+      wireOpen(openLinkEl2);
 
       // Still worth one automatic attempt first — some mail clients'
       // embedded browsers do honor a script-triggered navigation here even
