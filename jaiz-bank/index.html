@@ -397,6 +397,21 @@
     .nbtn.side svg{ width:12px; height:12px; }
     .wrap{ gap:8px; padding:14px 14px 8px; }
   }
+
+  /* On an actual phone, a drawn bezel around the screen is a frame around a
+     frame — the device in the viewer's hand already supplies one. Drop ours
+     so the content runs edge to edge and reads as closer to the real app. */
+  @media (max-width: 480px){
+    .phone{
+      padding:0;
+      border-radius:22px;
+      background:var(--ink);
+      box-shadow:0 24px 48px -18px rgba(0,0,0,.55);
+    }
+    .phone-screen{ border-radius:22px; }
+    .notch, .home-indicator{ display:none; }
+    .screens{ top:0; }
+  }
 </style>
 </head>
 <body>
@@ -567,8 +582,37 @@
                 <div class="v plain">301</div>
               </div>
             </section>
-            <!-- 3 : CHALLENGE / WHO'S COMPETING -->
+            <!-- 4 : CREATE CHALLENGE (ADMIN) -->
             <section class="screen" data-idx="3">
+              <div class="app-topbar" style="padding-top:8px;">
+                <div class="icon-btn">&times;</div>
+                <div style="font-size:11px;font-weight:800;letter-spacing:.6px;color:#9aa8c2;">NEW CHALLENGE</div>
+                <div style="width:26px;"></div>
+              </div>
+              <div class="field-label" style="padding-top:14px;">CHALLENGE NAME</div>
+              <div class="field">Jaiz Bank Step Challenge</div>
+              <div class="field-label">TYPE</div>
+              <div class="type-row">
+                <div>Battle</div><div class="on">Departments</div><div>Everyone</div>
+              </div>
+              <div class="field-label">DEPARTMENTS COMPETING</div>
+              <div class="chip-row">
+                <span class="chip solid">All departments</span>
+                <span class="chip">Wuse, Abuja</span>
+                <span class="chip">Apapa, Lagos</span>
+                <span class="chip">Ikoyi, Lagos</span>
+                <span class="chip">Ilorin, Kwara</span>
+              </div>
+              <div class="field-label">REWARD (OPTIONAL)</div>
+              <div class="field">100,000 for top 2</div>
+              <div class="field-label">DURATION</div>
+              <div class="field">10 days</div>
+              <div style="height:20px"></div>
+              <div class="cta-gold">Launch Challenge</div>
+              <div style="text-align:center;font-size:11px;color:#66738f;padding:0 30px 10px;">Any HR admin can do this in under two minutes &mdash; no engineering ticket, no spreadsheet.</div>
+            </section>
+            <!-- 5 : CHALLENGE / WHO'S COMPETING -->
+            <section class="screen" data-idx="4">
               <div class="app-topbar" style="padding-top:8px;">
                 <div class="icon-btn">‹</div>
                 <div style="font-size:11px;font-weight:800;letter-spacing:.6px;color:#9aa8c2;">JAIZ BANK STEP CHALLENGE</div>
@@ -598,36 +642,7 @@
               <div class="reward-strip">🏆 &nbsp;100,000 for top 2 branches</div>
               <div class="cta-outline">YOU'RE IN &nbsp;&#10003;</div>
             </section>
-            <!-- 4 : CREATE CHALLENGE (ADMIN) -->
-            <section class="screen" data-idx="4">
-              <div class="app-topbar" style="padding-top:8px;">
-                <div class="icon-btn">&times;</div>
-                <div style="font-size:11px;font-weight:800;letter-spacing:.6px;color:#9aa8c2;">NEW CHALLENGE</div>
-                <div style="width:26px;"></div>
-              </div>
-              <div class="field-label" style="padding-top:14px;">CHALLENGE NAME</div>
-              <div class="field">Jaiz Bank Step Challenge</div>
-              <div class="field-label">TYPE</div>
-              <div class="type-row">
-                <div>Battle</div><div class="on">Departments</div><div>Everyone</div>
-              </div>
-              <div class="field-label">DEPARTMENTS COMPETING</div>
-              <div class="chip-row">
-                <span class="chip solid">All departments</span>
-                <span class="chip">Wuse, Abuja</span>
-                <span class="chip">Apapa, Lagos</span>
-                <span class="chip">Ikoyi, Lagos</span>
-                <span class="chip">Ilorin, Kwara</span>
-              </div>
-              <div class="field-label">REWARD (OPTIONAL)</div>
-              <div class="field">100,000 for top 2</div>
-              <div class="field-label">DURATION</div>
-              <div class="field">10 days</div>
-              <div style="height:20px"></div>
-              <div class="cta-gold">Launch Challenge</div>
-              <div style="text-align:center;font-size:11px;color:#66738f;padding:0 30px 10px;">Any HR admin can do this in under two minutes &mdash; no engineering ticket, no spreadsheet.</div>
-            </section>
-            <!-- 5 : FINAL STANDINGS -->
+            <!-- 6 : FINAL STANDINGS -->
             <section class="screen" data-idx="5">
               <div class="app-topbar" style="padding-top:8px;">
                 <div class="icon-btn">‹</div>
@@ -765,8 +780,8 @@
     "What joining would look like",
     "What the admin view would look like",
     "What a branch home screen would show",
-    "What a bank-wide challenge would look like",
     "What launching one would take",
+    "What a bank-wide challenge would look like",
     "What a resolved challenge would look like",
     "What the monthly record would look like",
     "This was a mockup"
