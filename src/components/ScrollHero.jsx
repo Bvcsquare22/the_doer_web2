@@ -2,7 +2,8 @@ import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { gsap, ScrollTrigger } from '../effects/smoothScroll.js';
 import { canRun3D, isMobile } from '../lib/device.js';
 import { SPLINE_SCENE } from '../config.js';
-import { world } from '../effects/worldState.js';
+import { world, pulse } from '../effects/worldState.js';
+import { onReady } from './Preloader.jsx';
 import { ChallengePhone } from './Mockups.jsx';
 import { Arrow, ArrowUpRight, Gift, Flame, Shield } from './Icons.jsx';
 
@@ -76,6 +77,7 @@ export default function ScrollHero() {
     const el = section.current;
     const hero = el.querySelector('.hero-copy');
     requestAnimationFrame(() => el.classList.add('in'));
+    const stopReady = onReady(() => { world.introAt = performance.now(); });
 
     const io = new IntersectionObserver(([e]) => setActive(e.isIntersecting));
     io.observe(el);
@@ -97,7 +99,7 @@ export default function ScrollHero() {
       tl.to({}, { duration: 0.6 });
       gsap.to('.scroll-hint', { autoAlpha: 0, scrollTrigger: { trigger: el, start: 'top top', end: '+=200', scrub: true } });
     }, el);
-    return () => { io.disconnect(); ctx.revert(); };
+    return () => { stopReady(); io.disconnect(); ctx.revert(); };
   }, [rich]);
 
   if (!rich) return <StaticHero />;
@@ -105,7 +107,7 @@ export default function ScrollHero() {
   return (
     <header className={`world ${lite ? 'is-lite' : ''}`} ref={section} data-label="START" data-theme="dark">
       <div className="world-sticky">
-        <div className="world-bg">
+        <div className="world-bg" data-cursor="Tap" onClick={pulse}>
           <Suspense fallback={<div className="world-loading" />}>
             {SPLINE_SCENE ? <Spline scene={SPLINE_SCENE} /> : <ScrollWorld active={active} lite={lite} />}
           </Suspense>
@@ -121,7 +123,7 @@ export default function ScrollHero() {
             </div>
           ))}
         </div>
-        <div className="scroll-hint" aria-hidden="true"><span>Scroll to walk</span><i /></div>
+        <div className="scroll-hint" aria-hidden="true"><span>Scroll to walk · Tap to pulse</span><i /></div>
       </div>
     </header>
   );

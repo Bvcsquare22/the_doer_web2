@@ -16,7 +16,8 @@ export function startSmoothScroll() {
   lenis.on('scroll', ScrollTrigger.update);
   const tick = (t) => lenis && lenis.raf(t * 1000);
   gsap.ticker.add(tick);
-  gsap.ticker.lagSmoothing(0);
+  // Keep lag smoothing on: if the page stalls while 3D loads, timelines (like the intro) pause instead of skipping ahead.
+  gsap.ticker.lagSmoothing(500, 33);
   return () => {
     gsap.ticker.remove(tick);
     lenis.destroy();

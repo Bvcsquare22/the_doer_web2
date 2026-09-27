@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Bell, Flame } from './Icons.jsx';
 import { prefersReducedMotion } from '../lib/device.js';
 
@@ -61,6 +61,47 @@ export function ChallengePhone({ w = 270, className, style }) {
   );
 }
 
+/* A leaderboard that actually moves: steps tick up and your branch climbs past the others. */
+const START = [['Head Office', 9160], ['Port Harcourt', 8977], ['Surulere · you', 8412], ['Ikeja', 8030]];
+function LiveBoard() {
+  const [rows, setRows] = useState(START);
+  const [bumped, setBumped] = useState('');
+  const ref = useRef(null);
+  useEffect(() => {
+    if (prefersReducedMotion()) return;
+    let visible = false;
+    const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; });
+    io.observe(ref.current);
+    const id = setInterval(() => {
+      if (!visible) return;
+      setRows((prev) => {
+        const me = prev.find((r) => r[0].includes('you'));
+        if (me[1] > 9600) return START; // loop the story
+        const next = prev.map(([n, v]) => [n, v + (n.includes('you') ? 90 + Math.round(Math.random() * 60) : Math.round(Math.random() * 45))]);
+        const before = [...prev].sort((a, b) => b[1] - a[1]).map((r) => r[0]);
+        const after = [...next].sort((a, b) => b[1] - a[1]).map((r) => r[0]);
+        const climber = after.find((n, i) => before.indexOf(n) > i);
+        setBumped(climber || '');
+        return next;
+      });
+    }, 1300);
+    return () => { clearInterval(id); io.disconnect(); };
+  }, []);
+  const order = [...rows].sort((a, b) => b[1] - a[1]).map((r) => r[0]);
+  return (
+    <div className="lb live" ref={ref}>
+      {rows.map(([n, v]) => {
+        const i = order.indexOf(n);
+        return (
+          <div key={n} className={`lb-row ${n.includes('you') ? 'me' : ''}`} style={{ top: `calc(${i} * var(--w) * .118)` }}>
+            <span className="r">{i + 1}</span><span>{n}{bumped === n && <span className="up">▲</span>}</span><b>{v.toLocaleString('en-US')}</b>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export function BattlePhone({ w = 300, title = 'Branch League, October', reward = 'A paid day off + the trophy' }) {
   return (
     <Phone w={w}>
@@ -75,12 +116,7 @@ export function BattlePhone({ w = 300, title = 'Branch League, October', reward 
         <div className="bar gold"><i style={{ width: '78%' }} /></div>
         <div className="app-row"><span>Avg per person <b>8,412</b></span><span>Leader <b>9,160</b></span></div>
       </div>
-      <div className="lb">
-        <div className="lb-row"><span className="r">1</span><span>Head Office</span><b>9,160</b></div>
-        <div className="lb-row"><span className="r">2</span><span>Port Harcourt</span><b>8,977</b></div>
-        <div className="lb-row me"><span className="r">3</span><span>Surulere · you</span><b>8,412</b></div>
-        <div className="lb-row"><span className="r">4</span><span>Ikeja</span><b>8,030</b></div>
-      </div>
+      <LiveBoard />
       <div className="app-card app-reward">
         <span className="logo">🏆</span>
         <div><div className="app-label">Winning branch gets</div><b>{reward}</b></div>

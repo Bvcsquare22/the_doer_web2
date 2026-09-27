@@ -4,7 +4,7 @@ import { Environment, Lightformer, Sparkles, Grid, Float } from '@react-three/dr
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
 import * as THREE from 'three';
 
-import { world } from './worldState.js';
+import { world, pulse } from './worldState.js';
 
 const GOLD = new THREE.Color('#D4A843');
 const GOLD_HOT = new THREE.Color('#FFD77A');
@@ -63,6 +63,8 @@ function Footsteps({ curve, count }) {
     const m = mesh.current;
     if (!m || !m.instanceColor) return;
     const head = 0.03 + world.progress * 0.9 + 0.05;
+    const now = performance.now();
+    const fronts = world.pulses.map((t) => head - 0.06 + ((now - t) / 1000) * 0.32);
     for (let i = 0; i < count; i++) {
       const target = ts[i] < head ? 1 : 0;
       glow.current[i] = THREE.MathUtils.damp(glow.current[i], target, 6, dt);
@@ -71,6 +73,10 @@ function Footsteps({ curve, count }) {
       const fresh = THREE.MathUtils.clamp(1 - (head - ts[i]) * 30, 0, 1) * g;
       c.copy(DIM).lerp(GOLD, g).lerp(GOLD_HOT, fresh * 0.8);
       if (!target && ts[i] - head < 0.012) c.lerp(LIME, 0.25);
+      for (const f of fronts) {
+        const d = Math.abs(ts[i] - f);
+        if (d < 0.02) c.lerp(i % 2 ? GOLD_HOT : LIME, 1 - d / 0.02);
+      }
       m.setColorAt(i, c);
     }
     m.instanceColor.needsUpdate = true;
@@ -106,16 +112,26 @@ function Coins({ curve, count }) {
 const _v = new THREE.Vector3();
 function Coin({ spin }) {
   const ref = useRef();
+  const state = useRef({ hover: 0, hot: false, pop: 0 });
   // Never let a coin sit in front of the lens: shrink it away as the camera walks past.
   useFrame(({ camera }, dt) => {
     const g = ref.current;
     if (!g) return;
-    g.rotation.y += dt * spin;
+    const st = state.current;
+    st.hover = THREE.MathUtils.damp(st.hover, st.hot ? 1 : 0, 8, dt);
+    st.pop = Math.max(0, st.pop - dt * 1.4);
+    g.rotation.y += dt * (spin + st.hover * 9 + st.pop * 30);
+    g.position.y = Math.sin((1 - st.pop) * Math.PI) * st.pop * 1.2;
     const d = g.getWorldPosition(_v).distanceTo(camera.position);
-    g.scale.setScalar(THREE.MathUtils.smoothstep(d, 1.2, 2.6));
+    g.scale.setScalar(THREE.MathUtils.smoothstep(d, 1.2, 2.6) * (1 + st.hover * 0.35));
   });
+  const events = {
+    onPointerOver: (e) => { e.stopPropagation(); state.current.hot = true; },
+    onPointerOut: () => { state.current.hot = false; },
+    onClick: (e) => { e.stopPropagation(); state.current.pop = 1; pulse(); },
+  };
   return (
-    <group ref={ref}>
+    <group ref={ref} {...events}>
       <mesh rotation={[Math.PI / 2, 0, 0]}>
         <cylinderGeometry args={[0.24, 0.24, 0.05, 48]} />
         <meshStandardMaterial color="#D4A843" metalness={1} roughness={0.22} />
@@ -178,10 +194,13 @@ function Rig({ curve }) {
     const pos = curve.getPointAt(t);
     const ahead = curve.getPointAt(Math.min(t + 0.06, 1));
     const sway = Math.sin(clock.elapsedTime * 0.6) * 0.08;
+    // Fly in: start high and far back, swoop down onto the path once the intro curtain opens.
+    const k = world.introAt ? THREE.MathUtils.clamp((performance.now() - world.introAt) / 2800, 0, 1) : 0;
+    const lift = Math.pow(1 - k, 3);
     camera.position.set(
       pos.x + world.pointer.x * 0.35 + sway,
-      pos.y + 1.25 + world.pointer.y * 0.18 + Math.abs(Math.sin(clock.elapsedTime * 1.6)) * 0.03,
-      pos.z + 1.6
+      pos.y + 1.25 + world.pointer.y * 0.18 + Math.abs(Math.sin(clock.elapsedTime * 1.6)) * 0.03 + lift * 5.5,
+      pos.z + 1.6 + lift * 6
     );
     look.set(ahead.x, ahead.y + 0.35, ahead.z);
     smoothLook.current.lerp(look, 1 - Math.exp(-dt * 5));

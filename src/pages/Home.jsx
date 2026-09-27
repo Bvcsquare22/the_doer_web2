@@ -1,6 +1,6 @@
 import Layout from '../components/Layout.jsx';
 import ScrollHero from '../components/ScrollHero.jsx';
-import { BattlePhone, StreakPhone, JoinPhone, RewardsPhone } from '../components/Mockups.jsx';
+import { BattlePhone, StreakPhone, JoinPhone, RewardsPhone, ChallengePhone } from '../components/Mockups.jsx';
 import { StoreButtons, ShaderBackdrop, Head } from '../components/Shared.jsx';
 import { Arrow, Bars, Trophy, Gift } from '../components/Icons.jsx';
 import { EMAIL } from '../config.js';
@@ -68,7 +68,7 @@ export default function Home() {
             </div>
           </div>
           <div className="battle-stage reveal d2">
-            <div className="battle-glow" />
+            <div className="battle-glow" data-speed="1.2" />
             <BattlePhone />
           </div>
         </div>
@@ -116,16 +116,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* INSIDE THE APP */}
-      <section className="section paper" data-label="INSIDE THE APP" data-theme="light">
+      {/* INSIDE THE APP: pinned, the phones travel sideways as you scroll */}
+      <section className="section paper gallery" data-label="INSIDE THE APP" data-theme="light" data-cursor="Scroll">
         <div className="wrap">
-          <Head eyebrow="Inside the app" center>Built to make you <span className="gold">show up tomorrow.</span></Head>
-          <div className="screens">
-            <figure className="reveal"><StreakPhone /><figcaption><span>01</span>Streaks that build habits</figcaption></figure>
-            <figure className="reveal d1"><JoinPhone /><figcaption><span>02</span>Private spaces for teams</figcaption></figure>
-            <figure className="reveal d2"><RewardsPhone /><figcaption><span>03</span>Rewards that are real</figcaption></figure>
+          <div className="gallery-head">
+            <Head eyebrow="Inside the app" className="gallery-title">Built to make you <span className="gold">show up tomorrow.</span></Head>
+            <span className="hint reveal"><i />Keep scrolling</span>
           </div>
-          <p className="mock-note" style={{ justifyContent: 'center' }}>Current Doer interface, illustrative names and numbers.</p>
+          <div className="screens">
+            <figure><StreakPhone w={270} /><figcaption><span>01</span>Streaks that build habits</figcaption></figure>
+            <figure><ChallengePhone w={270} /><figcaption><span>02</span>Sponsored challenges, live</figcaption></figure>
+            <figure><JoinPhone w={270} /><figcaption><span>03</span>Private spaces for teams</figcaption></figure>
+            <figure><BattlePhone w={270} /><figcaption><span>04</span>Battles that move in real time</figcaption></figure>
+            <figure><RewardsPhone w={270} /><figcaption><span>05</span>Rewards that are real</figcaption></figure>
+          </div>
+          <p className="mock-note">Current Doer interface, illustrative names and numbers.</p>
         </div>
       </section>
 

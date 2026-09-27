@@ -5,6 +5,9 @@ import { prefersReducedMotion, canRun3D } from '../lib/device.js';
 import { EMAIL } from '../config.js';
 import { Menu, Close } from './Icons.jsx';
 import InView from './InView.jsx';
+import Preloader from './Preloader.jsx';
+import Cursor from './Cursor.jsx';
+import { initCinematic } from '../effects/cinematic.js';
 
 const LiquidLogo = lazy(() => import('../effects/LiquidLogo.jsx'));
 
@@ -219,6 +222,7 @@ function usePageEffects() {
   useEffect(() => {
     document.documentElement.classList.add('js');
     const stop = startSmoothScroll();
+    const stopCinematic = initCinematic();
     const reduce = prefersReducedMotion();
 
     const countUp = (el) => {
@@ -252,7 +256,7 @@ function usePageEffects() {
 
     // Fonts change layout; make sure pinned scroll scenes measure the final page.
     document.fonts?.ready.then(() => ScrollTrigger.refresh());
-    return () => { io.disconnect(); stop(); };
+    return () => { io.disconnect(); stopCinematic(); stop(); };
   }, []);
 }
 
@@ -260,6 +264,8 @@ export default function Layout({ page, cta, sideLeft, sideRight, children, modal
   usePageEffects();
   return (
     <>
+      <Preloader />
+      <Cursor />
       <Frame sideLeft={sideLeft} sideRight={sideRight} />
       <Nav page={page} cta={cta} />
       <main>{children}</main>
