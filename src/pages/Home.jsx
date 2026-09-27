@@ -2,12 +2,14 @@ import Layout from '../components/Layout.jsx';
 import ScrollHero from '../components/ScrollHero.jsx';
 import { BattlePhone, StreakPhone, JoinPhone, RewardsPhone, ChallengePhone } from '../components/Mockups.jsx';
 import { StoreButtons, ShaderBackdrop, Head } from '../components/Shared.jsx';
-import { Arrow, Bars, Trophy, Gift } from '../components/Icons.jsx';
+import { Arrow, Bars, Trophy, Gift, Flame, Users, Lock, Phone, Chart, Target, Shield, Map } from '../components/Icons.jsx';
 import { EMAIL } from '../config.js';
 
-const MARQUEE = ['Walk', 'Compete', 'Get rewarded', 'Branch vs branch', 'Team vs team', 'Real prizes', 'No gym needed'];
+const MARQUEE = ['Walk', 'Earn airtime', 'Beat your colleagues', 'Win free food', 'Keep your streak', 'Get cashback', 'Take a day off', 'No gym needed'];
 
 const FAQ = [
+  ['What can I win?', 'Each challenge shows its prize before you join. Rewards include airtime, mobile money, food vouchers, cashback and brand vouchers. Inside company programmes, employers add things like paid days off and trophies.'],
+  ['Do I need a smartwatch?', 'No. Doer works with the phone you already carry. It reads your steps from Apple Health on iPhone or Health Connect on Android.'],
   ['Is Doer free?', 'Yes. Doer is free to download and free to use. Brands and organizations fund the rewards, you just show up and walk.'],
   ['Are the rewards real?', 'Yes. When you complete a challenge you earn things like airtime, food vouchers and cash rewards from the brand or organization behind it. Redeemable in the real world, not points on a screen.'],
   ['How does Doer count my steps?', 'Doer reads step data from Apple Health on iPhone and Health Connect on Android, only with your permission. No wearable or extra hardware needed.'],
@@ -38,9 +40,25 @@ export default function Home() {
         <div className="wrap">
           <Head eyebrow="Doer in three lines">Most people will never step inside a gym. <span className="gold">We built for them.</span></Head>
           <div className="wwh">
-            <div className="wwh-row reveal"><span className="k">WHAT</span><span className="q">What we do</span><p className="a">We turn walking into something worth showing up for. Doer counts your steps automatically, puts you in <em>challenges and team battles</em>, and pays out real rewards when you hit the goal.</p></div>
-            <div className="wwh-row reveal"><span className="k">WHO</span><span className="q">Who we serve</span><p className="a"><em>Everyday people</em> who know they should move more. <em>Organizations</em> that want healthier, closer teams. <em>Brands</em> that want to be part of a win instead of an ad people skip.</p></div>
-            <div className="wwh-row reveal"><span className="k">HOW</span><span className="q">How we serve them</span><p className="a">People walk for free. Companies run <em>monthly step battles</em> between branches and departments with a live dashboard. Brands <em>sponsor challenges</em> and fund the prizes. Everyone is paid in the same currency: movement.</p></div>
+            <div className="wwh-row reveal"><span className="k">WHAT</span><span className="q">What we do</span><p className="a">We turn walking into a game you can win. Your phone counts your steps, you join <em>challenges and team battles</em>, and when you hit the goal you collect something real: <em>airtime, mobile money, food vouchers or cashback.</em></p></div>
+            <div className="wwh-row reveal"><span className="k">WHO</span><span className="q">Who we serve</span><p className="a"><em>Everyday people</em> who know they should move more but need a reason. <em>Organizations</em>, from banks to government agencies, that want healthier, closer staff. <em>Brands</em> that want people to choose them, not skip them.</p></div>
+            <div className="wwh-row reveal"><span className="k">HOW</span><span className="q">How we serve them</span><p className="a">Walkers use Doer <em>free, forever.</em> Organizations run <em>monthly branch and department battles</em> with a live dashboard. Brands <em>sponsor challenges</em> and fund the prizes. The more people move, the more everyone wins.</p></div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT YOUR STEPS CAN WIN */}
+      <section className="section paper" id="rewards" data-label="REWARDS" data-theme="light">
+        <div className="wrap">
+          <Head eyebrow="What your steps can win" lede="Every challenge shows its prize before you join. Hit the goal, it's yours. No points to convert, no tokens to cash out.">Real rewards. <span className="gold">Not points.</span></Head>
+          <div className="reward-wall">
+            <div className="rw big reveal"><span className="rw-k">📱</span><b>Airtime</b><p>Straight to your line when you finish.</p></div>
+            <div className="rw reveal d1"><span className="rw-k">₦</span><b>Mobile money</b><p>Cash rewards to your wallet.</p></div>
+            <div className="rw reveal d1"><span className="rw-k">🍔</span><b>Food vouchers</b><p>Meals from the brands you already eat.</p></div>
+            <div className="rw reveal d2"><span className="rw-k">%</span><b>Cashback</b><p>Money back from sponsoring brands.</p></div>
+            <div className="rw reveal d2"><span className="rw-k">🎟</span><b>Brand vouchers</b><p>Products and perks from sponsors.</p></div>
+            <div className="rw reveal d3"><span className="rw-k">🌴</span><b>Paid days off</b><p>From employers running Doer for staff.</p></div>
+            <div className="rw dark reveal d3"><span className="rw-k">🏆</span><b>Trophies &amp; badges</b><p>Bragging rights you keep forever.</p></div>
           </div>
         </div>
       </section>
@@ -81,7 +99,25 @@ export default function Home() {
           <div className="steps">
             <div className="step reveal"><span className="num">01</span><h3 className="h3">Join a challenge</h3><p className="body">Pick a sponsored challenge, join your company's private space, or start a group with friends. One tap and you are in.</p></div>
             <div className="step reveal d1"><span className="num">02</span><h3 className="h3">Just walk</h3><p className="body">Doer reads your steps from Apple Health or Health Connect, with your permission. Your streak grows, your rank moves, your team climbs.</p></div>
-            <div className="step reveal d2"><span className="num">03</span><h3 className="h3">Claim the reward</h3><p className="body">Hit the goal and the prize is yours. Not points. Not coins. Airtime, food, vouchers and cash rewards from real brands.</p></div>
+            <div className="step reveal d2"><span className="num">03</span><h3 className="h3">Claim the reward</h3><p className="body">Hit the goal and the prize is yours: airtime, mobile money, food vouchers or cashback from the brand or employer behind the challenge.</p></div>
+          </div>
+        </div>
+      </section>
+
+      {/* EVERYTHING IN DOER */}
+      <section className="section" data-label="FEATURES" data-theme="light" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <Head eyebrow="Everything in Doer">Built to keep you <span className="gold">coming back tomorrow.</span></Head>
+          <div className="feat-grid reveal">
+            <div className="feat"><span className="ico"><Target /></span><h3>Sponsored challenges</h3><p>7, 14 and 30 day step challenges funded by brands, each with a real prize waiting at the finish.</p></div>
+            <div className="feat"><span className="ico"><Users /></span><h3>Team battles</h3><p>Your group against theirs on a live board. Scored per person, so small teams win too.</p></div>
+            <div className="feat"><span className="ico"><Flame /></span><h3>Streaks</h3><p>Every day you walk, your streak grows. Miss a day and it resets. That's the point.</p></div>
+            <div className="feat"><span className="ico"><Trophy /></span><h3>Badges &amp; milestones</h3><p>From your first 1,000 steps to 3 million. Every milestone is a badge you keep.</p></div>
+            <div className="feat"><span className="ico"><Chart /></span><h3>Live leaderboards</h3><p>See exactly where you rank, today, this week, this challenge.</p></div>
+            <div className="feat"><span className="ico"><Map /></span><h3>Groups &amp; walk clubs</h3><p>Join verified groups like Run Club Abuja and the Doer WalkClub, or start your own.</p></div>
+            <div className="feat"><span className="ico"><Lock /></span><h3>Your name, your call</h3><p>Compete under a display name like QuietStepper. Nobody needs to know it's you.</p></div>
+            <div className="feat"><span className="ico"><Phone /></span><h3>No wearable needed</h3><p>Works with the phone in your pocket, through Apple Health or Health Connect.</p></div>
+            <div className="feat"><span className="ico"><Shield /></span><h3>Your data stays yours</h3><p>Health data is never sold. Sponsors see results, never your personal details.</p></div>
           </div>
         </div>
       </section>
@@ -93,22 +129,22 @@ export default function Home() {
           <div className="aud">
             <a className="aud-card reveal" href="#download">
               <span className="tag">01 · PEOPLE</span>
-              <h3 className="h3">For people who want a reason to move</h3>
-              <p>90% of people who start a fitness journey quit within three months. Not because they are lazy. Because nothing is waiting on day four. Doer puts something there.</p>
-              <ul><li>Free to download, free to play</li><li>Streaks, badges and leaderboards</li><li>Walk clubs in Abuja and Lagos</li><li>Real rewards, redeemable in the real world</li></ul>
+              <h3 className="h3">For anyone who needs a reason to move</h3>
+              <p>90% of people who start a fitness journey quit within three months. Not because they're lazy. Because nothing is waiting on day four. Doer puts airtime there.</p>
+              <ul><li>Free to download, free forever</li><li>Airtime, mobile money, food and cashback</li><li>Streaks, badges and leaderboards</li><li>Walk clubs in Abuja and Lagos</li></ul>
               <span className="go">Download Doer <Arrow /></span>
             </a>
             <a className="aud-card feature reveal d1" href="/organizations.html">
               <span className="tag">02 · ORGANIZATIONS</span>
-              <h3 className="h3">For companies that want healthier teams</h3>
-              <p>A monthly wellness programme your staff actually use. Branches and departments compete, HR watches it live, and it costs your team zero extra work.</p>
+              <h3 className="h3">For banks, agencies and companies</h3>
+              <p>A monthly step league for your staff. Branches and departments compete, HR watches it live, Doer funds the monthly rewards. Your team does zero extra work.</p>
               <ul><li>A private space only your staff can see</li><li>Branch vs branch, department vs department</li><li>Live participation dashboard and reports</li><li>Monthly rewards, already funded</li></ul>
               <span className="go">See Doer for organizations <Arrow /></span>
             </a>
             <a className="aud-card reveal d2" href="/brands.html">
               <span className="tag">03 · BRANDS</span>
               <h3 className="h3">For brands tired of being skipped</h3>
-              <p>Over half of digital ads are never actually seen. A Doer challenge is chosen. People opt in and carry your brand with them for 7 to 30 days.</p>
+              <p>Over half of digital ads are never seen. A Doer challenge is chosen. People opt in, walk with your brand for 7 to 30 days, and win your reward.</p>
               <ul><li>Fully branded challenge pages</li><li>Sponsor public challenges or company battles</li><li>Verified steps, joins and redemptions</li><li>Pay for movement, not impressions</li></ul>
               <span className="go">Sponsor a challenge <Arrow /></span>
             </a>
@@ -156,6 +192,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* INVESTORS */}
+      <section className="section dark ink2" id="investors" data-label="INVESTORS" data-theme="dark">
+        <div className="wrap">
+          <Head eyebrow="For investors" lede="Brands waste most of their ad spend on attention they never get. Africa is losing over a million lives a year to diseases driven by inactivity. Doer connects the two: brands pay for verified movement, people get rewarded for it.">Two broken systems. <span className="gold">One business.</span></Head>
+          <div className="inv-grid">
+            <div className="inv reveal"><span className="inv-k">Model</span><b>Businesses pay. Walkers never do.</b><p>Two revenue streams: brand challenge sponsorships, and recurring corporate wellness contracts priced per branch.</p></div>
+            <div className="inv reveal d1"><span className="inv-k">Traction</span><b>Live inside a federal agency.</b><p>1,039,743 steps in nine days, 78% of staff active, 17 days unbroken. Live on iOS and Android.</p></div>
+            <div className="inv reveal d2"><span className="inv-k">Proof of demand</span><b>200M+ people walk for rewards.</b><p>Sweatcoin proved it with tokens. Doer pays in rewards people actually want, through local rails.</p></div>
+            <div className="inv reveal d1"><span className="inv-k">Moat</span><b>Verified activity data.</b><p>Every challenge builds a dataset of real movement and reward response that can't be copied with code alone.</p></div>
+            <div className="inv reveal d2"><span className="inv-k">Backing</span><b>Selected, 1 of 15 from 300+.</b><p>LvlUp Labs cohort. Africa Innovation Challenge 2026. ICSDI 2026 finalist.</p></div>
+            <div className="inv cta-inv reveal d3"><span className="inv-k">Next</span><b>Talk to the founder.</b><p><a href={`mailto:${EMAIL.founder}?subject=Investing%20in%20Doer`}>{EMAIL.founder}</a></p></div>
+          </div>
+          <p className="source">Sources: comScore and Google Active View (ad viewability) · WHO African Region · Business of Apps (Sweatcoin). Traction figures from Doer's live system, 9 September 2026.</p>
+        </div>
+      </section>
+
       {/* WHY WE EXIST */}
       <section className="section" data-label="WHY WE EXIST" data-theme="light">
         <div className="wrap founder">
@@ -198,8 +250,8 @@ export default function Home() {
         <ShaderBackdrop preset="gold" speed={0.25} />
         <div className="wrap cta reveal">
           <span className="eyebrow" style={{ color: 'var(--ink)' }}>Available now</span>
-          <h2 className="h-display">Your streak<br />starts today.</h2>
-          <p className="lede" style={{ color: 'rgba(13,13,13,.78)' }}>Download Doer, join your first challenge, and find out what your steps are worth.</p>
+          <h2 className="h-display">Start walking.<br />Start winning.</h2>
+          <p className="lede" style={{ color: 'rgba(13,13,13,.78)' }}>Download Doer free, join your first challenge today, and find out what your steps are worth.</p>
           <StoreButtons />
         </div>
       </section>

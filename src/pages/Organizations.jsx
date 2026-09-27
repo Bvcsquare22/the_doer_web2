@@ -32,8 +32,8 @@ export default function Organizations() {
         <div className="hero-grid">
           <div className="hero-copy">
             <span className="eyebrow">Doer for organizations</span>
-            <h1 className="h-display" style={{ fontSize: 'clamp(46px, 6.6vw, 100px)' }}>Staff wellness <span className="gold">people actually use.</span></h1>
-            <p className="lede">Doer turns occasional health walks into a monthly habit. Branches and departments compete on steps, HR watches it live, and the rewards are already funded. It costs your team zero extra work.</p>
+            <h1 className="h-display" style={{ fontSize: 'clamp(46px, 6.6vw, 100px)' }}>Turn your branches into <span className="gold">a step league.</span></h1>
+            <p className="lede">Doer is a monthly walking competition for your staff. Branch against branch, department against department, on the phones they already own. We set it up, fund the monthly rewards and give HR a live dashboard. Your team does zero extra work.</p>
             <div className="hero-actions">
               <button className="btn btn-gold" data-open-form>Book 15 minutes <Arrow /></button>
               <a href="#how" className="btn btn-ghost on-dark">See how it works</a>
@@ -53,6 +53,38 @@ export default function Organizations() {
           </div>
         </div>
       </header>
+
+      {/* KEY FACTS */}
+      <div className="facts" data-theme="light" aria-label="Key facts">
+        <div><b>Days</b><span>from yes to your first battle</span></div>
+        <div><b>0</b><span>IT integrations or devices</span></div>
+        <div><b>Funded</b><span>monthly rewards, by Doer</span></div>
+        <div><b>Live</b><span>dashboard and monthly reports</span></div>
+      </div>
+
+      {/* BUILT FOR */}
+      <section className="section dark" data-label="BUILT FOR" data-theme="dark">
+        <div className="wrap">
+          <Head eyebrow="Built for">Wherever people work <span className="gold">in teams.</span></Head>
+          <div className="tiers">
+            <div className="tier hot reveal" style={{ background: 'var(--gold)', color: 'var(--ink)' }}>
+              <span className="badge" style={{ color: 'var(--ink)' }}>BANKS</span>
+              <h3 className="h3">Every branch on one board</h3>
+              <p className="body" style={{ color: 'rgba(13,13,13,.75)' }}>Built for banks with dozens of branches and staff under real pressure. A measurable programme you can report against NSBP, Responsible Banking and ESG commitments.</p>
+            </div>
+            <div className="tier hot reveal d1" style={{ background: 'var(--ink-3)' }}>
+              <span className="badge">AGENCIES</span>
+              <h3 className="h3">Already live in government</h3>
+              <p className="body">A federal agency's staff have walked on Doer every day since August. Departments compete, and agencies can take on other agencies.</p>
+            </div>
+            <div className="tier hot reveal d2" style={{ background: 'var(--ink-3)' }}>
+              <span className="badge">COMPANIES</span>
+              <h3 className="h3">Any team, any size</h3>
+              <p className="body">Head office against the field team, Lagos against Abuja, Sales against Support. If your people have rivals, Doer gives it a scoreboard.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* THE SHORT VERSION */}
       <section className="section" data-label="THE SHORT VERSION" data-theme="light">
@@ -121,6 +153,19 @@ export default function Organizations() {
         </div>
       </section>
 
+      {/* FIRST MONTH */}
+      <section className="section paper" data-label="YOUR FIRST MONTH" data-theme="light">
+        <div className="wrap">
+          <Head eyebrow="Your first month">What happens <span className="gold">after you say yes.</span></Head>
+          <ol className="timeline">
+            <li className="reveal"><span className="tl-k">WEEK 1</span><b>We build your space</b><p>Your private group, branches and departments loaded. One invite link goes out to staff.</p></li>
+            <li className="reveal d1"><span className="tl-k">WEEK 2</span><b>The first battle starts</b><p>Branch vs branch goes live. Staff see where their team ranks the moment they open the app.</p></li>
+            <li className="reveal d2"><span className="tl-k">WEEKS 2 TO 4</span><b>The rivalry does the work</b><p>Leaderboards move daily. HR watches participation live without sending a single reminder.</p></li>
+            <li className="reveal d3"><span className="tl-k">END OF MONTH</span><b>Winners, rewards, report</b><p>Top walkers and the winning branch collect their rewards. You get a report on steps, streaks and participation.</p></li>
+          </ol>
+        </div>
+      </section>
+
       {/* DASHBOARD */}
       <section className="section dark ink2" data-label="THE DASHBOARD" data-theme="dark">
         <div className="wrap">
@@ -140,7 +185,7 @@ export default function Organizations() {
         <div className="wrap split" style={{ alignItems: 'start' }}>
           <div className="reveal">
             <Head eyebrow="The rewards">Real rewards for your staff, <span className="gold">already funded.</span></Head>
-            <div className="callout">Every month, <b>we put up real rewards for your staff.</b> We also run Doer WalkClub, and we can organize monthly walking retreats for your teams, fully organized on our end. All they have to do is show up.</div>
+            <div className="callout">Every month, <b>we put up real rewards for your staff</b>, like airtime and vouchers. We also run Doer WalkClub, and we can organize monthly walking retreats for your teams, fully organized on our end. All they have to do is show up.</div>
           </div>
           <div className="reveal d1">
             <p className="lede" style={{ marginBottom: 14 }}>Then layer on your own incentives. From our work with a federal government agency, these work well:</p>

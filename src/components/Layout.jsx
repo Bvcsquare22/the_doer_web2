@@ -56,10 +56,11 @@ function Frame({ sideLeft, sideRight }) {
 /* ---------- Nav: liquid glass on desktop, frosted on mobile, text color follows the section below ---------- */
 const LINKS = {
   home: [
+    { href: '#rewards', label: 'Rewards' },
     { href: '#battles', label: 'Battles' },
-    { href: '#how', label: 'How it works' },
-    { href: '/organizations.html', label: 'For Organizations' },
-    { href: '/brands.html', label: 'For Brands' },
+    { href: '/organizations.html', label: 'Organizations' },
+    { href: '/brands.html', label: 'Brands' },
+    { href: '#investors', label: 'Investors' },
   ],
   organizations: [
     { href: '/', label: 'Doer app' },
@@ -185,14 +186,14 @@ function Footer() {
       <div className="footer-grid">
         <div>
           <a href="/" className="brand"><img src="/logo.png" alt="" /><span>DOER</span></a>
-          <p>We make walking worth it, for people, organizations and brands. Built in Abuja by De Doers Limited.</p>
+          <p>We make walking worth it. Walkers earn airtime, food and cashback, organizations run step leagues, brands fund the prizes. Built in Abuja by De Doers Limited.</p>
         </div>
         <div><h5>Product</h5><ul>
-          <li><a href="/#battles">Battles</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/#download">Download</a></li>
+          <li><a href="/#rewards">Rewards</a></li><li><a href="/#battles">Battles</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/#download">Download</a></li>
         </ul></div>
         <div><h5>Company</h5><ul>
           <li><a href="/organizations.html">For Organizations</a></li><li><a href="/brands.html">For Brands</a></li>
-          <li><a href={`mailto:${EMAIL.partnerships}`}>Partnerships</a></li><li><a href={`mailto:${EMAIL.hello}`}>Contact</a></li>
+          <li><a href="/#investors">Investors</a></li><li><a href={`mailto:${EMAIL.partnerships}`}>Partnerships</a></li><li><a href={`mailto:${EMAIL.hello}`}>Contact</a></li>
         </ul></div>
         <div><h5>Legal &amp; Social</h5><ul>
           <li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/delete-account.html">Delete Account</a></li>

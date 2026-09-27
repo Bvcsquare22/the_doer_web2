@@ -32,7 +32,7 @@ export default function Brands() {
           <div className="hero-copy">
             <span className="eyebrow">Doer for brands</span>
             <h1 className="h-display" style={{ fontSize: 'clamp(46px, 6.6vw, 100px)' }}>Don't interrupt people. <span className="gold">Be part of their win.</span></h1>
-            <p className="lede">Brands on Doer sponsor walking challenges people choose to join. For 7 to 30 days your brand sits inside a goal someone is working toward every day, and when they hit it, the reward in their hand is yours.</p>
+            <p className="lede">Sponsor a walking challenge on Doer and your airtime, voucher or product becomes the prize thousands of people walk for. For 7 to 30 days your brand sits inside a goal they chase every day, and when they win, your brand is the win.</p>
             <div className="hero-actions">
               <button className="btn btn-gold" data-open-form>Sponsor a challenge <Arrow /></button>
               <a href="#formats" className="btn btn-ghost on-dark">See the formats</a>
@@ -52,6 +52,14 @@ export default function Brands() {
           </div>
         </div>
       </header>
+
+      {/* WHO YOU REACH */}
+      <div className="facts" data-theme="light" aria-label="Who you reach">
+        <div><b>18 to 34</b><span>smartphone users in Lagos and Abuja</span></div>
+        <div><b>Daily</b><span>opens for the length of your challenge</span></div>
+        <div><b>Workforces</b><span>inside banks, agencies and companies</span></div>
+        <div><b>Verified</b><span>steps, joins and redemptions</span></div>
+      </div>
 
       {/* COMPARE */}
       <section className="section" data-label="THE PROBLEM" data-theme="light">
@@ -109,7 +117,7 @@ export default function Brands() {
             <div className="feat"><span className="ico"><span className="mark" style={{ fontSize: 18 }}>30D</span></span><h3>30 Day Challenge</h3><p>A full month. The deepest integration on Doer: people wake up every day with your brand attached to their goal.</p></div>
             <div className="feat"><span className="ico"><Users /></span><h3>Team battle sponsorship</h3><p>Two groups compete, one wins, and your brand funds the prize. The rivalry drives the engagement.</p></div>
             <div className="feat"><span className="ico"><Building /></span><h3>Sponsor a company battle</h3><p>Back the monthly branch battle inside an organization, or a company vs company showdown. Your brand in front of whole workforces.</p></div>
-            <div className="feat"><span className="ico"><Handshake /></span><h3>Built with you</h3><p>From brief to launch, our team designs the challenge around your goal, timeline and audience. You pick the reward, we handle the rest.</p></div>
+            <div className="feat"><span className="ico"><Handshake /></span><h3>Built with you</h3><p>From brief to launch, our team designs the challenge around your goal. You pick the reward: airtime, data, vouchers, product, cashback. We handle the rest.</p></div>
           </div>
         </div>
       </section>

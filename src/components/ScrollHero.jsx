@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { prefersReducedMotion } from '../lib/device.js';
 import { gsap, ScrollTrigger } from '../effects/smoothScroll.js';
 import { canRun3D, isMobile } from '../lib/device.js';
 import { SPLINE_SCENE } from '../config.js';
@@ -11,30 +12,47 @@ const ScrollWorld = lazy(() => import('../effects/ScrollWorld.jsx'));
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
 const WHO = [
-  { n: '01', href: '#download', b: 'People', em: 'who want a reason to move' },
-  { n: '02', href: '/organizations.html', b: 'Organizations', em: 'that want healthier teams' },
-  { n: '03', href: '/brands.html', b: 'Brands', em: 'that want attention people choose to give' },
+  { n: '01', href: '#download', b: 'Walkers', em: 'earn airtime, food and cashback for steps' },
+  { n: '02', href: '/organizations.html', b: 'Organizations', em: 'run monthly step battles for staff' },
+  { n: '03', href: '/brands.html', b: 'Brands', em: 'fund the prize, own the moment' },
 ];
 
 const CHAPTERS = [
-  { k: '01 · WALK', h: <>Every step<br /><span className="gold">counted.</span></>, p: 'Doer reads your steps from Apple Health or Health Connect in the background. No logging, no forms, no wearable to buy.' },
+  { k: '01 · WALK', h: <>Every step<br /><span className="gold">counted.</span></>, p: 'Your phone already counts your steps. Doer reads them from Apple Health or Health Connect in the background. No smartwatch, no logging, no gym.' },
   { k: '02 · COMPETE', h: <>Every team<br /><span className="gold">ranked.</span></>, p: 'Branch vs branch. Department vs department. Friends vs friends. Scored on average steps per person, so any team can win.' },
-  { k: '03 · WIN', h: <>Every win<br /><span className="gold">rewarded.</span></>, p: 'Airtime, food, vouchers, cash rewards and paid days off. Funded by brands and organizations, never by you.' },
+  { k: '03 · WIN', h: <>Every win<br /><span className="gold">paid.</span></>, p: 'Airtime. Mobile money. Food vouchers. Cashback. A paid day off. Real rewards from real brands and employers. Never points, never tokens.' },
 ];
+
+const REWARDS = ['airtime.', 'free food.', 'cashback.', 'vouchers.', 'a day off.'];
+
+/* The reward word in the headline keeps changing: airtime, free food, cashback... */
+function RewardWord() {
+  const [i, setI] = useState(0);
+  const [out, setOut] = useState(false);
+  useEffect(() => {
+    if (prefersReducedMotion()) return;
+    const id = setInterval(() => {
+      setOut(true);
+      setTimeout(() => { setI((n) => (n + 1) % REWARDS.length); setOut(false); }, 420);
+    }, 2400);
+    return () => clearInterval(id);
+  }, []);
+  return <span className={`gold reward-word ${out ? 'out' : ''}`}>{REWARDS[i]}</span>;
+}
 
 function Intro({ static: isStatic }) {
   return (
     <div className="hero-copy">
-      <span className="hero-tag"><span className="pill">Live</span> Already running inside a federal government agency</span>
-      <h1 className="h-display">
-        <span className="line"><span>We make</span></span>
-        <span className="line"><span>walking</span></span>
-        <span className="line"><span className="gold">worth it.</span></span>
+      <span className="hero-tag"><span className="pill">Free</span> On iOS &amp; Android · Live inside a federal agency</span>
+      <h1 className="h-display" aria-label="Walk. Earn airtime, free food, cashback, vouchers, a day off.">
+        <span className="line"><span>Walk.</span></span>
+        <span className="line"><span>Earn</span></span>
+        <span className="line"><span><RewardWord /></span></span>
       </h1>
-      <p className="lede">Doer is the walking app that turns everyday steps into team battles and real rewards. You walk, your phone counts it, your team climbs the board, and the prize is something you actually want.</p>
+      <p className="lede">Doer is the free app that rewards the steps you already take. Join a challenge, walk with your team, hit the goal, and collect airtime, mobile money, food vouchers or cashback from the brands and employers behind it.</p>
       <div className="hero-actions">
-        <a href="#download" className="btn btn-gold">Download Doer <Arrow /></a>
-        <a href="/organizations.html" className={`btn btn-ghost ${isStatic ? '' : 'on-dark'}`}>Doer for your company</a>
+        <a href="#download" className="btn btn-gold">Start walking, it's free <Arrow /></a>
+        <a href="/organizations.html" className={`btn btn-ghost ${isStatic ? '' : 'on-dark'}`}>Doer for your staff</a>
       </div>
       <nav className="hero-who" aria-label="Who Doer serves">
         {WHO.map((w) => (
