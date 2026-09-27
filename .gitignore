@@ -1,1 +1,4 @@
+node_modules/
+dist/
 de_doer/
+.DS_Store
