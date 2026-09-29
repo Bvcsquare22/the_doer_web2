@@ -73,6 +73,19 @@
       border: 1px solid #2c2a26;
     }
     .hidden { display: none; }
+    .code-box {
+      margin: 0 0 20px;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #2c2a26;
+      text-align: center;
+    }
+    .code-box .label { font-size: 13px; color: #a39f94; margin: 0 0 6px; }
+    .code-box .code { font-size: 30px; font-weight: 700; letter-spacing: 0.18em; color: #e8be5a; margin: 0 0 10px; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .code-box button {
+      background: transparent; color: #f2eee4; border: 1px solid #2c2a26; border-radius: 8px;
+      padding: 10px 16px; font: inherit; font-weight: 600; font-size: 14px; cursor: pointer;
+    }
     @media (prefers-color-scheme: light) {
       html, body { background: #fbf9f4; color: #1c1a16; }
       p { color: #6b665c; }
@@ -80,6 +93,10 @@
       .spinner { border-color: #e4dfd3; border-top-color: #a9803d; }
       .btn-primary { background: #a9803d; color: #fff; }
       .btn-secondary { color: #1c1a16; border-color: #e4dfd3; }
+      .code-box { border-color: #e4dfd3; }
+      .code-box .label { color: #6b665c; }
+      .code-box .code { color: #a9803d; }
+      .code-box button { color: #1c1a16; border-color: #e4dfd3; }
     }
   </style>
 </head>
@@ -95,6 +112,11 @@
 
       <div id="fallback" class="hidden">
         <h1>Join on Doer</h1>
+        <div id="code-box" class="code-box hidden">
+          <p class="label">Your friend's code</p>
+          <p class="code" id="code-text"></p>
+          <button type="button" id="copy-code">Copy code</button>
+        </div>
         <p id="fallback-copy">Already installed? Tap Open in Doer. If nothing happens, install the app first, open it once, then come back and tap Open in Doer.</p>
         <a id="open-link-2" class="btn btn-primary" href="#">Open in Doer</a>
         <a id="store-link" class="btn btn-secondary" href="#">Get the app</a>
@@ -106,7 +128,7 @@
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
-      var type = params.get('type');   // 'challenge' | 'group' | 'org'
+      var type = params.get('type');   // 'challenge' | 'group' | 'org' | 'friend' | 'referral'
       var code = params.get('code');
 
       var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.dedoers.doer';
@@ -132,6 +154,24 @@
 
       storeLinkEl.href = isIOS ? APP_STORE_URL : PLAY_STORE_URL;
 
+      // A referral link is for someone who may not have the app yet. Show
+      // the code so they can type it in after signing up (the app asks "Did a
+      // friend invite you?"), and copy it when they tap the store button.
+      if (type === 'referral' && code) {
+        var codeText = String(code).toUpperCase().replace(/[^A-Z0-9]/g, '');
+        document.getElementById('code-text').textContent = codeText;
+        document.getElementById('code-box').classList.remove('hidden');
+        document.getElementById('opening-title').textContent = 'A friend invited you to Doer';
+        var copy = function () {
+          try { if (navigator.clipboard) navigator.clipboard.writeText(codeText); } catch (e) {}
+        };
+        document.getElementById('copy-code').addEventListener('click', function () {
+          copy();
+          this.textContent = 'Copied';
+        });
+        storeLinkEl.addEventListener('click', copy);
+      }
+
       // No code/type, or a desktop visitor — nothing to deep-link into,
       // just show the normal "get the app" card immediately.
       if (!code || !type || !isMobile) {
@@ -139,11 +179,16 @@
         return;
       }
 
-      var scheme = type === 'challenge'
-        ? 'com.dedoers.doer://join-challenge/' + encodeURIComponent(code)
-        : type === 'org'
-        ? 'com.dedoers.doer://join-org/' + encodeURIComponent(code)
-        : 'com.dedoers.doer://join/' + encodeURIComponent(code);
+      // 'friend' and 'referral' used to fall through to the group handler
+      // (com.dedoers.doer://join/), so a friend invite link opened from a
+      // browser tried to join a GROUP with a friend code. Each type now maps
+      // to its own scheme host, matching deep_link_observer.dart.
+      var schemeHost = type === 'challenge' ? 'join-challenge'
+        : type === 'org' ? 'join-org'
+        : type === 'friend' ? 'friend-invite'
+        : type === 'referral' ? 'referral'
+        : 'join';
+      var scheme = 'com.dedoers.doer://' + schemeHost + '/' + encodeURIComponent(code);
 
       // iOS Safari (and, on newer Android/Chrome, to a lesser extent)
       // silently ignores a script-triggered navigation to a custom URL
