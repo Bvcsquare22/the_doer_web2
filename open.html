@@ -181,10 +181,13 @@
       // embedded browsers do honor a script-triggered navigation here even
       // though plain Safari/Chrome often don't — and the button above is
       // right there as the real fallback the instant this doesn't work.
-      window.location.href = SCHEME;
+      // Not on iPhone (2026-10-02): there the https link already opens Doer when it's installed
+      // (Universal Links), so reaching this page means it isn't, and Safari answers an automatic try
+      // with "Safari cannot open the page because the address is invalid". The Open button stays.
+      if (!isIOS) window.location.href = SCHEME;
       setTimeout(function () {
         if (!document.hidden) showFallback();
-      }, 2000);
+      }, isIOS ? 0 : 2000);
     })();
   </script>
 </body>
