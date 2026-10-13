@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terms of Service for the Doer fitness app">
+  <title>Terms of Service — Doer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #D4A843;
+      --gold-dim: #a07c2a;
+      --dark: #0D0D0D;
+      --dark-2: #111111;
+      --dark-3: #181818;
+      --white: #F5F0E8;
+      --white-dim: rgba(245,240,232,0.72);
+      --white-dimmer: rgba(245,240,232,0.42);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+      cursor: none;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    .cursor { width:10px; height:10px; background:var(--gold); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:99999; mix-blend-mode:difference; }
+    .cursor-ring { width:36px; height:36px; border:1px solid var(--gold); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:99998; transition:width .3s,height .3s,opacity .3s; opacity:0.5; }
+
+    /* NAV */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:1000;
+      padding: 20px 48px;
+      display: flex; align-items:center; justify-content:space-between;
+      transition: all .4s ease;
+    }
+    nav.scrolled {
+      background: rgba(13,13,13,0.93);
+      backdrop-filter: blur(20px);
+      padding: 14px 48px;
+      border-bottom: 1px solid rgba(212,168,67,0.1);
+    }
+    .nav-left { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav-logo-img { width:34px; height:34px; border-radius:8px; }
+    .nav-logo-text { font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:3px; color:var(--white); }
+    .nav-logo-text span { color:var(--gold); }
+    .nav-right { display:flex; align-items:center; gap:28px; }
+    .nav-back { color:var(--white-dim); text-decoration:none; font-size:13px; font-weight:500; transition:color .3s; }
+    .nav-back:hover { color:var(--white); }
+    .nav-home-btn {
+      display: inline-block;
+      white-space: nowrap;
+      border:1px solid var(--gold); color:var(--gold); padding:9px 20px;
+      font-size:12px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;
+      text-decoration:none; transition:all .3s; position:relative; overflow:hidden;
+    }
+    .nav-home-btn::before { content:''; position:absolute; inset:0; background:var(--gold); transform:translateX(-100%); transition:transform .3s ease; }
+    .nav-home-btn:hover::before { transform:translateX(0); }
+    .nav-home-btn:hover { color:var(--dark); }
+    .nav-home-btn span { position:relative; z-index:1; }
+
+    /* PAGE HERO */
+    .page-hero {
+      padding: 160px 48px 80px;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .page-hero::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      opacity: 0.3;
+      margin-top: 64px;
+    }
+    .page-label {
+      font-size: 10px; letter-spacing:4px; text-transform:uppercase;
+      color:var(--gold); display:flex; align-items:center; gap:12px;
+      margin-bottom:24px; font-weight:700;
+    }
+    .page-label::before { content:''; display:block; width:30px; height:1px; background:var(--gold); }
+    .page-title {
+      font-family:'Bebas Neue',sans-serif;
+      font-size: clamp(56px, 8vw, 100px);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .page-title span { color: var(--gold); }
+    .page-updated { font-size:14px; color:var(--white-dimmer); font-weight:400; }
+
+    /* CONTENT */
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px 120px;
+    }
+    .section { margin-bottom: 56px; }
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px; font-weight:700;
+      color:var(--gold);
+      margin-bottom:20px;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(212,168,67,0.15);
+    }
+    p { color:var(--white-dim); font-size:16px; margin-bottom:16px; line-height:1.8; }
+    ul { list-style:none; margin:16px 0; }
+    li {
+      color:var(--white-dim); font-size:16px; margin-bottom:14px;
+      padding-left:24px; position:relative; line-height:1.7;
+    }
+    li::before {
+      content:''; position:absolute; left:0; top:9px;
+      width:6px; height:6px; background:var(--gold); border-radius:50%;
+    }
+    li strong { color:var(--white); }
+    .highlight {
+      background:var(--dark-3);
+      border-radius:4px;
+      padding:24px 28px;
+      margin:24px 0;
+      border-left:3px solid var(--gold);
+    }
+    .highlight p { margin-bottom:0; }
+    .highlight p + p { margin-top: 12px; }
+    .highlight strong { color: var(--white); }
+    .contact-box {
+      background:var(--dark-2);
+      border:1px solid rgba(212,168,67,0.15);
+      border-radius:4px;
+      padding:48px;
+      text-align:center;
+      margin-top:64px;
+    }
+    .contact-box h3 { font-family:'Syne',sans-serif; font-size:24px; font-weight:700; margin-bottom:14px; }
+    .contact-box p { margin-bottom:8px; }
+    .contact-box a { color:var(--gold); font-size:17px; text-decoration:none; font-weight:700; }
+    .contact-box a:hover { text-decoration:underline; }
+
+    /* FOOTER */
+    footer {
+      background: #080808;
+      border-top:1px solid rgba(255,255,255,0.05);
+      padding: 48px;
+    }
+    .footer-inner { max-width:1200px; margin:0 auto; }
+    .footer-top {
+      display:flex; justify-content:space-between; align-items:flex-start;
+      margin-bottom:36px; padding-bottom:36px;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+    .footer-brand { display:flex; align-items:center; gap:12px; text-decoration:none; margin-bottom:12px; }
+    .footer-logo-img { width:28px; height:28px; border-radius:7px; }
+    .footer-logo-text { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:3px; color:var(--white); }
+    .footer-logo-text span { color:var(--gold); }
+    .footer-tagline { font-size:13px; color:var(--white-dimmer); max-width:200px; line-height:1.6; }
+    .footer-links { display:flex; gap:72px; }
+    .footer-col h4 { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; font-weight:700; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:10px; padding-left:0; }
+    .footer-col ul li::before { display:none; }
+    .footer-col ul li a { color:var(--white-dimmer); text-decoration:none; font-size:13px; transition:color .3s; }
+    .footer-col ul li a:hover { color:var(--white); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; }
+    .footer-copy { font-size:12px; color:rgba(255,255,255,0.22); }
+    .footer-gold-line { width:50px; height:1px; background:var(--gold); opacity:0.3; }
+
+    @media (max-width:900px) {
+      nav { padding:16px 20px; }
+      .page-hero { padding:130px 20px 60px; }
+      .content { padding:0 20px 80px; }
+      .footer-top { flex-direction:column; gap:32px; }
+      .footer-links { gap:40px; }
+      footer { padding:40px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-left">
+      <img src="logo.png" alt="Doer" class="nav-logo-img">
+      <span class="nav-logo-text">D<span>O</span>ER</span>
+    </a>
+    <div class="nav-right">
+      <a href="index.html" class="nav-back">← Back to Home</a>
+      <a href="index.html#download" class="nav-home-btn"><span>Download</span></a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-label">Legal</div>
+    <h1 class="page-title">Terms of<br><span>Service.</span></h1>
+    <p class="page-updated">Effective Date: October 13, 2026 &nbsp;|&nbsp; Last Updated: October 13, 2026</p>
+  </div>
+
+  <div class="content">
+    <main>
+
+      <div class="section">
+        <div class="highlight">
+          <p><strong>Please Read Carefully.</strong> These Terms of Service ("Terms") constitute a legally binding agreement between you and De Doers Limited, the company behind the Doer app. By downloading, accessing, or using Doer, you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree, you must discontinue use of the app immediately.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>1. Definitions</h2>
+        <p>In these Terms, the following definitions apply:</p>
+        <ul>
+          <li><strong>"Doer," "De Doers," "Company," "we," "us," or "our"</strong> means De Doers Limited, the company behind the Doer app.</li>
+          <li><strong>"App"</strong> means the Doer mobile application, available on the Google Play Store and Apple App Store, and all associated features, tools, and services.</li>
+          <li><strong>"User," "you," or "your"</strong> means any individual who registers for or uses the App.</li>
+          <li><strong>"Account"</strong> means the personalized profile created by a User to access the App.</li>
+          <li><strong>"Challenge"</strong> means a brand-sponsored or platform-initiated fitness activity — primarily walking or step-based — that Users can join within the App. Challenges have defined goals, durations, and associated Rewards.</li>
+          <li><strong>"Brand Partner" or "Partner"</strong> means any brand, company, or merchant that sponsors a Challenge or provides Rewards in connection with a Challenge on the platform.</li>
+          <li><strong>"Streak"</strong> means the consecutive number of days on which a User has met the daily movement target within the App. Missing a day resets the Streak to zero.</li>
+          <li><strong>"Streak Freeze"</strong> means a premium feature that, when activated, prevents a Streak from resetting upon a single missed day.</li>
+          <li><strong>"Rewards"</strong> means the prizes, vouchers, discount codes, free products, meals, or other incentives offered by Brand Partners upon successful completion of a Challenge.</li>
+          <li><strong>"Rewards Balance"</strong> means the total of earned but unclaimed Rewards held in a user's account at any given time.</li>
+          <li><strong>"Redemption"</strong> means the act of claiming and using a Reward earned through completion of a Challenge.</li>
+          <li><strong>"Premium Subscription"</strong> means the paid subscription tier offering access to enhanced features including Streak Freeze, advanced tracking, and social features.</li>
+          <li><strong>"Leaderboard"</strong> means the in-app ranking system that ranks Users by step count or challenge performance within a given Challenge.</li>
+          <li><strong>"Steps"</strong> means the number of walking steps recorded by the App through the User's device sensors or connected fitness data.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>2. Eligibility and Account Registration</h2>
+        <p>2.1. To use the Doer App, you must:</p>
+        <ul>
+          <li>Be at least 18 years of age, or the age of legal majority in your jurisdiction if higher.</li>
+          <li>Be a resident of Nigeria or otherwise legally permitted to access our services.</li>
+          <li>Provide accurate, current, and complete information during registration.</li>
+          <li>Maintain the accuracy of your registration information and update it promptly if it changes.</li>
+        </ul>
+        <p>2.2. By creating an Account, you represent and warrant that you meet the eligibility requirements above. The Company reserves the right to suspend or terminate Accounts that do not meet these requirements.</p>
+        <p>2.3. You are responsible for maintaining the security of your Account credentials. You must not share your password with any third party. You are responsible for all activity that occurs under your Account, including step submissions and Challenge entries. If you suspect unauthorized access, notify us immediately at <a href="mailto:dedoersapp@gmail.com" style="color:var(--gold);">dedoersapp@gmail.com</a>.</p>
+        <p>2.4. Each individual may only maintain one Account. Creating multiple accounts to participate in the same Challenge more than once, abuse the Rewards system, or circumvent any restriction is a material violation of these Terms.</p>
+        <p>2.5. You acknowledge that use of the App involves physical activity, specifically walking. You confirm that you are in good health and physically able to engage in walking activity. The Company accepts no liability for any injury, illness, or health event arising from your participation in any Challenge. If you have a medical condition, consult a qualified healthcare provider before using the App.</p>
+      </div>
+
+      <div class="section">
+        <h2>3. The Doer Platform and Services</h2>
+        <p>3.1. Doer is a fitness motivation platform that makes walking sustainable and rewarding. Users participate in brand-sponsored walking Challenges, build daily movement Streaks, compete on Leaderboards, and earn real Rewards from Brand Partners for showing up and completing their goals.</p>
+        <p>3.2. The App tracks your daily step count using your device's built-in motion sensors, accelerometer, or connected health platforms. Step data is the primary metric used to determine Challenge progress, Streak status, and Leaderboard rankings.</p>
+        <p>3.3. The App is available on the Google Play Store and on the Apple App Store. The Company's Apple Developer Account is registered in the United Kingdom. Distribution through these platforms is subject to the respective platform's terms and conditions in addition to these Terms.</p>
+        <p>3.4. We reserve the right to modify, suspend, or discontinue any feature or aspect of the App at any time. We will endeavor to provide reasonable advance notice of material changes that affect your active Challenges, Streak, or Rewards Balance.</p>
+        <p>3.5. The App offers a free tier and a Premium Subscription tier. Certain features — including Streak Freeze, advanced performance tracking, and enhanced social tools — are available exclusively to Premium Subscribers.</p>
+      </div>
+
+      <div class="section">
+        <h2>4. Challenges — How They Work</h2>
+        <div class="highlight">
+          <p><strong>How Challenges Work.</strong> A Brand Partner sponsors a named Challenge (e.g. "Chicken Republic 10K Steps"). You join the Challenge, walk the required steps over the defined period, climb the Leaderboard, and earn a real Reward from the sponsoring brand when you complete it. Brands get genuine daily engagement. You get fit and get rewarded.</p>
+        </div>
+        <p><strong>4.1. Joining a Challenge</strong></p>
+        <ul>
+          <li>Challenges are displayed in the Challenges tab of the App. You may join any open Challenge before its entry deadline.</li>
+          <li>Each Challenge specifies: the sponsoring Brand Partner, the step goal, the Challenge duration (typically 7 to 30 days), the Reward on offer, and the Leaderboard structure.</li>
+          <li>By joining a Challenge, you agree to the specific terms of that Challenge as displayed in the App, which supplement these Terms.</li>
+          <li>You may participate in multiple Challenges simultaneously.</li>
+        </ul>
+        <p><strong>4.2. Step Tracking and Verification</strong></p>
+        <ul>
+          <li>The App tracks your daily step count using your device sensors. You are responsible for ensuring the App is granted the necessary permissions to access motion and fitness data on your device.</li>
+          <li>Step data must be recorded organically through physical walking activity. The use of any mechanical device, automated tool, or artificial means to simulate steps is strictly prohibited and constitutes fraud.</li>
+          <li>The Company reserves the right to verify step data and may cross-reference data from device health platforms or other signals. Anomalous step patterns may result in disqualification, forfeiture of Rewards, and account suspension.</li>
+          <li>The Company does not guarantee the accuracy of step tracking at all times, as this is dependent on device hardware and operating system capabilities. Minor discrepancies in step counts are normal and do not constitute a basis for dispute.</li>
+        </ul>
+        <p><strong>4.3. Leaderboards</strong></p>
+        <ul>
+          <li>Each Challenge has a Leaderboard ranking participants by cumulative steps completed. Leaderboard positions update in real time or at intervals determined by the App.</li>
+          <li>Leaderboard rankings are for informational and motivational purposes. Rewards are tied to Challenge completion (reaching the step goal), not exclusively to Leaderboard position, unless a specific Challenge expressly states otherwise.</li>
+          <li>The Company reserves the right to remove any User from a Leaderboard if their step data is found to be fraudulent or in violation of these Terms.</li>
+        </ul>
+        <p><strong>4.4. Challenge Completion and Rewards</strong></p>
+        <ul>
+          <li>A Challenge is considered complete when a User achieves the step goal within the defined Challenge period.</li>
+          <li>Upon completion, the Reward offered by the sponsoring Brand Partner will be made available in the User's Rewards tab within the App.</li>
+          <li>Rewards are subject to availability and the terms set by the sponsoring Brand Partner. The Company does not guarantee the availability of any specific Reward beyond what is committed at the time a Challenge is launched.</li>
+          <li>If a Challenge is cancelled or modified by a Brand Partner or the Company before completion, affected Users will be notified and reasonable efforts will be made to provide an alternative Reward or to void the Challenge without penalty to the User.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>5. Daily Streaks</h2>
+        <p>5.1. A Streak represents the number of consecutive days on which you have met your daily step target within the App. Streaks are a core motivational mechanic of Doer and are tracked independently from Challenge participation.</p>
+        <p>5.2. Missing a day — defined as failing to reach the daily step target before midnight in your local time zone — will reset your Streak to zero. The App may display a warning notification before your Streak resets.</p>
+        <p>5.3. Streak Freeze is available to Premium Subscribers and prevents a Streak from resetting on a single missed day. Streak Freeze activations are limited and subject to the terms of the Premium Subscription plan.</p>
+        <p>5.4. Streaks are tracked based on step data recorded by the App. The Company does not retroactively award or restore Streaks due to device failure, app crashes, or missed data synchronization, except in cases of verified technical failure attributable to the App.</p>
+        <p>5.5. The Company reserves the right to modify the Streak mechanics, daily targets, and related features over time. Material changes will be communicated via in-app notification.</p>
+      </div>
+
+      <div class="section">
+        <h2>6. Rewards Earning Mechanics</h2>
+        <div class="highlight">
+          <p><strong>How Earning Works.</strong> Rewards on Doer are earned by completing brand-sponsored Challenges. When you reach the step goal of a Challenge within the defined period, the sponsoring Brand Partner's Reward is unlocked and added to your Rewards tab. You earn by showing up — not by clicking ads.</p>
+        </div>
+        <p><strong>6.1. How Rewards Are Earned</strong></p>
+        <ul>
+          <li>Rewards are earned exclusively through the successful completion of Challenges as described in Clause 4.</li>
+          <li>Additional Rewards may be available through: referral bonuses (where a referred user successfully registers and completes a qualifying action), platform milestones and streak achievements, promotional campaigns or bonus Challenges offered by the Company or Brand Partners.</li>
+          <li>Rewards are credited to your account upon verified completion of the qualifying activity. Crediting may not be instantaneous and can take up to 7 business days depending on verification requirements.</li>
+        </ul>
+        <p><strong>6.2. Earning Rules and Limits</strong></p>
+        <ul>
+          <li>Rewards are non-transferable between accounts unless the App expressly provides a gifting or transfer feature.</li>
+          <li>The Company may impose Challenge entry limits, earning caps, or frequency restrictions at its discretion. These limits will be communicated within the App.</li>
+          <li>Any fraudulent, automated, or artificially simulated activity used to complete a Challenge or earn Rewards is strictly prohibited and will result in forfeiture of associated Rewards and account suspension or permanent termination.</li>
+          <li>The Company reserves the right to audit, withhold, or reverse Rewards credits that were earned in error, through fraudulent means, or in violation of these Terms.</li>
+        </ul>
+        <p><strong>6.3. Referral Rewards</strong></p>
+        <p>Referral Rewards are only credited where: (a) the referred individual is a new user who has not previously registered on the platform; (b) the referred individual completes the qualifying action within the timeframe specified in the App; and (c) the referral is made through the official in-app referral mechanism. Self-referrals and referrals using fictitious accounts are prohibited and will result in forfeiture of the associated Reward.</p>
+      </div>
+
+      <div class="section">
+        <h2>7. Rewards Redemption Mechanics</h2>
+        <p><strong>7.1. How to Redeem</strong></p>
+        <p>Rewards earned through Challenge completion are displayed in your Rewards tab. Rewards may include:</p>
+        <ul>
+          <li>Vouchers, promo codes, or discount offers from sponsoring Brand Partners (e.g. a free meal from a quick service restaurant, a gym session discount).</li>
+          <li>Digital goods, in-app credits, or platform features.</li>
+          <li>Cashback, airtime, or mobile money credit where expressly offered by a Brand Partner.</li>
+          <li>Physical products or experiences as offered through specific Brand Partner Challenges.</li>
+        </ul>
+        <p>The redemption method for each Reward will be specified in the Rewards tab. Some Rewards require in-store redemption via a code or QR scan; others are fulfilled digitally.</p>
+        <p><strong>7.2. Redemption Process</strong></p>
+        <ul>
+          <li>To redeem a Reward, navigate to your Rewards tab, select the Reward, and follow the instructions displayed. Instructions vary by Reward type and Brand Partner.</li>
+          <li>Once a Reward is redeemed, it cannot be reversed, exchanged, or refunded unless the Brand Partner's own terms provide for this.</li>
+          <li>The Company may require identity verification before processing certain Rewards. You may be asked to provide additional information as part of this process.</li>
+          <li>Fulfilment of physical Rewards is subject to the Brand Partner's own logistics and availability. The Company facilitates the Reward but does not directly fulfil physical products.</li>
+        </ul>
+        <p><strong>7.3. Redemption Restrictions</strong></p>
+        <ul>
+          <li>Rewards cannot be exchanged for cash or monetary value except where this is expressly stated as a Reward option within the App.</li>
+          <li>Rewards may not be sold, bartered, or transferred to any other person or account unless a gifting feature is expressly available.</li>
+          <li>The Company or the sponsoring Brand Partner may decline a redemption where fraud, abuse, or a violation of these Terms is suspected.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>8. Unclaimed and Expired Rewards</h2>
+        <div class="highlight">
+          <p><strong>Important: Rewards Expiry.</strong> Rewards earned on Doer are tied to specific brand-sponsored Challenges and are not a permanent entitlement. Unclaimed Rewards will expire. Please read this section carefully to understand the expiry rules and how to protect your Rewards.</p>
+        </div>
+        <p><strong>8.1. Standard Expiry Policy</strong></p>
+        <p>Rewards earned through Challenge completion are subject to the following expiry schedule:</p>
+        <ul>
+          <li>Challenge Rewards (brand-sponsored prizes) expire ninety (90) days from the date they are credited to your Rewards tab, unless a shorter expiry is specified by the Brand Partner at the time the Challenge is launched.</li>
+          <li>Referral Rewards expire sixty (60) days from the date of crediting if not redeemed within that period.</li>
+          <li>Promotional or bonus Rewards may carry shorter validity periods, which will be communicated at the point of crediting.</li>
+          <li>Streak milestone Rewards expire thirty (30) days from the date of crediting.</li>
+        </ul>
+        <p><strong>8.2. Brand Partner Expiry Terms</strong></p>
+        <p>Rewards sponsored by Brand Partners are subject to the expiry and availability terms set by that Partner at the time the Challenge is created. Where a Brand Partner specifies a shorter redemption window than the standard periods above, the Brand Partner's terms shall prevail and will be clearly displayed within the Challenge and Rewards detail screens.</p>
+        <p><strong>8.3. Account Inactivity</strong></p>
+        <p>An Account is considered inactive if the User has not logged in, completed a Challenge Day, or attempted a redemption for a continuous period of six (6) months. Upon an Account becoming inactive:</p>
+        <ul>
+          <li>The Company will send a notification to your registered email address or via in-app notification warning of imminent Rewards expiry.</li>
+          <li>If no activity is recorded within thirty (30) days of such notification, all Rewards in the inactive account may be forfeited.</li>
+          <li>The Company is not responsible for failed notifications due to outdated or invalid contact details on your account.</li>
+        </ul>
+        <p><strong>8.4. Unclaimed Rewards</strong></p>
+        <p>Rewards that have been credited to your account but not redeemed within the applicable validity period are considered unclaimed. Unclaimed Rewards:</p>
+        <ul>
+          <li>Will expire at the end of the applicable validity period and will be permanently removed from your Rewards tab with no compensation, substitution, or reinstatement.</li>
+          <li>Will not accrue monetary value or any financial interest during the period they remain unclaimed.</li>
+          <li>Cannot be reinstated once expired, except at the sole discretion of the Company in cases of documented technical failures directly attributable to the App.</li>
+          <li>Are not redeemable for cash, and their expiry does not entitle the User to any form of monetary compensation from the Company or the Brand Partner.</li>
+        </ul>
+        <p><strong>8.5. Account Closure</strong></p>
+        <p>If your Account is voluntarily closed by you, or suspended or terminated by the Company:</p>
+        <ul>
+          <li>All Rewards — whether earned, unclaimed, or pending verification — will be immediately and permanently forfeited upon closure or termination.</li>
+          <li>No compensation will be provided for forfeited Rewards in connection with account closure or termination.</li>
+          <li>Active Challenge participation will be terminated and no partial Rewards will be awarded for incomplete Challenges at the time of closure.</li>
+          <li>If closure results from a verified technical error on the part of the Company, we will make reasonable efforts to restore your Rewards Balance upon reinstatement of your account.</li>
+        </ul>
+        <p><strong>8.6. Dispute of Expired or Forfeited Rewards</strong></p>
+        <p>If you believe a Reward has been incorrectly expired or forfeited, you must raise a dispute within thirty (30) days of the expiry date by contacting our support team at <a href="mailto:dedoersapp@gmail.com" style="color:var(--gold);">dedoersapp@gmail.com</a>. We will investigate and respond within fifteen (15) business days. Disputes raised outside this window will not be considered.</p>
+      </div>
+
+      <div class="section">
+        <h2>9. Premium Subscription</h2>
+        <p>9.1. Doer offers a Premium Subscription plan priced at $5.45 per month (or the Nigerian Naira equivalent at the time of purchase). Premium features include Streak Freeze, advanced performance tracking, and enhanced social features.</p>
+        <p>9.2. Subscriptions are billed monthly and will auto-renew unless cancelled at least 24 hours before the end of the current billing period.</p>
+        <p>9.3. Subscription payments are processed through the Apple App Store or Google Play Store, as applicable. Refunds and billing disputes are governed by the respective platform's payment policies.</p>
+        <p>9.4. The Company may modify the pricing, features, or structure of the Premium Subscription with thirty (30) days' notice. Continued subscription after the notice period constitutes acceptance of the revised terms.</p>
+        <p>9.5. Cancellation of a Premium Subscription takes effect at the end of the current billing cycle. You will retain access to Premium features until that date.</p>
+      </div>
+
+      <div class="section">
+        <h2>10. Prohibited Conduct</h2>
+        <p>Users must not engage in any of the following:</p>
+        <ul>
+          <li>Using mechanical devices, motorized transport, vehicles, or any automated means to simulate walking steps and artificially inflate step counts.</li>
+          <li>Using bots, scripts, jailbroken devices, or modified versions of the App to manipulate step data, Challenge progress, or Leaderboard rankings.</li>
+          <li>Creating multiple accounts to participate in the same Challenge more than once or claim the same Reward more than once.</li>
+          <li>Using another person's account credentials or device to earn steps or Rewards on their behalf.</li>
+          <li>Providing false, misleading, or fraudulent information during registration or identity verification.</li>
+          <li>Attempting to hack, reverse-engineer, decompile, or tamper with the App or its step-tracking systems.</li>
+          <li>Circumventing earning caps, Challenge limits, or technical restrictions on the platform.</li>
+          <li>Using the platform for any unlawful purpose, including money laundering, fraud, or any activity prohibited under Nigerian law.</li>
+          <li>Engaging in any activity that disrupts, damages, or degrades the experience of other Users, including harassment, abuse, or manipulation of community features.</li>
+        </ul>
+        <p>Violations of this Clause may result in immediate disqualification from active Challenges, forfeiture of all earned Rewards, suspension or permanent termination of your Account, and referral to appropriate law enforcement where warranted.</p>
+      </div>
+
+      <div class="section">
+        <h2>11. Brand Partners and Third-Party Services</h2>
+        <p>11.1. Challenges on Doer are sponsored by Brand Partners. The Company facilitates the connection between Users and Brand Partners but does not itself provide the goods or services that constitute the Reward.</p>
+        <p>11.2. The availability, terms, and fulfilment of Rewards are ultimately the responsibility of the sponsoring Brand Partner. The Company does not guarantee the quality, accuracy, or continued availability of any Reward once a Challenge is completed.</p>
+        <p>11.3. Any dispute relating to a Reward — including failure of a Brand Partner to honor a committed Reward — should be directed to that Brand Partner in the first instance. The Company may assist in facilitating communication but is not obligated to resolve such disputes or provide compensation on behalf of a Brand Partner.</p>
+        <p>11.4. Brand Partners are vetted by the Company before being permitted to sponsor Challenges. However, the Company makes no warranty regarding the ongoing conduct, solvency, or reliability of any Brand Partner.</p>
+        <p>11.5. The App is made available on Apple's App Store via an account registered in the United Kingdom. Apple Inc. is a distributor only and is not a party to these Terms or to any dispute between you and the Company. Apple has no obligation to provide support, refunds, or remedies in connection with the App, except as required by Apple's own policies.</p>
+      </div>
+
+      <div class="section">
+        <h2>12. Intellectual Property</h2>
+        <p>12.1. All content, features, designs, trademarks, logos, brand identities, and technology comprising the Doer App are the exclusive property of De Doers Limited or its licensors and are protected by applicable intellectual property laws.</p>
+        <p>12.2. You are granted a limited, non-exclusive, non-transferable, revocable license to access and use the App for personal, non-commercial purposes in accordance with these Terms.</p>
+        <p>12.3. You may not reproduce, distribute, modify, create derivative works of, publicly display, or commercially exploit any content from the App without our prior written consent.</p>
+        <p>12.4. Brand Partner names, logos, and branding appearing within Challenges are the property of the respective Brand Partner. Use of Brand Partner trademarks or branding outside the App is not permitted without the Brand Partner's express consent.</p>
+        <p>12.5. Any feedback, suggestions, or ideas you submit regarding the App may be used by the Company without any obligation to compensate you.</p>
+      </div>
+
+      <div class="section">
+        <h2>13. Disclaimer of Warranties</h2>
+        <p>13.1. The App and all associated services are provided on an "as is" and "as available" basis, without warranties of any kind, express or implied, including warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+        <p>13.2. The Company does not warrant that the App will be uninterrupted, error-free, or free of defects. Step tracking accuracy depends on device hardware, operating system performance, and granted permissions, and the Company makes no warranty as to tracking precision.</p>
+        <p>13.3. The Company does not warrant that any specific Challenge, Reward, or Brand Partner will remain available for any particular period.</p>
+        <p>13.4. Doer is a fitness motivation tool. It is not a medical device, health diagnostic product, or fitness prescription service. Nothing in the App constitutes medical or health advice.</p>
+      </div>
+
+      <div class="section">
+        <h2>14. Limitation of Liability</h2>
+        <p>14.1. To the fullest extent permitted by applicable law, De Doers Limited shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of the App, including but not limited to loss of Rewards, loss of data, loss of Streak, physical injury arising from walking activity, or Brand Partner failures.</p>
+        <p>14.2. Our total aggregate liability to you in respect of any claim arising under these Terms shall not exceed NGN 50,000 (Fifty Thousand Naira) or the total value of Rewards redeemed by you in the three (3) months preceding the event, whichever is lower.</p>
+        <p>14.3. Nothing in these Terms limits our liability for death or personal injury caused by our negligence, fraud, or any other liability that cannot be excluded by Nigerian law.</p>
+      </div>
+
+      <div class="section">
+        <h2>15. Suspension and Termination</h2>
+        <p>15.1. You may close your Account at any time through the in-app account management settings or by contacting us at <a href="mailto:dedoersapp@gmail.com" style="color:var(--gold);">dedoersapp@gmail.com</a>. Upon closure, your Streak, Challenge progress, and all Rewards will be permanently forfeited in accordance with Clause 8.5.</p>
+        <p>15.2. The Company may suspend or permanently terminate your Account, with or without notice, in the event of:</p>
+        <ul>
+          <li>A breach of any provision of these Terms, including fraudulent step activity.</li>
+          <li>Suspected manipulation of Challenge data, Leaderboard rankings, or the Rewards system.</li>
+          <li>Account inactivity in accordance with the policy in Clause 8.3.</li>
+          <li>Any circumstance in which continued access poses a risk to the Company, its Users, or Brand Partners.</li>
+        </ul>
+        <p>15.3. Upon termination for breach or fraud, all Rewards will be immediately forfeited, all active Challenge participation will be terminated, and no compensation will be payable.</p>
+      </div>
+
+      <div class="section">
+        <h2>16. Governing Law and Jurisdiction</h2>
+        <div class="highlight">
+          <p><strong>Jurisdiction Note.</strong> Doer is built by a Nigerian company for Nigerian users. While the App is distributed via an Apple Developer Account registered in the United Kingdom, this does not change the governing law of your relationship with De Doers Limited, which is Nigerian law. All disputes are subject to Nigerian courts.</p>
+        </div>
+        <p>16.1. These Terms and any dispute or claim arising out of or in connection with them shall be governed by and construed in accordance with the laws of the Federal Republic of Nigeria.</p>
+        <p>16.2. Both parties submit to the exclusive jurisdiction of the courts of the Federal Capital Territory, Abuja, Nigeria, for the resolution of any dispute arising out of or in connection with these Terms, the App, any Challenge, or any Reward.</p>
+        <p>16.3. Notwithstanding Clause 16.2, users retain any rights available to them under applicable Nigerian consumer protection legislation, including the Federal Competition and Consumer Protection Act (FCCPA) 2018, which shall not be excluded or limited by these Terms.</p>
+        <p>16.4. If you access the App from outside Nigeria, you do so at your own risk and are responsible for compliance with your local laws. The Company makes no representation that the App is appropriate or available for use outside Nigeria.</p>
+        <p>16.5. The fact that the App is distributed through Apple's App Store via an account registered in the United Kingdom does not confer jurisdiction on any UK court, nor does it cause UK law to apply to your relationship with De Doers Limited. Apple's own terms and policies are entirely separate from and independent of these Terms.</p>
+      </div>
+
+      <div class="section">
+        <h2>17. Dispute Resolution</h2>
+        <p>17.1. In the event of a dispute between you and De Doers Limited arising out of these Terms or your use of the App, please contact our support team in the first instance at <a href="mailto:dedoersapp@gmail.com" style="color:var(--gold);">dedoersapp@gmail.com</a> to seek an informal resolution.</p>
+        <p>17.2. If the dispute is not resolved informally within fourteen (14) days of written notice, either Party may refer the matter to mediation before a mutually agreed mediator.</p>
+        <p>17.3. If mediation is unsuccessful or declined, either Party may pursue the matter through the courts of competent jurisdiction as set out in Clause 16.</p>
+      </div>
+
+      <div class="section">
+        <h2>18. Changes to These Terms</h2>
+        <p>18.1. We reserve the right to update or modify these Terms at any time. When we make material changes, we will notify you via in-app notification, email, or prominent notice within the App.</p>
+        <p>18.2. Your continued use of the App after the effective date of any changes constitutes your acceptance of the revised Terms. If you do not accept the revised Terms, you must discontinue use of the App.</p>
+        <p>18.3. The most current version of these Terms will always be accessible within the App and on our website.</p>
+      </div>
+
+      <div class="section">
+        <h2>19. General Provisions</h2>
+        <ul>
+          <li><strong>Entire Agreement:</strong> These Terms, together with our Privacy Policy and any additional terms applicable to specific Challenges or promotions, constitute the entire agreement between you and De Doers Limited regarding your use of the App.</li>
+          <li><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</li>
+          <li><strong>No Waiver:</strong> Our failure to enforce any provision of these Terms shall not constitute a waiver of our right to enforce it in the future.</li>
+          <li><strong>Assignment:</strong> You may not assign or transfer your rights or obligations under these Terms without our prior written consent. We may assign our rights and obligations without restriction.</li>
+          <li><strong>Force Majeure:</strong> The Company shall not be liable for any failure or delay in performance resulting from circumstances beyond its reasonable control, including regulatory changes, infrastructure failures, Brand Partner insolvency, or acts of God.</li>
+          <li><strong>Language:</strong> These Terms are written in English. In the event of any inconsistency between an English version and a translated version, the English version shall prevail.</li>
+        </ul>
+      </div>
+
+      <div class="contact-box">
+        <h3>20. Contact Information</h3>
+        <p>For questions, support, or complaints regarding these Terms or the App, please contact:</p>
+        <p style="color:var(--white); font-weight:700; margin-top:12px;">De Doers Limited (Doer)</p>
+        <p>B03f1 Brains and Hammer City Estate, FCT, Abuja, Nigeria.</p>
+        <p><a href="mailto:dedoersapp@gmail.com">dedoersapp@gmail.com</a> &nbsp;·&nbsp; <a href="mailto:charles@dedoer.com">charles@dedoer.com</a></p>
+        <p>Phone: <a href="tel:+2348139976947">+234 813 997 6947</a></p>
+      </div>
+
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="footer-brand">
+            <img src="logo.png" alt="Doer" class="footer-logo-img">
+            <span class="footer-logo-text">D<span>O</span>ER</span>
+          </a>
+          <p class="footer-tagline">The platform that turns real movement into real rewards — for people, brands, and organizations.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="index.html#how">How It Works</a></li>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#download">Download</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="delete-account.html">Delete Account</a></li>
+              <li><a href="brands.html">For Brands</a></li>
+              <li><a href="organizations.html">For Organizations</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 De Doers Limited. All rights reserved.</p>
+        <div class="footer-gold-line"></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cursor.style.transform=`translate(${mx-5}px,${my-5}px)`; });
+    (function animRing(){ rx+=(mx-rx-18)*.12; ry+=(my-ry-18)*.12; ring.style.transform=`translate(${rx}px,${ry}px)`; requestAnimationFrame(animRing); })();
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ring.style.width='52px';ring.style.height='52px';ring.style.opacity='1';});
+      el.addEventListener('mouseleave',()=>{ring.style.width='36px';ring.style.height='36px';ring.style.opacity='0.5';});
+    });
+    window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>50));
+  </script>
+</body>
+</html>
