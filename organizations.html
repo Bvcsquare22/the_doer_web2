@@ -123,6 +123,9 @@
     transition: background 0.3s;
   }
   .nav-contact-btn:hover { background: var(--gold-bright); }
+  @media (max-width: 640px) {
+    .nav-back { display: none; }
+  }
 
   /* HERO */
   .hero {
@@ -557,7 +560,7 @@
   .challenge-types .section-label::before { background: var(--gold); }
   .ct-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2px;
   }
   .ct-card {
@@ -589,7 +592,43 @@
     letter-spacing: 1px;
   }
   .ct-card-title {
-    display: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+
+  /* REAL APP SCREENS */
+  .org-screens {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+  }
+  .org-screen {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+  }
+  .org-screen img {
+    display: block;
+    width: 100%;
+    filter: drop-shadow(0 30px 40px rgba(17, 16, 8, 0.28));
+  }
+  .org-screen-offset {
+    margin-top: 48px;
+  }
+  .org-screen figcaption {
+    font-size: 13px;
+    color: var(--ink-dim);
+    font-weight: 500;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+  @media (max-width: 600px) {
+    .org-screens { gap: 16px; }
+    .org-screen-offset { margin-top: 28px; }
   }
   .ct-card-desc {
     font-size: 16px;
@@ -1049,7 +1088,7 @@
       <div class="why-card reveal delay-2">
         <div class="why-num">02</div>
         <div class="why-card-title">Built for Structure, Not Just Individuals</div>
-        <p class="why-card-desc">Department vs department. Branch vs branch. Team vs team. The rivalry already exists inside your organization, Doer just gives it a scoreboard.</p>
+        <p class="why-card-desc">Department against department, or the whole company on one board. The rivalry already exists inside your organization. Doer just gives it a scoreboard.</p>
       </div>
       <div class="why-card reveal delay-3">
         <div class="why-num">03</div>
@@ -1104,48 +1143,15 @@
       <div class="wyg-left reveal-left">
         <h2 class="wyg-title">What Being a Doer Organization Actually Means.</h2>
         <p class="wyg-intro">Every organization on Doer gets more than a step counter. They get a working culture tool.</p>
-        <!-- MOCKUP -->
-        <div class="wyg-mockup">
-          <div class="mockup-header" style="background:linear-gradient(135deg,#1a3a1a,#2d6a2d);">
-            <span class="mockup-brand">🏢 Your Organization</span>
-            <span class="mockup-tag">Example</span>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-challenge-name">Q1 Step Challenge — Sales vs Support</div>
-            <div class="mockup-duration">30 Day Challenge</div>
-            <div class="mockup-brand-identity" style="background:rgba(45,106,45,0.1);border-color:rgba(45,106,45,0.25);">
-              <div class="brand-logo-placeholder" style="background:linear-gradient(135deg,#1a3a1a,#2d6a2d);">🏢</div>
-              <div class="brand-identity-text">
-                <div class="brand-identity-label">Organized By</div>
-                <div class="brand-identity-name">HR & Wellness Team</div>
-              </div>
-            </div>
-            <div class="mockup-stats">
-              <div class="m-stat">
-                <span class="m-stat-val">214</span>
-                <span class="m-stat-label">Participants</span>
-              </div>
-              <div class="m-stat">
-                <span class="m-stat-val">6</span>
-                <span class="m-stat-label">Departments</span>
-              </div>
-              <div class="m-stat">
-                <span class="m-stat-val">12d</span>
-                <span class="m-stat-label">Left</span>
-              </div>
-            </div>
-            <div class="mockup-progress">
-              <div class="prog-label"><span>Day 18 of 30</span><strong>60%</strong></div>
-              <div class="prog-bar"><div class="prog-fill"></div></div>
-            </div>
-            <div class="mockup-reward">
-              <span style="font-size:22px;">🎁</span>
-              <div>
-                <div class="reward-text-label">Reward</div>
-                <div class="reward-text-val">Half-Day Off · Winning Department</div>
-              </div>
-            </div>
-          </div>
+        <div class="org-screens">
+          <figure class="org-screen">
+            <img src="images/screen-org-admin.png" alt="Doer admin screen for a new company challenge: choose Everyone together, Battle, or Departments, pick the departments, add an optional reward, and launch" loading="lazy">
+            <figcaption>An admin launches a battle in a few taps</figcaption>
+          </figure>
+          <figure class="org-screen org-screen-offset">
+            <img src="images/screen-battle.png" alt="A live Doer department battle between Finance and Operations, scored on average steps per person, with a team lunch fund for the winner" loading="lazy">
+            <figcaption>Every department sees the live score</figcaption>
+          </figure>
         </div>
       </div>
       <div class="wyg-right reveal-right">
@@ -1161,21 +1167,21 @@
             <div class="wyg-item-icon">🥊</div>
             <div class="wyg-item-content">
               <div class="wyg-item-title">Department vs Department</div>
-              <p class="wyg-item-desc">Turn the whole organization into brackets. Rivalry that already exists between teams now drives participation instead of sitting idle.</p>
+              <p class="wyg-item-desc">Battles are scored on average steps per person, so a team of 14 can beat a team of 19. The rivalry that already exists between teams finally gets a scoreboard.</p>
             </div>
           </div>
           <div class="wyg-item">
             <div class="wyg-item-icon">📈</div>
             <div class="wyg-item-content">
               <div class="wyg-item-title">Participation Health, In Real Time</div>
-              <p class="wyg-item-desc">See who's active and who's gone quiet, by team or by branch, without chasing anyone down for a status update.</p>
+              <p class="wyg-item-desc">See how every department is moving, day by day, without chasing anyone down for a status update.</p>
             </div>
           </div>
           <div class="wyg-item">
             <div class="wyg-item-icon">🛠️</div>
             <div class="wyg-item-content">
               <div class="wyg-item-title">Admin Controls, No Engineering</div>
-              <p class="wyg-item-desc">Any admin launches, edits, and ends a challenge from a simple dashboard. No ticket, no spreadsheet, no waiting.</p>
+              <p class="wyg-item-desc">Any admin picks the format, the departments, and the reward, then launches. No ticket, no spreadsheet, no waiting.</p>
             </div>
           </div>
           <div class="wyg-item">
@@ -1209,23 +1215,18 @@
     <div class="ct-grid">
       <div class="ct-card reveal delay-1">
         <div class="ct-duration">VS</div>
-        <div class="ct-card-title">Department vs Department</div>
-        <p class="ct-card-desc">Two teams, one leaderboard. Whoever moves more wins, right there in the group chat.</p>
+        <div class="ct-card-title">Battle</div>
+        <p class="ct-card-desc">Two departments head to head, ranked by average steps per person, so team size never decides it.</p>
       </div>
       <div class="ct-card gold-card reveal delay-2">
         <div class="ct-duration">ALL</div>
-        <div class="ct-card-title">Company-Wide Challenge</div>
-        <p class="ct-card-desc">Every department, one board. Simple, visible, and competitive from day one across the whole organization.</p>
+        <div class="ct-card-title">Everyone Together</div>
+        <p class="ct-card-desc">The whole organization walks, each person for themselves. The top finishers win.</p>
       </div>
       <div class="ct-card reveal delay-3">
-        <div class="ct-duration">HQ</div>
-        <div class="ct-card-title">Branch vs Branch</div>
-        <p class="ct-card-desc">Pit locations against each other. Distance doesn't matter, steps do. Built for organizations with more than one office.</p>
-      </div>
-      <div class="ct-card reveal delay-4">
-        <div class="ct-duration">EXEC</div>
-        <div class="ct-card-title">Leadership Challenge</div>
-        <p class="ct-card-desc">Put the executive team on the board first. Nothing drives adoption like leadership visibly playing and losing.</p>
+        <div class="ct-duration">3+</div>
+        <div class="ct-card-title">Departments</div>
+        <p class="ct-card-desc">Three or more departments ranked against each other on one board.</p>
       </div>
     </div>
   </div>
@@ -1311,9 +1312,9 @@
         <label class="sp-label">Organization Size</label>
         <select id="spChallenge" class="sp-input">
           <option value="">Select organization size</option>
-          <option>1–50 people</option>
-          <option>51–200 people</option>
-          <option>201–1,000 people</option>
+          <option>1 to 50 people</option>
+          <option>51 to 200 people</option>
+          <option>201 to 1,000 people</option>
           <option>1,000+ people</option>
           <option>Not sure yet</option>
         </select>

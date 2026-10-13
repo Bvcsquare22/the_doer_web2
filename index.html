@@ -274,8 +274,7 @@
     .hero-phone img {
       display: block;
       width: 100%;
-      border-radius: 40px;
-      box-shadow: 0 50px 120px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(212, 168, 67, 0.15), 0 0 90px rgba(212, 168, 67, 0.12);
+      filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 40px rgba(212, 168, 67, 0.12));
     }
 
     .hero-phone-glow {
@@ -752,20 +751,18 @@
     }
 
     .app-tour-item-center {
-      transform: translateY(-32px);
+      margin-top: -32px;
     }
 
     .app-tour-phone {
-      border-radius: 34px;
-      overflow: hidden;
-      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.06);
       margin-bottom: 24px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.55));
+      transition: transform 0.4s ease, filter 0.4s ease;
     }
 
     .app-tour-phone:hover {
       transform: translateY(-8px);
-      box-shadow: 0 50px 120px rgba(0, 0, 0, 0.6), 0 0 60px rgba(212, 168, 67, 0.1), 0 0 0 1px rgba(212, 168, 67, 0.25);
+      filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(212, 168, 67, 0.15));
     }
 
     .app-tour-phone img {
@@ -793,7 +790,7 @@
       }
 
       .app-tour-item-center {
-        transform: none;
+        margin-top: 0;
       }
     }
 
@@ -2370,13 +2367,13 @@
       <div class="hero-visual">
         <div class="hero-phone">
           <div class="hero-phone-glow"></div>
-          <img src="images/screen-groups.png" alt="Abuja Walkers group challenge inside the Doer app" loading="eager">
+          <img src="images/screen-challenge.png" alt="A sponsored 21 day step challenge in the Doer app, 75 percent complete, ranked 7th of 1,284" loading="eager">
         </div>
         <div class="hero-visual-badge">
           <span class="hero-visual-badge-icon">🔥</span>
           <div class="hero-visual-badge-text">
-            <span class="big">212 members walking</span>
-            <span class="small">Abuja Walkers · Live</span>
+            <span class="big">Ranked #7 of 1,284</span>
+            <span class="small">6 days left · Live</span>
           </div>
         </div>
       </div>
@@ -2392,20 +2389,20 @@
       <div class="app-tour-header reveal">
         <div class="section-label" style="justify-content:center;">Inside The App</div>
         <h2 class="app-tour-title">This Isn't a Mockup.<br>It's Doer.</h2>
-        <p class="app-tour-sub">Real screens, from the real app, on real phones. What you download is exactly what you see here.</p>
+        <p class="app-tour-sub">The app's own screens, shown with sample data. What you see here is what you download.</p>
       </div>
       <div class="app-tour-grid">
         <div class="app-tour-item reveal delay-1">
-          <div class="app-tour-phone"><img src="images/screen-home.png" alt="Doer home screen showing joined challenges and groups" loading="lazy"></div>
-          <div class="app-tour-caption">Home — Your Daily Overview</div>
+          <div class="app-tour-phone"><img src="images/screen-home.png" alt="Doer home screen showing a 15 day streak, the next badge, and joined challenges with step progress" loading="lazy"></div>
+          <div class="app-tour-caption">Track your streak and every challenge</div>
         </div>
         <div class="app-tour-item app-tour-item-center reveal delay-2">
-          <div class="app-tour-phone"><img src="images/screen-created.png" alt="Doer new group created confirmation screen" loading="lazy"></div>
-          <div class="app-tour-caption">Every Win, Confirmed Instantly</div>
+          <div class="app-tour-phone"><img src="images/screen-leaderboard.png" alt="Doer challenge leaderboard ranking walkers by total steps" loading="lazy"></div>
+          <div class="app-tour-caption">Climb a live leaderboard</div>
         </div>
         <div class="app-tour-item reveal delay-3">
-          <div class="app-tour-phone"><img src="images/screen-groups.png" alt="Doer Abuja Walkers group challenge screen" loading="lazy"></div>
-          <div class="app-tour-caption">Community — Run Clubs &amp; Groups</div>
+          <div class="app-tour-phone"><img src="images/screen-reward.png" alt="Doer reward screen announcing a 1,000 naira airtime win for finishing a step challenge" loading="lazy"></div>
+          <div class="app-tour-caption">Win real rewards, sent straight to you</div>
         </div>
       </div>
     </div>
@@ -2836,7 +2833,7 @@
       <div class="brands-cta-left">
         <div class="brands-cta-label">For Organizations</div>
         <h2 class="brands-cta-title">Running A Team<br><span>Or A Company?</span></h2>
-        <p class="brands-cta-sub">Turn your organization into a walking challenge. Department vs department, branch vs branch, launched by any admin in minutes, no engineering required.</p>
+        <p class="brands-cta-sub">Turn your organization into a walking challenge. Department battles or the whole company on one board, launched by any admin in minutes, no engineering required.</p>
         <div class="brands-cta-perks">
           <div class="brands-cta-perk"><div class="brands-cta-perk-dot"></div>Built for departments, not just individuals</div>
           <div class="brands-cta-perk"><div class="brands-cta-perk-dot"></div>Set up by anyone, no engineering ticket</div>

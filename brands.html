@@ -123,6 +123,9 @@
     transition: background 0.3s;
   }
   .nav-contact-btn:hover { background: var(--gold-bright); }
+  @media (max-width: 640px) {
+    .nav-back { display: none; }
+  }
 
   /* HERO */
   .hero {
@@ -529,6 +532,34 @@
     line-height: 1.7;
     color: var(--ink);
     font-weight: 400;
+  }
+
+  /* REAL BRAND DASHBOARD */
+  .wyg-head { max-width: 760px; margin-bottom: 56px; }
+  .wyg-head .wyg-intro { margin-bottom: 0; }
+  .wyg-dashboard { margin: 0 0 80px; }
+  .wyg-dashboard img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 40px 60px rgba(17, 16, 8, 0.28));
+  }
+  .wyg-dashboard figcaption {
+    font-size: 13px;
+    color: var(--ink-dimmer);
+    text-align: center;
+    margin-top: 20px;
+  }
+  .wyg-items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+  }
+  .wyg-items-grid .wyg-item:nth-child(2) { border-top: 1px solid var(--ink-border); }
+  @media (max-width: 900px) {
+    .wyg-dashboard { margin-bottom: 56px; }
+    .wyg-items-grid { grid-template-columns: 1fr; }
+    .wyg-items-grid .wyg-item:nth-child(2) { border-top: none; }
   }
 
   /* CHALLENGE TYPES */
@@ -1100,56 +1131,15 @@
 <section class="what-you-get" id="what">
   <div class="what-you-get-inner">
     <div class="section-label reveal">What You Get</div>
-    <div class="wyg-layout">
-      <div class="wyg-left reveal-left">
-        <h2 class="wyg-title">What Being a Doer Brand Actually Means.</h2>
-        <p class="wyg-intro">Every brand on Doer gets more than a placement. They get a presence.</p>
-        <!-- MOCKUP -->
-        <div class="wyg-mockup">
-          <div class="mockup-header">
-            <span class="mockup-brand">🍗 Chicken Republic</span>
-            <span class="mockup-tag">Example</span>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-challenge-name">The 10K Daily Challenge</div>
-            <div class="mockup-duration">7 Day Challenge</div>
-            <div class="mockup-brand-identity">
-              <div class="brand-logo-placeholder">🍗</div>
-              <div class="brand-identity-text">
-                <div class="brand-identity-label">Sponsored By</div>
-                <div class="brand-identity-name">Chicken Republic</div>
-              </div>
-            </div>
-            <div class="mockup-stats">
-              <div class="m-stat">
-                <span class="m-stat-val">2,841</span>
-                <span class="m-stat-label">Participants</span>
-              </div>
-              <div class="m-stat">
-                <span class="m-stat-val">10K</span>
-                <span class="m-stat-label">Daily Steps</span>
-              </div>
-              <div class="m-stat">
-                <span class="m-stat-val">7</span>
-                <span class="m-stat-label">Days</span>
-              </div>
-            </div>
-            <div class="mockup-progress">
-              <div class="prog-label"><span>Day 5 of 7</span><strong>72%</strong></div>
-              <div class="prog-bar"><div class="prog-fill"></div></div>
-            </div>
-            <div class="mockup-reward">
-              <span style="font-size:22px;">🎁</span>
-              <div>
-                <div class="reward-text-label">Reward</div>
-                <div class="reward-text-val">Free Meal Voucher · Chicken Republic</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wyg-right reveal-right">
-        <div class="wyg-items">
+    <div class="wyg-head reveal">
+      <h2 class="wyg-title">What Being a Doer Brand Actually Means.</h2>
+      <p class="wyg-intro">Every brand on Doer gets more than a placement. They get a presence, and a dashboard that shows exactly what it earned.</p>
+    </div>
+    <figure class="wyg-dashboard reveal">
+      <img src="images/screen-brand-dashboard.png" alt="The Doer brand dashboard showing a finished campaign: total steps, completion rate, daily steps chart, engagement breakdown, cost per redemption, and return on spend" loading="lazy">
+      <figcaption>Your campaign dashboard at brands.dedoer.com, shown with a sample brand and sample data.</figcaption>
+    </figure>
+    <div class="wyg-items wyg-items-grid reveal">
           <div class="wyg-item">
             <div class="wyg-item-icon">🎯</div>
             <div class="wyg-item-content">
@@ -1174,8 +1164,8 @@
           <div class="wyg-item">
             <div class="wyg-item-icon">📊</div>
             <div class="wyg-item-content">
-              <div class="wyg-item-title">Redemption Data</div>
-              <p class="wyg-item-desc">Know exactly how many users completed your challenge and claimed your reward. Real numbers. Real accountability.</p>
+              <div class="wyg-item-title">Campaign Intelligence</div>
+              <p class="wyg-item-desc">Total steps, completion rate, cost per redemption, and return on spend, live on your own dashboard and ready to export as a PDF.</p>
             </div>
           </div>
           <div class="wyg-item">
@@ -1185,8 +1175,6 @@
               <p class="wyg-item-desc">From setup to launch, our team handles everything. You focus on the reward. We handle the rest.</p>
             </div>
           </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
