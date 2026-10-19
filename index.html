@@ -249,8 +249,9 @@
     }
 
     .hero-text {
+      flex: 1 1 auto;
+      min-width: 0;
       max-width: 560px;
-      flex-shrink: 0;
     }
 
     .hero-visual {
@@ -1018,8 +1019,9 @@
     /* PHONE MOCKUPS */
     .challenge-cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(2, minmax(0, 340px));
+      justify-content: center;
+      gap: 40px;
       margin-bottom: 100px;
     }
 
@@ -1121,16 +1123,8 @@
       flex-shrink: 0;
     }
 
-    .cr-logo {
-      background: linear-gradient(135deg, #8B0000, #CC0000);
-    }
-
-    .ab-logo {
-      background: linear-gradient(135deg, #001a5e, #003087);
-    }
-
-    .fw-logo {
-      background: linear-gradient(135deg, #0b2c6b, #00b9f1);
+    .gw-logo {
+      background: linear-gradient(135deg, #1f4d2b, #3a8a4f);
     }
 
     .brand-sponsored-tag {
@@ -1919,7 +1913,7 @@
     }
 
     .faq-item.open .faq-answer {
-      max-height: 200px;
+      max-height: 800px;
       padding: 0 32px 28px;
     }
 
@@ -2090,6 +2084,14 @@
     }
 
     @media (max-width: 768px) {
+      .brands-cta {
+        padding: 90px 20px;
+      }
+      .brands-cta .waitlist-submit {
+        white-space: normal;
+        width: 100%;
+        line-height: 1.5;
+      }
       .brands-cta-inner {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -2487,10 +2489,10 @@
         <div class="section-label">Example Challenges</div>
         <h2 class="challenges-title">Pick Your Challenge.<br>Earn Your Reward.</h2>
         <p class="challenges-sub">Every challenge on Doer is sponsored by a real brand with a real reward waiting at the
-          finish line. The brands below are illustrative examples of what a sponsored challenge looks like.</p>
+          finish line. Greenway Cafe is a sample brand, used here to show what a sponsored challenge looks like.</p>
       </div>
       <div class="challenge-cards">
-        <!-- Chicken Republic -->
+        <!-- Greenway Cafe, 7 day challenge -->
         <div class="reveal delay-1">
           <div class="phone-frame">
             <div class="phone-notch">
@@ -2501,10 +2503,10 @@
             <div class="phone-screen">
               <div class="ccard-header"><span class="ccard-back">←</span><span class="ccard-menu">⋮</span></div>
               <div class="ccard-brand-banner">
-                <div class="brand-logo-circle cr-logo">🍗</div>
+                <div class="brand-logo-circle gw-logo">☕</div>
                 <div>
                   <div class="brand-sponsored-tag">Sponsored by</div>
-                  <div class="brand-name-large">Chicken Republic</div>
+                  <div class="brand-name-large">Greenway Cafe</div>
                 </div>
               </div>
               <div class="ccard-body">
@@ -2562,7 +2564,7 @@
             </div>
           </div>
         </div>
-        <!-- Access Bank -->
+        <!-- Greenway Cafe, 14 day challenge -->
         <div class="reveal delay-2">
           <div class="phone-frame">
             <div class="phone-notch">
@@ -2573,10 +2575,10 @@
             <div class="phone-screen">
               <div class="ccard-header"><span class="ccard-back">←</span><span class="ccard-menu">⋮</span></div>
               <div class="ccard-brand-banner">
-                <div class="brand-logo-circle ab-logo">🏦</div>
+                <div class="brand-logo-circle gw-logo">☕</div>
                 <div>
                   <div class="brand-sponsored-tag">Sponsored by</div>
-                  <div class="brand-name-large">Access Bank</div>
+                  <div class="brand-name-large">Greenway Cafe</div>
                 </div>
               </div>
               <div class="ccard-body">
@@ -2605,10 +2607,10 @@
                   </div>
                   <div class="ccard-stat"><span class="cstat-val">5d</span><span class="cstat-label">Left</span></div>
                 </div>
-                <div class="ccard-reward"><span class="reward-icon">💳</span>
+                <div class="ccard-reward"><span class="reward-icon">🎁</span>
                   <div>
                     <div class="reward-label">Reward</div>
-                    <div class="reward-val">₦5,000 Cashback</div>
+                    <div class="reward-val">₦5,000 Cafe Credit</div>
                   </div>
                 </div>
                 <div class="ccard-leaderboard">
@@ -2624,78 +2626,6 @@
                   <div class="leaderboard-row"><span class="lb-rank">3</span>
                     <div class="lb-avatar">⚡</div><span class="lb-name">Ngozi F.</span><span
                       class="lb-steps">51,700</span>
-                  </div>
-                </div>
-                <button class="ccard-join-btn">Keep Walking </button>
-              </div>
-            </div>
-            <div class="phone-home-bar">
-              <div class="home-bar-line"></div>
-            </div>
-          </div>
-        </div>
-        <!-- Flutterwave -->
-        <div class="reveal delay-3">
-          <div class="phone-frame">
-            <div class="phone-notch">
-              <div class="notch-dot"></div>
-              <div class="notch-bar"></div>
-              <div class="notch-dot"></div>
-            </div>
-            <div class="phone-screen">
-              <div class="ccard-header"><span class="ccard-back">←</span><span class="ccard-menu">⋮</span></div>
-              <div class="ccard-brand-banner">
-                <div class="brand-logo-circle fw-logo">⚡</div>
-                <div>
-                  <div class="brand-sponsored-tag">Sponsored by</div>
-                  <div class="brand-name-large">Flutterwave</div>
-                </div>
-              </div>
-              <div class="ccard-body">
-                <div class="ccard-title">The Monthly Grind</div>
-                <div class="ccard-duration">30 Day Challenge</div>
-                <div class="ccard-step-target">
-                  <div>
-                    <div class="step-target-label">Total Target</div>
-                    <div class="step-target-val">100K</div>
-                  </div>
-                  <div style="text-align:right">
-                    <div class="step-target-label">Total Steps</div>
-                    <div class="step-target-unit">👣 in 30 days</div>
-                  </div>
-                </div>
-                <div class="ccard-progress-wrap">
-                  <div class="ccard-progress-header"><span>Day 18 of 30</span><strong>60%</strong></div>
-                  <div class="progress-bar">
-                    <div class="progress-fill" style="width:60%"></div>
-                  </div>
-                </div>
-                <div class="ccard-stats">
-                  <div class="ccard-stat"><span class="cstat-val">984</span><span class="cstat-label">Joined</span>
-                  </div>
-                  <div class="ccard-stat"><span class="cstat-val">#3</span><span class="cstat-label">Your Rank</span>
-                  </div>
-                  <div class="ccard-stat"><span class="cstat-val">12d</span><span class="cstat-label">Left</span></div>
-                </div>
-                <div class="ccard-reward"><span class="reward-icon">🏆</span>
-                  <div>
-                    <div class="reward-label">Reward</div>
-                    <div class="reward-val">₦20,000 Transfer</div>
-                  </div>
-                </div>
-                <div class="ccard-leaderboard">
-                  <div class="leaderboard-title">Leaderboard</div>
-                  <div class="leaderboard-row"><span class="lb-rank">1</span>
-                    <div class="lb-avatar">🦅</div><span class="lb-name">Chidi M.</span><span
-                      class="lb-steps">74,200</span>
-                  </div>
-                  <div class="leaderboard-row"><span class="lb-rank">2</span>
-                    <div class="lb-avatar">💨</div><span class="lb-name">Fatima B.</span><span
-                      class="lb-steps">68,900</span>
-                  </div>
-                  <div class="leaderboard-row"><span class="lb-rank you">You</span>
-                    <div class="lb-avatar">😤</div><span class="lb-name you">You</span><span
-                      class="lb-steps">61,800</span>
                   </div>
                 </div>
                 <button class="ccard-join-btn">Keep Walking </button>
@@ -2726,13 +2656,13 @@
             </div>
             <div class="battle-screen">
               <div class="battle-top-bar">
-                <div class="battle-top-title">Chicken Republic Step War</div>
+                <div class="battle-top-title">Greenway Cafe Step War</div>
                 <div class="battle-live-badge">
                   <div class="live-dot"></div>Live
                 </div>
               </div>
               <div class="battle-body">
-                <div class="battle-sponsor-tag">Sponsored by <span class="battle-sponsor-name">Chicken Republic</span>
+                <div class="battle-sponsor-tag">Sponsored by <span class="battle-sponsor-name">Greenway Cafe</span>
                 </div>
                 <div class="battle-vs-row">
                   <div class="b-team">
@@ -2768,7 +2698,7 @@
                     <div class="score-val">20.4K</div>
                   </div>
                 </div>
-                <div class="battle-reward-box"><span style="font-size:20px;">🍗</span>
+                <div class="battle-reward-box"><span style="font-size:20px;">☕</span>
                   <div>
                     <div class="reward-label">Winning Team Reward</div>
                     <div class="reward-val" style="font-size:13px;">₦2,000 Voucher · Per Member</div>
