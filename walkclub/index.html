@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doer Walk Club Reminder</title>
+<style>
+  :root { --ink:#0D0D0D; --gold:#D4A843; --cream:#F0EBE1; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+         background:var(--ink); color:var(--cream); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  main { width:100%; max-width:420px; padding:32px 16px; text-align:center; }
+  h1 { font-size:28px; margin:0 0 8px; }
+  p { margin:0 0 24px; line-height:1.5; opacity:.85; }
+  a.btn { display:block; padding:16px; margin:0 0 12px; border-radius:14px; font-size:17px; font-weight:600;
+          text-decoration:none; background:var(--gold); color:var(--ink); }
+  a.btn.alt { background:transparent; color:var(--cream); border:1px solid rgba(240,235,225,.35); }
+  small { display:block; margin-top:16px; opacity:.6; line-height:1.4; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Doer Walk Club</h1>
+  <p>Every Saturday, 6:00 AM at Millennium Park, Abuja. We start walking at 6:30.</p>
+  <a id="primary" class="btn" href="/walkclub.ics">Add to Apple Calendar</a>
+  <a id="google" class="btn alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Doer%20Walk%20Club&amp;dates=20261024T050000Z/20261024T070000Z&amp;ctz=Africa/Lagos&amp;recur=RRULE:FREQ=WEEKLY;BYDAY=SA&amp;location=Millennium%20Park%2C%20Abuja&amp;details=Arrive%20by%206%3A00%20AM.%20We%20start%20walking%20at%206%3A30%20AM.%20Open%20the%20Doer%20app%20to%20RSVP.">Add to Google Calendar</a>
+  <small>Apple Calendar adds a reminder on Thursday morning and Friday evening. Google Calendar uses your own default reminder.</small>
+</main>
+<script>
+  // Android phones open Google Calendar; everything else gets the .ics (iPhone shows its add-to-calendar sheet).
+  if (/android/i.test(navigator.userAgent)) {
+    var p = document.getElementById('primary'), g = document.getElementById('google');
+    g.className = 'btn'; p.className = 'btn alt';
+    p.parentNode.insertBefore(g, p);
+  }
+</script>
+</body>
+</html>
