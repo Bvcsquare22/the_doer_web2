@@ -14,25 +14,33 @@
   p { margin:0 0 24px; line-height:1.5; opacity:.85; }
   a.btn { display:block; padding:16px; margin:0 0 12px; border-radius:14px; font-size:17px; font-weight:600;
           text-decoration:none; background:var(--gold); color:var(--ink); }
-  a.btn.alt { background:transparent; color:var(--cream); border:1px solid rgba(240,235,225,.35); }
   small { display:block; margin-top:16px; opacity:.6; line-height:1.4; }
+  small a { color:var(--cream); }
+  .hide { display:none; }
 </style>
 </head>
 <body>
 <main>
   <h1>Doer Walk Club</h1>
   <p>Every Saturday at Millennium Park, Abuja. Meet up at 6:30 AM, we start walking at 7:00.</p>
-  <a id="primary" class="btn" href="/walkclub.ics">Add to Apple Calendar</a>
-  <a id="google" class="btn alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Doer%20Walk%20Club&amp;dates=20261024T053000Z/20261024T070000Z&amp;ctz=Africa/Lagos&amp;recur=RRULE:FREQ=WEEKLY;BYDAY=SA&amp;location=Millennium%20Park%2C%20Abuja&amp;details=Meet%20up%20at%206%3A30%20AM.%20We%20start%20walking%20at%207%3A00%20AM.%20Open%20the%20Doer%20app%20to%20RSVP.">Add to Google Calendar</a>
-  <small>Apple Calendar adds the walk plus a reminder on Thursday at 8:00 AM and Friday at 6:00 PM. Google Calendar adds the Saturday walk only, with your own default reminder.</small>
+
+  <section id="ios">
+    <a class="btn" href="/walkclub.ics">Add to my calendar</a>
+    <small>One tap adds the Saturday walk, plus a reminder on Thursday at 8:00 AM and Friday at 6:00 PM.</small>
+  </section>
+
+  <section id="android">
+    <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Reminder%3A%20Doer%20Walk%20Club%20is%20on%20Saturday&amp;dates=20261022T070000Z/20261022T071500Z&amp;ctz=Africa/Lagos&amp;recur=RRULE:FREQ=WEEKLY;BYDAY=TH&amp;location=Millennium%20Park%2C%20Abuja&amp;details=Walk%20Club%20this%20Saturday.%20Meet%20up%20at%206%3A30%20AM%2C%20we%20start%20walking%20at%207%3A00%20AM.">1. Add Thursday morning reminder</a>
+    <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Reminder%3A%20Doer%20Walk%20Club%20is%20tomorrow%20morning&amp;dates=20261023T170000Z/20261023T171500Z&amp;ctz=Africa/Lagos&amp;recur=RRULE:FREQ=WEEKLY;BYDAY=FR&amp;location=Millennium%20Park%2C%20Abuja&amp;details=Walk%20Club%20tomorrow.%20Meet%20up%20at%206%3A30%20AM%2C%20we%20start%20walking%20at%207%3A00%20AM.%20Get%20your%20shoes%20ready.">2. Add Friday evening reminder</a>
+    <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Doer%20Walk%20Club&amp;dates=20261024T053000Z/20261024T070000Z&amp;ctz=Africa/Lagos&amp;recur=RRULE:FREQ=WEEKLY;BYDAY=SA&amp;location=Millennium%20Park%2C%20Abuja&amp;details=Meet%20up%20at%206%3A30%20AM.%20We%20start%20walking%20at%207%3A00%20AM.%20Open%20the%20Doer%20app%20to%20RSVP.">3. Add Saturday walk</a>
+    <small>Each button opens Google Calendar with everything filled in. Tap Save, then come back for the next one. Prefer one file? <a href="/walkclub.ics">Download it instead</a>.</small>
+  </section>
 </main>
 <script>
-  // Android phones open Google Calendar; everything else gets the .ics (iPhone shows its add-to-calendar sheet).
-  if (/android/i.test(navigator.userAgent)) {
-    var p = document.getElementById('primary'), g = document.getElementById('google');
-    g.className = 'btn'; p.className = 'btn alt';
-    p.parentNode.insertBefore(g, p);
-  }
+  // Android gets the three Google Calendar buttons, iPhone and Mac get the one-tap file, anything else sees both.
+  var ua = navigator.userAgent, android = /android/i.test(ua), apple = /iphone|ipad|ipod|macintosh/i.test(ua);
+  if (android) document.getElementById('ios').className = 'hide';
+  else if (apple) document.getElementById('android').className = 'hide';
 </script>
 </body>
 </html>
